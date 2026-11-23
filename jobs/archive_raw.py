@@ -12,10 +12,12 @@ def gh(*args):return subprocess.check_output(['gh',*args],text=True)
 def main():
     if REPO!='SansaZheng/Financial-graph':raise RuntimeError('Archive only to primary authorized repository')
     path=Path(os.environ.get('RUNNER_TEMP','.'))/'financialgraph-raw';path.mkdir(exist_ok=True)
-    try:r=json.loads(gh('api',f'repos/{REPO}/releases/tags/{TAG}'))
-    except subprocess.CalledProcessError:
+    releases=json.loads(gh('api',f'repos/{REPO}/releases?per_page=100'))
+    r=next((x for x in releases if x['tag_name']==TAG),None)
+    if r is None:
         gh('release','create',TAG,'--repo',REPO,'--draft','--target',os.environ['GITHUB_SHA'],'--title','Pinned raw minute-bar data (SHA256 verified)','--notes','Source CryptoSpartan/stocks_bars_1m on Hugging Face, MIT metadata. Binary parts concatenate in part-number order. Verify manifest SHA256 before use. This is a data archive, not an experimental result.')
-        r=json.loads(gh('api',f'repos/{REPO}/releases/tags/{TAG}'))
+        releases=json.loads(gh('api',f'repos/{REPO}/releases?per_page=100'))
+        r=next(x for x in releases if x['tag_name']==TAG)
     if not r['draft']:raise RuntimeError('Published archive already exists; preserve it')
     existing={x['name']:x for x in r['assets']};overall=hashlib.sha256();parts=[]
     chunk=1024**3
