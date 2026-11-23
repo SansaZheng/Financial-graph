@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-23T15:43:36.104350+08:00", "prompt_id": "002-recovery", "run_id": "cgi-001-recovery", "executor": "Codex + CQ", "status": "running", "jobs": ["j-1123-b41d82", "j-1123-373d6c", "j-1123-fca05c"], "outputs": ["jobs", "src", "paper/workflow"]}
