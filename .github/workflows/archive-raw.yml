@@ -1,0 +1,19 @@
+name: Archive pinned raw data
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: financialgraph-raw-archive
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.repository == 'SansaZheng/Financial-graph'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream, hash and upload release parts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 jobs/archive_raw.py

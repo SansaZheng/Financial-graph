@@ -1,0 +1,42 @@
+{
+  "name": "FinancialGraph free CPU invariant qualification",
+  "work": "FinancialGraph",
+  "code": {
+    "github": "SuuTTT/financial-graph-cq",
+    "commit": "8043e1a177985d04b3aafdd97a29e3c61ca4c946"
+  },
+  "command": [
+    "bash",
+    "jobs/kaggle-smoke.sh"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/financial-graph/invariants-20261123",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "3 passed"
+      },
+      {
+        "path": "freeze.txt"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 15
+    }
+  }
+}

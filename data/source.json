@@ -1,0 +1,11 @@
+{
+  "source": "https://huggingface.co/datasets/CryptoSpartan/stocks_bars_1m",
+  "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+  "file": "stocks_bars_1m.parquet",
+  "bytes": 10927267185,
+  "sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+  "license_metadata": "MIT",
+  "metadata_verified_on": "2026-11-23",
+  "archive_status": "workflow prepared, not yet verified",
+  "note": "Match original experimental archive hash. Release is published only after whole-file and remote per-part digest checks. No raw download to Mac."
+}
