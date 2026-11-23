@@ -1,0 +1,341 @@
+{
+  "created": "2026-11-24 Asia/Singapore",
+  "files": [
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed0/test_predictions.csv",
+      "archive_path": "financial-graph-research/evidence/pilot/public_seed0/test_predictions.csv",
+      "bytes": 16890,
+      "allocated_bytes": 20480,
+      "sha256": "e556057cc30a77f029f443143a86f8c327106fc1801fc22cc26b6f29d4adea82"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2/signals.csv",
+      "archive_path": "financial-graph-research/evidence/pilot/public_seed2/signals.csv",
+      "bytes": 11378,
+      "allocated_bytes": 12288,
+      "sha256": "244c382d6dc15322a8e45c38995b7a2a4bf525b433d0221d60f2d368ae830030"
+    },
+    {
+      "source": "/Users/zyy/.local/share/financial-graph/evidence/cq/j-1123-9d87e1/freeze.txt",
+      "archive_path": "recovery/evidence/cq/j-1123-9d87e1/freeze.txt",
+      "bytes": 16569,
+      "allocated_bytes": 20480,
+      "sha256": "e91efd2e9c36b7db84bc4d4c0f0ed09a05ff3ec792cf89e84f4b6f7137acd384"
+    },
+    {
+      "source": "/Users/zyy/.local/share/financial-graph/evidence/cq/j-1123-9d87e1/cq-threads.json",
+      "archive_path": "recovery/evidence/cq/j-1123-9d87e1/cq-threads.json",
+      "bytes": 78,
+      "allocated_bytes": 4096,
+      "sha256": "97465c11312150d634db5b0b8026afa70c9c98f003c9f19692063ccfc357b9e5"
+    },
+    {
+      "source": "/Users/zyy/.local/share/financial-graph/evidence/cq/j-1123-9d87e1/tests.txt",
+      "archive_path": "recovery/evidence/cq/j-1123-9d87e1/tests.txt",
+      "bytes": 423,
+      "allocated_bytes": 4096,
+      "sha256": "13a0dfa31596fcf2d4cbdb2d1f8b2a5da9718c5088b751eafd09b7fddb2b9703"
+    },
+    {
+      "source": "/Users/zyy/.local/share/financial-graph/evidence/cq/j-1123-9d87e1/progress.txt",
+      "archive_path": "recovery/evidence/cq/j-1123-9d87e1/progress.txt",
+      "bytes": 45,
+      "allocated_bytes": 4096,
+      "sha256": "5512a48013813b434569076cf1550eb64f7a083337b546acd73bb9521a16b0a1"
+    },
+    {
+      "source": "/Users/zyy/.local/share/financial-graph/evidence/cq/j-1123-9d87e1/manifest.json",
+      "archive_path": "recovery/evidence/cq/j-1123-9d87e1/manifest.json",
+      "bytes": 544,
+      "allocated_bytes": 4096,
+      "sha256": "b66740cca3d0832174913251d7a681c925b00092d0e38eb3eeca8f0e1e01275e"
+    }
+  ],
+  "failed": [
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_data_manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed2.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/expanded_results.png",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed1.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed0.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/expanded_comparison.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed1.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed2.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/expanded_metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/data_preparation.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/universe.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/selection.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/graphs_seed0.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/ensemble_signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/c219_seed2/graphs_seed2.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/expanded/c219_seed2/graphs_seed2.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_results.png",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed0/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed0/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed0/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed0/signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed2.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed1/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed1/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed1/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed1/signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/cluster_gae_inventory.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed0.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public-code-sha256.txt",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed1.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public-protocol.txt",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_comparison.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_summary.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed2/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed2/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed2/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/results/public_seed2/signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed2.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/expanded_results.png",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed1.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed0.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/expanded_comparison.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed1.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed2.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/expanded_metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/data_preparation.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/universe.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/selection.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/graphs_seed0.manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/legacy-expanded/ensemble_signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_data_manifest.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed0.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed1.log",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public-protocol.txt",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_comparison.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_summary.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed0/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed0/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed0/signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed1/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed1/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed1/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed1/signals.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2/metrics.json",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2/forecast_data.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    },
+    {
+      "source": "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2/test_predictions.csv",
+      "error": "iCloud dataless placeholder; earlier hydration attempts timed out; preserve source"
+    }
+  ],
+  "deletion_status": "not started"
+}

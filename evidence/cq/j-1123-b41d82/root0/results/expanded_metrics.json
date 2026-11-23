@@ -1,0 +1,186 @@
+{
+  "status": "Expanded independent study, not original-paper numerical reproduction",
+  "selected_on_2021_validation": {
+    "gae_baseline": "mlp_gae",
+    "no_graph_control": "seasonal_control_1",
+    "density_control": "density_control_1",
+    "extension": "temporal_joint_1"
+  },
+  "validation_mse": {
+    "linear_har": 0.28735385939932173,
+    "xgb_har": 0.2875865297667238,
+    "mlp_har": 0.28581854317384947,
+    "linear_gae": 0.2847271420987179,
+    "xgb_gae": 0.2860376236491129,
+    "mlp_gae": 0.2808602284085091,
+    "seasonal_control_1": 0.24331674257026828,
+    "density_control_1": 0.24320498864805395,
+    "joint_seasonal_1": 0.241446777421031,
+    "temporal_joint_1": 0.24091625103572897,
+    "seasonal_control_10": 0.24369517288317866,
+    "density_control_10": 0.24358206627728898,
+    "joint_seasonal_10": 0.24182338930693348,
+    "temporal_joint_10": 0.24128175884097075,
+    "seasonal_control_100": 0.24650790443636245,
+    "density_control_100": 0.24641004642423553,
+    "joint_seasonal_100": 0.24466948398281235,
+    "temporal_joint_100": 0.244119367880544
+  },
+  "test_metrics": {
+    "density_control_1": {
+      "r2": 0.7611352162425551,
+      "mse": 0.2379233428358234
+    },
+    "linear_gae": {
+      "r2": 0.7351564572420213,
+      "mse": 0.2637997114109821
+    },
+    "linear_har": {
+      "r2": 0.7354713692587558,
+      "mse": 0.26348604056113123
+    },
+    "mlp_gae": {
+      "r2": 0.736813624921525,
+      "mse": 0.2621490751483031
+    },
+    "mlp_har": {
+      "r2": 0.7386091003630479,
+      "mse": 0.2603606762378109
+    },
+    "seasonal_control_1": {
+      "r2": 0.7610306499143316,
+      "mse": 0.23802749703539872
+    },
+    "temporal_joint_1": {
+      "r2": 0.7601003469024872,
+      "mse": 0.23895413343171668
+    },
+    "xgb_gae": {
+      "r2": 0.73662432715338,
+      "mse": 0.26233762683465867
+    },
+    "xgb_har": {
+      "r2": 0.7372053478770394,
+      "mse": 0.2617588960956381
+    }
+  },
+  "paired_gain_intervals": {
+    "gae_baseline": {
+      "mean_daily_mse_gain": 0.023999899377250757,
+      "ci95": [
+        0.016458300625494388,
+        0.03156868826920608
+      ]
+    },
+    "no_graph_control": {
+      "mean_daily_mse_gain": -0.0009668817659101215,
+      "ci95": [
+        -0.002026648346177623,
+        -4.302327466224872e-05
+      ]
+    },
+    "density_control": {
+      "mean_daily_mse_gain": -0.0010844329109558131,
+      "ci95": [
+        -0.0019387752783115474,
+        -0.00023094901202050171
+      ]
+    }
+  },
+  "annual_test_metrics": {
+    "2022": {
+      "gae_baseline": {
+        "r2": 0.6156403715639709,
+        "mse": 0.2648300885860398
+      },
+      "no_graph_control": {
+        "r2": 0.6773008147503314,
+        "mse": 0.22234503182359125
+      },
+      "density_control": {
+        "r2": 0.6765558722371168,
+        "mse": 0.22285830943437704
+      },
+      "extension": {
+        "r2": 0.6746883196495526,
+        "mse": 0.2241450838003951
+      }
+    },
+    "2023": {
+      "gae_baseline": {
+        "r2": 0.6048351461004995,
+        "mse": 0.26202350428058974
+      },
+      "no_graph_control": {
+        "r2": 0.6301953238891957,
+        "mse": 0.2452078320673343
+      },
+      "density_control": {
+        "r2": 0.630549231053759,
+        "mse": 0.24497316546038828
+      },
+      "extension": {
+        "r2": 0.6292283666147813,
+        "mse": 0.24584899620688624
+      }
+    },
+    "2024": {
+      "gae_baseline": {
+        "r2": 0.5501256668276806,
+        "mse": 0.25946023229401394
+      },
+      "no_graph_control": {
+        "r2": 0.5716866422902249,
+        "mse": 0.24702516923418277
+      },
+      "density_control": {
+        "r2": 0.5727569819232403,
+        "mse": 0.24640786224567912
+      },
+      "extension": {
+        "r2": 0.5711560056331442,
+        "mse": 0.24733120827699506
+      }
+    }
+  },
+  "rows": {
+    "train": 3617,
+    "validation": 1233,
+    "test": 3644
+  },
+  "test_sessions": 749,
+  "test_start": "2022-01-03 10:31:00-05:00",
+  "test_end": "2024-12-30 14:31:00-05:00",
+  "graph_complete_days": 1757,
+  "graph_status_counts": {
+    "ok": 5271
+  },
+  "runtime_manifests": [
+    {
+      "data_sha256": "321d296b49f9a2e6cfcdd4ea24b43fb7d9d303ad2fa7095e363c869eb0987835",
+      "epochs": 100,
+      "seed": 0,
+      "algorithm": "daily-gae-v1",
+      "torch_version": "2.0.1+cu117",
+      "numpy_version": "1.24.3"
+    },
+    {
+      "data_sha256": "321d296b49f9a2e6cfcdd4ea24b43fb7d9d303ad2fa7095e363c869eb0987835",
+      "epochs": 100,
+      "seed": 1,
+      "algorithm": "daily-gae-v1",
+      "torch_version": "2.0.1+cu117",
+      "numpy_version": "1.24.3"
+    },
+    {
+      "data_sha256": "321d296b49f9a2e6cfcdd4ea24b43fb7d9d303ad2fa7095e363c869eb0987835",
+      "epochs": 100,
+      "seed": 2,
+      "algorithm": "daily-gae-v1",
+      "torch_version": "2.0.1+cu117",
+      "numpy_version": "1.24.3"
+    }
+  ],
+  "spearman_auc_next_hour_test": -0.1318527850936565,
+  "warnings": []
+}

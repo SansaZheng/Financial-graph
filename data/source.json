@@ -6,6 +6,6 @@
   "sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
   "license_metadata": "MIT",
   "metadata_verified_on": "2026-11-23",
-  "archive_status": "workflow prepared, not yet verified",
+  "archive_status": "published; remote part digests and sizes verified 2026-11-24",
   "note": "Match original experimental archive hash. Release is published only after whole-file and remote per-part digest checks. No raw download to Mac."
 }

@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-24",
+  "request": "Migrate all GAE local data to GitHub before deleting local data",
+  "deletion_performed": false,
+  "reason": "71 iCloud dataless files cannot be read/hashed; all-data prerequisite not met",
+  "readable_files": 7,
+  "unreadable_files": 71,
+  "partial_archive_sha256": "b45116a2fc1c172737e60e8ec47abd072037210fd21a02a43a42ace3ecbbac86",
+  "partial_archive_bytes": 21072,
+  "raw_release_verified": true,
+  "recovered_server_input_hashes_verified": true,
+  "excluded": "SNN, LOB, MacroHFT, rule-agent and strategy data; environments; source code",
+  "freed_bytes": 0
+}

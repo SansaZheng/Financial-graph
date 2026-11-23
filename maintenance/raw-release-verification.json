@@ -1,0 +1,92 @@
+{
+  "release": "https://github.com/SansaZheng/Financial-graph/releases/tag/raw-stocks-bars-1m-59bc5acc",
+  "verified_on": "2026-11-24",
+  "asset_digests_match": true,
+  "manifest": {
+    "source": "https://huggingface.co/datasets/CryptoSpartan/stocks_bars_1m/resolve/0c6f25f287918b1421c2572d2c9e2b75bd8959a9/stocks_bars_1m.parquet",
+    "source_revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+    "source_license_metadata": "MIT",
+    "sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+    "bytes": 10927267185,
+    "parts": [
+      {
+        "name": "stocks_bars_1m.parquet.part000",
+        "bytes": 1073741824,
+        "sha256": "18fbb162c2eb63dad48195786b4028fdcb7d8c326611b4efbda33d8a84de2ac8",
+        "asset_id": 782039677,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part000"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part001",
+        "bytes": 1073741824,
+        "sha256": "83c08c007fadcc22e122f2c94ca08cd975608112de8c66e1ec7fce6285806312",
+        "asset_id": 782043138,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part001"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part002",
+        "bytes": 1073741824,
+        "sha256": "b485635b7eee8702e84f409839e5c454669c04be3e031034f794e5e8bf05ff92",
+        "asset_id": 782047196,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part002"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part003",
+        "bytes": 1073741824,
+        "sha256": "83e763f4f1550181abd51971a5f31074cc68976cd32a0e792ea03454dd62459c",
+        "asset_id": 782049847,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part003"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part004",
+        "bytes": 1073741824,
+        "sha256": "06b1eb396a8b62877f7f4ba976570c66e37cedbc269283573176fb545c8a1202",
+        "asset_id": 782052791,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part004"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part005",
+        "bytes": 1073741824,
+        "sha256": "856c12362732fc2b04e52c3b7146378fbb19d9a5b08be2faa92db512e1935e8d",
+        "asset_id": 782055451,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part005"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part006",
+        "bytes": 1073741824,
+        "sha256": "8d52e0e6a11f7e190690d046c5fbd6f4d8d6f37eb5a9bda482c436c39784f4d2",
+        "asset_id": 782057899,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part006"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part007",
+        "bytes": 1073741824,
+        "sha256": "62d70d4f4e19a44ecd98c9527dc71002f980b10c53287d4538891acead0d7c0a",
+        "asset_id": 782060352,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part007"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part008",
+        "bytes": 1073741824,
+        "sha256": "5131c139c8401caed1e249273726d4b5c44983d764cabfbea46ff2fb9a2b626c",
+        "asset_id": 782063134,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part008"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part009",
+        "bytes": 1073741824,
+        "sha256": "492066ae1e01e3b5037c6cb1c19bb4d99e1982dc0468baccc0df59372fb6dd91",
+        "asset_id": 782066253,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part009"
+      },
+      {
+        "name": "stocks_bars_1m.parquet.part010",
+        "bytes": 189848945,
+        "sha256": "97e91343da7babfd2390b84eedcfa479c7e99b41c5ad1b10137dd3b6babba650",
+        "asset_id": 782068025,
+        "url": "https://github.com/SansaZheng/Financial-graph/releases/download/untagged-c83c46c38e4df3949140/stocks_bars_1m.parquet.part010"
+      }
+    ],
+    "verified_remote_asset_digests": true
+  }
+}

@@ -1,0 +1,14 @@
+# Mac data migration — 2026-11-24
+
+No original data deleted. The user requires **all** data migrated before deletion.
+
+- Raw source release: 10,927,267,185 bytes in11 parts; remote digest/size checks match the manifest. See raw-release-verification.json. This raw file was on c220, not on the Mac.
+- Readable local files:7 preserved in mac-data-20261124.tar.gz; archive manifest embedded. This is a **partial** archive.
+- Unreadable local files:71 iCloud dataless placeholders. Earlier materialization reads timed out. See mac-data-manifest.json for exact paths. Do not unlink placeholders: that may delete cloud originals.
+- c220 forecast table, daily returns, hourly data and prior metrics recovered through CQ and SHA256-checked in evidence/cq/j-1123-b41d82. These are extra backups, not proof that inaccessible Mac files are identical.
+- Other projects and environments left untouched.
+
+To finish: make the listed project files readable from iCloud, hash/archive them, upload and verify the remote archive, then delete only matching files with no remaining experiment dependencies. Do not download the entire mixed-project FinancialAD folder. Most target directories currently occupy0 allocated bytes, so deleting their placeholders would not materially free Mac storage.
+
+## 中文结论
+原始大数据及已读取文件已备份/校验，但71个 iCloud 占位文件仍无法读取，因此尚未满足“全部迁移后删除”的前提。本轮没有删除原始文件，实际释放空间为0；没有改动其他项目。

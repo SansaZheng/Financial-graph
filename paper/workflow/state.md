@@ -31,3 +31,7 @@ Scientific objective remains incomplete: no new predictive result, no untouched2
 
 ## 中文结论
 GitHub 发布已成功，真实 CQ 结构测试已通过，正式预测实验依赖链已提交但仍在等待资源。原始数据分块归档重试中，完整上传尚未验收。当前没有新的性能提升结论；后续以实际结果验证是否超过强对照，并保留失败结果。
+
+
+## 2026-11-24 migration update
+Raw release is now verified. Mac cleanup is pending71 inaccessible iCloud placeholders; no source data deleted. CQ input audit and environment build completed, but smoke j-1123-29dbce failed with `/usr/bin/python: No module named src`; development remains blocked. See maintenance/README.md. No new predictive result exists.
