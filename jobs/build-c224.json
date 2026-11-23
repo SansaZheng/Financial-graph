@@ -1,0 +1,62 @@
+{
+  "name": "FinancialGraph CGI isolated environment c224",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "b832d7b0d069a22cf40c35935fdf19e0b6a79be6"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c224"
+  },
+  "command": [
+    "bash",
+    "jobs/build.sh"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 1,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c224"
+    ],
+    "never": [
+      "c223",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070",
+      "c220",
+      "c225"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/cgi-001/build-c224",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "passed"
+      },
+      {
+        "path": "freeze.txt"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 30
+    }
+  }
+}
