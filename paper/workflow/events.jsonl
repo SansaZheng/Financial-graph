@@ -1,1 +1,2 @@
 {"timestamp": "2026-11-23T15:43:36.104350+08:00", "prompt_id": "002-recovery", "run_id": "cgi-001-recovery", "executor": "Codex + CQ", "status": "running", "jobs": ["j-1123-b41d82", "j-1123-373d6c", "j-1123-fca05c"], "outputs": ["jobs", "src", "paper/workflow"]}
+{"timestamp": "2026-11-23T15:50:40.796694+08:00", "prompt_id": "002-recovery", "status": "running", "completed": ["j-1123-9d87e1"], "submitted": ["j-1123-923158", "j-1123-29dbce", "j-1123-2e7714"], "note": "waiting on lab capacity; no prediction metrics yet"}
