@@ -1,0 +1,59 @@
+{
+  "name": "FinancialGraph legacy c220 input recovery audit",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "6a4853e8651712073ef6849268363d4da6abceab"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c220"
+  },
+  "command": [
+    "python3",
+    "jobs/audit.py"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 1
+  },
+  "limits": {
+    "max_hours": 0.25,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c220"
+    ],
+    "never": [
+      "c225",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/input-audit-20261123",
+    "expect": [
+      {
+        "path": "audit.json",
+        "contains": "found_forecast"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 10
+    }
+  }
+}

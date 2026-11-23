@@ -1,0 +1,9 @@
+# CGI-001 protocol frozen before outcomes
+
+All historical 2018–2024 data is DEVELOPMENT ONLY. Outer origins: 2022,2023,2024. Validation: preceding calendar year. Fit starts 2018 and ends before validation; final refit ends before outer test year. Full-hour target labels must end before the next partition.
+
+Controls: seasonal ridge; density ridge; histogram gradient boosting on temporal+density; direct graph ridge/boosting. Ridge alpha 1,10,100; boosting leaves7,15,100 rounds. Select strongest control on validation MSE, not outer results. CGI fits forward out-of-fold baseline errors and graph innovations, using ridge corrections and volatility/shock interactions. Alpha1,10,100 and weight0,.25,.5,1 selected on validation. Include no-orthogonalization ablation. Gated CGI falls back to strong control unless validation improves with a positive exploratory five-session-block lower bound. This is not a statistical no-harm guarantee.
+
+Report log-realized-variance MSE and R², all model selections, predictions, folds and 2,000-draw five-session block intervals. Daily gains differ in weighting from hourly aggregate MSE. Intervals exploratory, no multiplicity correction. Never label reused data untouched. No causal identification, trading profitability or novelty claimed from residualization.
+
+Follow-up confirmation: independently audit new 2025–2026 data and other markets; freeze methods before looking at results. Need capacity-matched residual controls, graph rewiring and node permutation, regime robustness, QLIKE and independent datasets. Proposed node-level residual diffusion method is not implemented by this aggregate-score prototype. Ten datasets/ten methods including two 2026 methods are planning targets, not achieved counts. New graph fusion/gating alone is insufficient novelty.
