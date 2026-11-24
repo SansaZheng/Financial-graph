@@ -20,3 +20,9 @@ Issued macOS NSFileManager download requests to the exact71 manifest paths; all7
 `request_icloud.m`, `icloud_status.m`, `recover_71.py` preserve the bounded workflow. `publish_recovered.py` refuses unless all71 files are recovered, checks local hashes, uploads a Release, redownloads it and checks every member. It does not delete sources. After successful remote verification, evict local downloads through macOS rather than unlink cloud originals.
 
 中文结论：已再次主动请求恢复71个文件，但目前0个恢复成功；系统同步未返回内容，上传与删除条件仍未满足。
+
+## Recovery retry, 2026-11-25
+
+All 71 scoped macOS download requests were accepted again. Also requested Download in Finder for the project results/expanded folder only; Finder displayed downloading. Twelve polls at ten-second intervals and a final file-flag check found 0/71 resident files. Scoped bird/cloudd error diagnostics included network and timeout categories, but do not establish the cause. No account, network, global sync setting, other project, or original file was changed. The recovery archive remains incomplete and was not published.
+
+中文结论：本轮继续尝试系统下载和 Finder 下载，71 个文件仍全部为 iCloud 占位文件，尚未恢复内容。已备份的文件仍保留在 GitHub；未满足全部上传并校验的前提，因此没有删除任何原始文件，也没有释放本地数据空间。后续清理仅在校验完成后移除本地下载，保留云端原件。

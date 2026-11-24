@@ -77,6 +77,8 @@
     "/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research/evidence/pilot/public_seed2/test_predictions.csv"
   ],
   "deleted": false,
-  "archive_sha256": "2f601f0941470383ec045e10ea9365a9d5e3e279ba68f6b76e85395c3f8052fb",
-  "archive_bytes": 706
+  "archive_sha256": "3da63b00b71a1b5f736caacc93ad24abaa2197e5fca8a02492597f641e676b06",
+  "archive_bytes": 706,
+  "observed_date": "2026-11-25",
+  "archive_complete": false
 }

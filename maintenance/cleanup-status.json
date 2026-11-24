@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "request": "Migrate all GAE local data to GitHub before deleting local data",
   "deletion_performed": false,
   "reason": "71 iCloud dataless files cannot be read/hashed; all-data prerequisite not met",
@@ -19,5 +19,15 @@
     "poll_interval_seconds": 10,
     "coordinated_read": "did not return; own reader terminated",
     "source_files_deleted": 0
+  },
+  "retry_20261125": {
+    "download_requests_accepted": 71,
+    "restored": 0,
+    "polls": 12,
+    "poll_interval_seconds": 10,
+    "finder_retry": "Download requested only for results/expanded; Finder displayed downloading",
+    "source_files_deleted": 0,
+    "diagnostic_note": "Scoped bird/cloudd errors included network and timeout categories; cause not established",
+    "free_bytes": 7969529856
   }
 }
