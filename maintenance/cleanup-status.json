@@ -10,5 +10,14 @@
   "raw_release_verified": true,
   "recovered_server_input_hashes_verified": true,
   "excluded": "SNN, LOB, MacroHFT, rule-agent and strategy data; environments; source code",
-  "freed_bytes": 0
+  "freed_bytes": 0,
+  "retry_20261124": {
+    "download_requests_accepted": 71,
+    "restored": 0,
+    "macos_state": "all 71 downloading, not downloaded",
+    "polls": 12,
+    "poll_interval_seconds": 10,
+    "coordinated_read": "did not return; own reader terminated",
+    "source_files_deleted": 0
+  }
 }

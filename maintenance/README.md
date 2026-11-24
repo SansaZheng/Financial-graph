@@ -12,3 +12,11 @@ To finish: make the listed project files readable from iCloud, hash/archive them
 
 ## 中文结论
 原始大数据及已读取文件已备份/校验，但71个 iCloud 占位文件仍无法读取，因此尚未满足“全部迁移后删除”的前提。本轮没有删除原始文件，实际释放空间为0；没有改动其他项目。
+
+## Explicit recovery retry, 2026-11-24
+
+Issued macOS NSFileManager download requests to the exact71 manifest paths; all71 accepted. Across12 polls10 seconds apart, zero files became resident. NSURL metadata says all71 downloading, not downloaded, with no reported error. A read-only NSFileCoordinator request also failed to return; only our waiting reader was terminated. No global iCloud service/settings changed. No source deleted. Recovery remains incomplete.
+
+`request_icloud.m`, `icloud_status.m`, `recover_71.py` preserve the bounded workflow. `publish_recovered.py` refuses unless all71 files are recovered, checks local hashes, uploads a Release, redownloads it and checks every member. It does not delete sources. After successful remote verification, evict local downloads through macOS rather than unlink cloud originals.
+
+中文结论：已再次主动请求恢复71个文件，但目前0个恢复成功；系统同步未返回内容，上传与删除条件仍未满足。
