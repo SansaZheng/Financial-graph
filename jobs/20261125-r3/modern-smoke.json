@@ -1,0 +1,63 @@
+{
+  "work": "FinancialGraph",
+  "code": {
+    "github": "SuuTTT/financial-graph-cq",
+    "commit": "9f343afde518c3697cd7b4621a27578ccf42b36b"
+  },
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "9f343afde518c3697cd7b4621a27578ccf42b36b"
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 1,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "name": "FinancialGraph 003r3 modern-smoke",
+  "command": [
+    "bash",
+    "jobs/modern-cpu.sh",
+    "--smoke"
+  ],
+  "depends_on": [
+    "j-1125-09dfa8"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/financial-graph/20261125-r3-modern-smoke",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "10 passed"
+      },
+      {
+        "path": "freeze.txt"
+      },
+      {
+        "path": "metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "predictions.csv",
+        "min_lines": 100
+      },
+      {
+        "path": "selection.json"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 30
+    }
+  },
+  "replaces": [
+    "j-1125-d24723"
+  ]
+}

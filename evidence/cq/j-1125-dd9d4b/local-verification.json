@@ -1,0 +1,58 @@
+{
+  "status": "verified",
+  "metrics_recomputed": {
+    "strong_control": {
+      "mse": 0.2370910666430734,
+      "mae": 0.35497018946472625,
+      "r2": 0.7619707856761304,
+      "qlike": 0.1802520676731334,
+      "qlike_clip_count": 0
+    },
+    "density_control": {
+      "mse": 0.23705749430877882,
+      "mae": 0.3548235622331736,
+      "r2": 0.7620044908530834,
+      "qlike": 0.18046233792992447,
+      "qlike_clip_count": 0
+    },
+    "direct_graph": {
+      "mse": 0.23786181566351788,
+      "mae": 0.3553771863482468,
+      "r2": 0.7611969868722578,
+      "qlike": 0.18078738450134427,
+      "qlike_clip_count": 0
+    },
+    "cgi": {
+      "mse": 0.2386624117480984,
+      "mae": 0.3535145613218655,
+      "r2": 0.7603932229021444,
+      "qlike": 0.18765045727600876,
+      "qlike_clip_count": 0
+    },
+    "no_orthogonalization": {
+      "mse": 0.23900454519256703,
+      "mae": 0.3539476075245994,
+      "r2": 0.7600497356669067,
+      "qlike": 0.18779288635314825,
+      "qlike_clip_count": 0
+    },
+    "gated_cgi": {
+      "mse": 0.23922808661621625,
+      "mae": 0.35448317796701756,
+      "r2": 0.7598253097102756,
+      "qlike": 0.18695946799770297,
+      "qlike_clip_count": 0
+    }
+  },
+  "source_hashes_match_pinned_commit": {
+    "src/cgi.py": true,
+    "src/evaluate.py": true,
+    "src/ntd_evaluate.py": true,
+    "src/topology.py": true,
+    "jobs/build.sh": true,
+    "jobs/kaggle-smoke.sh": true,
+    "jobs/research-cpu.sh": true,
+    "jobs/run.sh": true
+  },
+  "rows": 3644
+}
