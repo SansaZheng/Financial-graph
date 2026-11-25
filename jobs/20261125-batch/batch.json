@@ -1,0 +1,93 @@
+{
+  "name": "FinancialGraph NTD unchanged three-seed batch",
+  "work": "FinancialGraph",
+  "code": {
+    "github": "SuuTTT/financial-graph-cq",
+    "commit": "32a4480cd7a739a345abddf0691a5900ceddb9e8"
+  },
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "32a4480cd7a739a345abddf0691a5900ceddb9e8"
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 1,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "command": [
+    "bash",
+    "jobs/ntd-batch.sh"
+  ],
+  "depends_on": [
+    "j-1125-4850c7",
+    "j-1125-09dfa8"
+  ],
+  "replaces": [
+    "j-1125-fce492",
+    "j-1125-e88fab",
+    "j-1125-dd6b5a"
+  ],
+  "outputs": {
+    "dest": "~/.local/share/cq/kaggle/financial-graph/20261125-ntd-batch",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "10 passed"
+      },
+      {
+        "path": "seed471/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed471/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed471/selection.json"
+      },
+      {
+        "path": "seed471/model_input.csv"
+      },
+      {
+        "path": "seed472/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed472/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed472/selection.json"
+      },
+      {
+        "path": "seed472/model_input.csv"
+      },
+      {
+        "path": "seed473/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed473/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed473/selection.json"
+      },
+      {
+        "path": "seed473/model_input.csv"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 20
+    }
+  }
+}

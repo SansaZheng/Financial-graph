@@ -44,3 +44,9 @@ Smoke stopped before training because the archived daily input contains14 missin
 ## Execution-only backend amendment
 
 Kaggle CPU slot pressure delayed NTD. CQ built and verified an isolated c225 environment at /data3/sudingli/cq-home/financial-graph-ntd, with Python3.11.18, numpy2.2.6,pandas2.2.3,scipy1.15.3,scikit-learn1.6.1. Ten tests passed. Core numerical package versions match Kaggle; Python differs from3.13.18. Scientific source files are byte-identical between9f343af and8b3843c; only execution wrappers changed. The already-assigned Kaggle smoke is retained for a cross-backend consistency check. Three still-unstarted Kaggle full seeds were cancelled and replaced by c225 full runs after a c225 smoke. No full seed is intentionally duplicated. The alternative portable-existing-environment qualification finished too, but is not used for these experiments. No paid resources or other projects' jobs were changed.
+
+## Final execution fallback
+
+The c225 smoke stalled during pytest collection before generating forecasts. A separate90-second bounded import diagnostic exited124; import timing showed broad slow dependency imports (joblib cumulative about33.6 seconds). This does not establish a model defect or a specific host/storage cause. No system or other-user job was changed. Three unstarted lab full seeds were cancelled. The lab smoke received a CQ cancellation request; its final state is tracked separately.
+
+The unchanged scientific code is now run as one sequential three-seed Kaggle CPU batch, j-1125-a08289, pinned32a4480 (full SHA in jobs/20261125-batch/batch.json). This reduces repeated provider startup. It depends on the successful original NTD smoke and environment qualification. No method, split, parameter grid or seed changed in response to prediction results. Each seed retains separate features, inputs, selections, predictions, metrics and version files under its own output subdirectory.
