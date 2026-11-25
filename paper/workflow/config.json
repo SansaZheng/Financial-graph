@@ -1,0 +1,42 @@
+{
+  "revision": 1,
+  "project_path": "/Users/zyy/.local/share/financial-graph",
+  "venue": {
+    "name": null,
+    "year": 2027,
+    "track": null,
+    "profile_id": "custom",
+    "quality_goal": "CCF A; not an acceptance claim"
+  },
+  "research": {
+    "topic": "Incremental topology information for market volatility forecasting",
+    "route_id": "ntd-002",
+    "method_name": "Null-centered Topology Diffusion (NTD)",
+    "route": "Causal-time residual networks, topology-null contrasts, forward residual correction against validation-selected controls",
+    "hypothesis": "Lagged topology-aligned idiosyncratic shocks improve forecasting beyond temporal persistence, density and capacity-matched controls."
+  },
+  "languages": {
+    "paper": "English",
+    "reports": [
+      "Chinese",
+      "English"
+    ]
+  },
+  "compute": {
+    "budget_usd": 0,
+    "paid_rental_authorized": false,
+    "executor": "CQ",
+    "authorized_hosts": [
+      "c220",
+      "c225"
+    ],
+    "free_cpu_backend": "kaggle"
+  },
+  "experiment_targets": {
+    "datasets": 10,
+    "baselines": 10,
+    "required_baseline_year": 2026,
+    "required_baseline_count": 2
+  },
+  "scope_change": "Stop all missing iCloud file investigation. Preserve placeholders; focus research."
+}

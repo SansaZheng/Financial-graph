@@ -1,6 +1,9 @@
-002-recovery | Codex + CQ | waiting on compute capacity / archive transfer | 2026-11-23 Asia/Singapore
+# Current research stage
 
-Completed: GitHub publication; CQ free CPU structural tests3/3 passed.
-Submitted forecast chain: j-1123-b41d82 + j-1123-923158 → j-1123-29dbce → j-1123-2e7714.
-Backup audit: j-1123-373d6c. Raw archive retry: GitHub Actions45133832878.
-No new empirical superiority claim. Next inspect results, fetch/verify/publish artifacts and run report generator; see state.md. No background monitoring promise.
+003-ntd | running | Codex + CQ | 2026-11-25T16:25:47.338802+08:00
+
+Task: repair execution and test topology-specific incremental predictive information.
+Prompt: [003-ntd](prompts/003-ntd.md). Configuration revision 1; target CCF A quality, venue unspecified.
+Completed: raw GitHub archive and c220 derived inputs verified.
+Active: implementation, literature audit, CQ qualification.
+Missing iCloud recovery discontinued by user; no deletion.
