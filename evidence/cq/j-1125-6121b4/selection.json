@@ -1,0 +1,38 @@
+{
+  "2022": {
+    "rg_params": 2889,
+    "mlp_width": 45,
+    "mlp_params": 2836,
+    "parameter_relative_gap": 0.018345448251990307,
+    "seed": 472,
+    "epochs_max": 2000,
+    "validation_mse_standardized": 0.13411243399367942,
+    "refit": "No train+validation refit: author early-stopped networks retain validation checkpoint; documented difference from ridge refit",
+    "train_end": "2020-12-31 14:31:00-05:00",
+    "validation_end": "2021-12-31 12:31:00-05:00"
+  },
+  "2023": {
+    "rg_params": 2889,
+    "mlp_width": 45,
+    "mlp_params": 2836,
+    "parameter_relative_gap": 0.018345448251990307,
+    "seed": 472,
+    "epochs_max": 2000,
+    "validation_mse_standardized": 0.14272538549343713,
+    "refit": "No train+validation refit: author early-stopped networks retain validation checkpoint; documented difference from ridge refit",
+    "train_end": "2021-12-31 12:31:00-05:00",
+    "validation_end": "2022-12-30 14:31:00-05:00"
+  },
+  "2024": {
+    "rg_params": 2889,
+    "mlp_width": 45,
+    "mlp_params": 2836,
+    "parameter_relative_gap": 0.018345448251990307,
+    "seed": 472,
+    "epochs_max": 2000,
+    "validation_mse_standardized": 0.1612557801895489,
+    "refit": "No train+validation refit: author early-stopped networks retain validation checkpoint; documented difference from ridge refit",
+    "train_end": "2022-12-30 14:31:00-05:00",
+    "validation_end": "2023-12-29 14:31:00-05:00"
+  }
+}

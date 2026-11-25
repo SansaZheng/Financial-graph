@@ -1,0 +1,65 @@
+{
+  "name": "FinancialGraph NTD isolated c225 CPU environment",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "8b3843c469c1cd1845aafc5b95a57153103345a1"
+  },
+  "home": {
+    "name": "financial-graph-ntd",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "jobs/lab-ntd-build.sh"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 1,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c220",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph-ntd/results/build-20261125",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "10 passed"
+      },
+      {
+        "path": "freeze.txt"
+      },
+      {
+        "path": "storage-root.txt"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 20
+    }
+  }
+}
