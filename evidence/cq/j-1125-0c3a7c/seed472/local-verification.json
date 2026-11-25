@@ -1,0 +1,123 @@
+{
+  "status": "verified",
+  "metrics_recomputed": {
+    "base_control": {
+      "mse": 0.2375920433078245,
+      "mae": 0.3569683288054402,
+      "r2": 0.7614678266925057,
+      "qlike": 0.17713249636607178,
+      "qlike_clip_count": 0
+    },
+    "density_ridge": {
+      "mse": 0.2375920433078245,
+      "mae": 0.3569683288054402,
+      "r2": 0.7614678266925057,
+      "qlike": 0.17713249636607178,
+      "qlike_clip_count": 0
+    },
+    "nonlinear_control": {
+      "mse": 0.24317395346429874,
+      "mae": 0.35957673509892046,
+      "r2": 0.7558638294277239,
+      "qlike": 0.18420502526616128,
+      "qlike_clip_count": 0
+    },
+    "temporal_only": {
+      "mse": 0.236963628183986,
+      "mae": 0.35511406181656036,
+      "r2": 0.7620987283975527,
+      "qlike": 0.17874267717916315,
+      "qlike_clip_count": 0
+    },
+    "ntd": {
+      "mse": 0.23788331351334774,
+      "mae": 0.3547443182655386,
+      "r2": 0.761175403957401,
+      "qlike": 0.18357230035985075,
+      "qlike_clip_count": 0
+    },
+    "raw_diffusion": {
+      "mse": 0.2377211444084398,
+      "mae": 0.3546974576356609,
+      "r2": 0.761338214750635,
+      "qlike": 0.18310721022581092,
+      "qlike_clip_count": 0
+    },
+    "null_only": {
+      "mse": 0.23761076984088894,
+      "mae": 0.3546226723326761,
+      "r2": 0.7614490260602615,
+      "qlike": 0.1826932416353326,
+      "qlike_clip_count": 0
+    },
+    "placebo": {
+      "mse": 0.23791679753021183,
+      "mae": 0.35483735356606577,
+      "r2": 0.7611417874473427,
+      "qlike": 0.1830492880515728,
+      "qlike_clip_count": 0
+    },
+    "temporal_residual": {
+      "mse": 0.23723041198206696,
+      "mae": 0.3539915674303074,
+      "r2": 0.7618308889603665,
+      "qlike": 0.18317763949881322,
+      "qlike_clip_count": 0
+    },
+    "ntd_no_orth": {
+      "mse": 0.23885262431802193,
+      "mae": 0.35624888703040675,
+      "r2": 0.7602022576784669,
+      "qlike": 0.1831775467485235,
+      "qlike_clip_count": 0
+    },
+    "direct_ntd": {
+      "mse": 0.23852509337897349,
+      "mae": 0.35765890853203275,
+      "r2": 0.7605310846275052,
+      "qlike": 0.1788158644997213,
+      "qlike_clip_count": 0
+    },
+    "strong_control": {
+      "mse": 0.23668329653026104,
+      "mae": 0.35259645338024675,
+      "r2": 0.7623801692980093,
+      "qlike": 0.18478649610451497,
+      "qlike_clip_count": 0
+    },
+    "gated_ntd": {
+      "mse": 0.23668329653026104,
+      "mae": 0.35259645338024675,
+      "r2": 0.7623801692980093,
+      "qlike": 0.18478649610451497,
+      "qlike_clip_count": 0
+    }
+  },
+  "source_hashes_match_pinned_commit": {
+    "src/cgi.py": true,
+    "src/evaluate.py": true,
+    "src/modern_baseline.py": true,
+    "src/ntd_evaluate.py": true,
+    "src/topology.py": true,
+    "jobs/build.sh": true,
+    "jobs/kaggle-smoke.sh": true,
+    "jobs/lab-ntd-build.sh": true,
+    "jobs/lab-ntd-run.sh": true,
+    "jobs/modern-cpu.sh": true,
+    "jobs/ntd-batch.sh": true,
+    "jobs/ntd-portable-batch.sh": true,
+    "jobs/research-cpu.sh": true,
+    "jobs/run.sh": true
+  },
+  "source_verification": "runtime hashes and CQ pin",
+  "input_hashes_checked": {
+    "evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv": true,
+    "evidence/cq/j-1123-b41d82/root0/data/daily_returns.csv": true
+  },
+  "timing_audit": {
+    "previous_session_only": true,
+    "graph_fit_precedes_shock": true,
+    "min_nodes": 98
+  },
+  "rows": 3644
+}

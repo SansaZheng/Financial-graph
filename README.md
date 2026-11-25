@@ -1,29 +1,28 @@
-## Active research — 2026-11-25
-
-Missing iCloud investigation has been discontinued at the user's request. Research uses verified GitHub/c220 inputs.
-
-- [Live checked status](paper/workflow/current.md) and [CQ job snapshot](paper/workflow/cq-status.json).
-- [NTD mechanism and frozen protocol](paper/workflow/protocol-ntd-002.md).
-- [Modern RG-ResMoE adaptation](paper/workflow/protocol-modern-001.md).
-- [Verified experiment report, ending in Chinese](paper/workflow/experiment-report.md).
-- [Reproduction steps](REPRODUCE.md), [claim map](paper/workflow/claim-map.md), [evidence limitations](paper/workflow/evidence-audit.md).
-
-The completed legacy CGI run failed to beat its strong control. New method claims require actual CQ outcomes; CCF A readiness is not established.
-
 # Financial Graph
 
-Research on incremental graph information for volatility forecasting. Target: CCF A research quality, not a claim of achieved novelty, superiority or acceptance.
+Research on incremental topology information for volatility forecasting. CCF A quality is a goal, not an achieved claim.
 
-The previous independent GAE experiment did **not** beat its strongest density control (R² 0.761135 vs 0.760100). Existing 2018–2024 results are consumed development data, never fresh confirmation.
+## Verified result — 2026-11-25
 
-## Current method
-Conditional Graph Innovation (CGI) removes the part of graph scores predictable from strong temporal/density controls using forward cross fitting, then learns a residual forecast correction. A development-only gate may reject the correction. Residualization is predictive, not structural causal identification. This is an initial hypothesis, not established novelty.
+CQ completed the frozen **Null-centered Topology Diffusion (NTD)** study: three seeds, each3644 forecasts across2022–2024. Independent recomputation, input/code hashes and time-boundary checks passed. NTD MSE is0.2377171/0.2378833/0.2376406, versus0.2366833 for the validation-selected strong control. All three seeds are worse by0.404–0.507%. The validation gate falls back to the strong control in every year. This is a negative primary result, retained in full.
 
-## Reproduction
-Install `requirements.txt`; run `python -m pytest tests`. Run experiments only through CQ using the pinned specs under `jobs/`. Scientific outputs go to `CQ_OUTPUT_DIR`. Follow `paper/workflow/state.md` for actual job IDs, evidence and blockers.
+Three adapted RG-ResMoE/matched-MLP runs and the older CGI run also completed. Better performance than some neural controls does not establish superiority to the strongest tested control. Historical data is development-only; no independent confirmatory holdout is claimed.
 
-## Archive scope
-The legacy Mac checkout is preserved at `/Users/zyy/Documents/ChatGPT/FinancialAD/financial-graph-research`; iCloud currently prevents reliable reads. This recovery checkout publishes small source files from `/Users/zyy/.local/share/financial-graph`. No original file was deleted or overwritten. Legacy evidence and the 10.9 GB raw archive are **not yet uploaded**; the data audit must recover and verify them before claiming a complete archive.
+- [Verified report with Chinese conclusion](paper/workflow/experiment-report.md)
+- [Exact reproduction steps](REPRODUCE.md)
+- [Frozen NTD protocol](paper/workflow/protocol-ntd-002.md) and [modern adaptation protocol](paper/workflow/protocol-modern-001.md)
+- [Code: graph construction](src/topology.py), [forecast evaluation](src/ntd_evaluate.py), [independent verifier](jobs/summarize_research.py)
+- [Full NTD evidence](evidence/cq/j-1125-0c3a7c), [job specification](jobs/20261125-portable-batch/batch.json)
+- [State](paper/workflow/state.md), [claim map](paper/workflow/claim-map.md), [limitations](paper/workflow/evidence-audit.md), [next-study decision](paper/workflow/next-study-decision.md)
+
+## Method and archive
+
+NTD constructs past-only factor-residual networks, measures diffusion alignment with held-out shocks, subtracts the exact uniform-permutation expectation, and fits a forward-cross-fitted forecast correction. Established residualization/permutation mathematics is not claimed as a new theorem. The proposed diagnostic has not demonstrated incremental predictive value here.
+
+Derived inputs, predictions, validation selections, environments, job specifications and key code are tracked in this repository. The11GB raw source is archived in a [verified multipart Release](https://github.com/SansaZheng/Financial-graph/releases/tag/raw-stocks-bars-1m-59bc5acc); see [verification receipt](maintenance/raw-release-verification.json). Missing iCloud files are no longer being pursued. Original Mac files remain untouched; this study does not claim those inaccessible files were recovered.
+
+All experiments used CQ with zero paid budget. Large lab files use authorized data disks. NTD and its controls share one environment; software differences from Kaggle modern runs are recorded explicitly. No other users' jobs or environments were modified.
 
 ## 中文结论
-本研究首先检验图信号能否在强时间序列和图密度对照之外提供增益。尚未产生新实验结论。全部结果，包括失败结果，必须保存；完整原始数据归档、独立确认和创新性验证仍未完成。
+
+本轮已完成可复算的真实实验和归档，但NTD未超过最强对照，尚未达到CCF A论文的证据要求。下一阶段须解决时间对齐、节点强度条件对照、独立市场数据和创新性验证，不能用已看过的年份反复调参替代独立确认。

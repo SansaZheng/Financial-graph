@@ -1,12 +1,28 @@
 {
-  "checked_at": "2026-11-25T10:58:16.468841+00:00",
+  "checked_at": "2026-11-25T22:06:10.360595+08:00",
   "jobs": [
     {
+      "id": "j-1125-0c3a7c",
+      "state": "done",
+      "reason": "outputs verified",
+      "started": 1795604989.629184,
+      "finished": 1795606570.2414641,
+      "exit_code": 0
+    },
+    {
+      "id": "j-1125-6c7e6f",
+      "state": "failed",
+      "reason": "exit 1",
+      "started": 1795608800.521848,
+      "finished": 1795608848.340568,
+      "exit_code": 1
+    },
+    {
       "id": "j-1125-a08289",
-      "state": "queued",
-      "reason": "waiting: 2 Kaggle notebooks already running (limit 2)",
+      "state": "cancelled",
+      "reason": "cancelled before launch",
       "started": null,
-      "finished": null,
+      "finished": 1795604665.397286,
       "exit_code": null
     },
     {

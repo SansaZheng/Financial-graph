@@ -1,21 +1,17 @@
-# Verified state — 2026-11-25 Asia/Singapore
+# Current research stage
 
-Primary archive: https://github.com/SansaZheng/Financial-graph
-CQ compute mirror: https://github.com/SuuTTT/financial-graph-cq
+003-ntd | Codex + CQ | 2026-11-25T22:06:10.360595+08:00
 
-## Completed evidence
-- Raw 11GB multipart GitHub Release verified by sizes and SHA256; see maintenance/raw-release-verification.json. No Mac raw-data download required.
-- Legacy CGI full comparison j-1125-dd9d4b: CGI MSE0.2386624 versus strong control0.2370911; no improvement.
-- Modern adapted RG-ResMoE and matched MLP: seeds471/472/473 completed and independently recomputed. Matched MLP outperformed RG-ResMoE in each seed. See experiment-report.md for exact values and adaptation limitations.
-- NTD implements past-only residual graph construction, exact permutation-null centering and cross-fitted residual correction with temporal and graph controls. Qualification passed10tests; Kaggle smoke j-1125-4850c7 completed. Smoke results did not trigger method changes.
+Completed and independently verified: legacy CGI, three modern RG-ResMoE/MLP seeds, and NTD three-seed batch j-1125-0c3a7c. Each full run has3644 matched forecasts for2022–2024. All NTD input/code hashes and causal-time output checks passed.
+Result: NTD loses to validation-selected strong control by0.404–0.507% MSE; gates fall back in all years. No superiority or CCF A readiness established. See experiment-report.md.
+All current scientific jobs are terminal. Shared-slot Kaggle batch was cancelled before launch; qualified portable c225 environment completed actual predictions. Core version differences from modern Kaggle runs are documented.
+Full CQ fetch succeeded:38 files, approximately7.5MB compressed. A redundant read-only c220 archive-transfer attempt j-1125-6c7e6f failed exit1; no retry needed, no effect on scientific output. Failure status retained.
+Next research decision: next-study-decision.md. No new experiments beyond this frozen study are claimed complete.
+Missing iCloud investigation discontinued. No paid compute, no original source deletion, no other projects modified.
 
-## Remaining experiment
-CQ job j-1125-0c3a7c runs the unchanged three-seed NTD batch in the already-qualified c225 project environment, pinned toe71914d3e75f (full SHA in its specification). The queued Kaggle batch j-1125-a08289 was cancelled before launch to avoid duplication. At this update the replacement is assigned to c225. Its final predictive results have not been observed.
+## Raw data and scientific boundary
 
-Lab environment qualification succeeded, but dependency import diagnosis timed out at90seconds and c225 smoke j-1125-194bed stalled before forecasts. That smoke is confirmed cancelled. Superseded unstarted full jobs are cancelled; no other projects or users affected. Diagnostic failure is preserved without an unsupported root-cause claim.
-
-## Scope and limitations
-Missing iCloud investigation is discontinued at the user's instruction. No original data deleted. No paid rental or paid compute enabled. All historical2022–2024 outcomes are development evidence, not untouched confirmation. No independent market panel or2025–2026 confirmation is complete. CCF A readiness, causal contagion and profitability are not established.
+The11GB multipart raw GitHub Release is verified; derived input and experimental output hashes are archived. Original minute aggregation and survivor-selected universe have not been reconstructed in this study. All2018–2024 data remains development-only. No independent market or2025–2026 confirmatory panel is available in the verified inputs. NTD components use established mathematics; novelty and broad state-of-the-art superiority are unproven.
 
 ## 中文结论
-研究已恢复推进，旧方法未超过强对照，三组现代对照和新方法的环境及小规模验证已完成。NTD正式三种子批次仍待免费资源，暂不能声称新方法优于最强对照，也不能声称达到CCF A录用水平。
+本轮真实CQ实验、复算和证据整理已完成，但主要科研目标尚未达成：NTD未超过最强对照，不能认定达到CCF A论文水平。后续应优先验证时间尺度、拓扑机制和独立数据，保留本轮全部负结果。

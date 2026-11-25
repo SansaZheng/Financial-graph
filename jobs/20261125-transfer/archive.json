@@ -1,0 +1,65 @@
+{
+  "name": "FinancialGraph read-only completed batch archive transfer",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "e71914d3e75fda53fb89e14efb2a789604fe4e6b"
+  },
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail\nSOURCE=/home/sudingli/cq-home/financial-graph/results/ntd-portable-batch-20261125\ncase \"$(readlink -f \"$CQ_OUTPUT_DIR\")\" in /data/*|/data[0-9]/*|/date/*|/date[0-9]/*) ;; *) exit 70;; esac\nprintf '0/1 archive\\n' > \"$CQ_OUTPUT_DIR/progress.txt\"\ntar -czf \"$CQ_OUTPUT_DIR/ntd-results.tar.gz\" -C \"$SOURCE\" code-commit.txt freeze.txt source-hashes.json tests.txt progress.txt seed471 seed472 seed473\n(cd \"$CQ_OUTPUT_DIR\" && sha256sum ntd-results.tar.gz > archive.sha256)\nprintf '1/1 complete\\n' >> \"$CQ_OUTPUT_DIR/progress.txt\"\n"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 1
+  },
+  "limits": {
+    "max_hours": 0.25,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c220"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070",
+      "c225"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/ntd-transfer-20261125",
+    "expect": [
+      {
+        "path": "ntd-results.tar.gz"
+      },
+      {
+        "path": "archive.sha256"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 10
+    }
+  },
+  "depends_on": [
+    "j-1125-0c3a7c"
+  ],
+  "home": {
+    "name": "financial-graph",
+    "from": "c220"
+  }
+}

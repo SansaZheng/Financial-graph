@@ -71,7 +71,7 @@ def main():
             lines.append(f"| {m['seed']} | {g:.4f} | {v['mean_daily_gain']:.7f} | [{v['ci95'][0]:.7f}, {v['ci95'][1]:.7f}] |")
         # Three permutations are Monte Carlo sensitivity, never three independent markets.
         gain=[100*(m['metrics']['strong_control']['mse']-m['metrics']['ntd']['mse'])/m['metrics']['strong_control']['mse'] for _,m,_ in ntd]
-        conclusions.append(f'NTD 相对各年度验证集选出的最强非图对照，{len(ntd)} 个排列种子的小时 MSE 改善范围为 {min(gain):.3f}% 至 {max(gain):.3f}%；负值表示更差。')
+        conclusions.append(f'NTD 相对各年度验证集选出的最强对照，{len(ntd)} 个排列种子的小时 MSE 改善范围为 {min(gain):.3f}% 至 {max(gain):.3f}%；负值表示更差。')
         aligned=pd.DataFrame({'target':ref.target,'ntd_mean':np.mean([f.ntd.to_numpy() for _,_,f in ntd],axis=0),'strong_control':ref.strong_control})
         for c in ['raw_diffusion','null_only','placebo','direct_ntd','ntd_no_orth']:
             aligned[c+'_mean']=np.mean([f[c].to_numpy() for _,_,f in ntd],axis=0)
@@ -90,6 +90,7 @@ def main():
         (out/'aligned-comparisons.json').write_text(json.dumps({'ntd_seeds':[m['seed'] for _,m,_ in ntd],'modern_seeds':[m['seed'] for _,m,_ in modern],'metrics':{c:metrics(aligned.target,aligned[c]) for c in aligned if c!='target'},'daily_intervals':comps,'status':'exploratory; seed-mean predictions are additional descriptive analysis, not primary preregistered endpoint'},indent=2)+'\n')
         lines+=['','## Aligned comparisons','', 'Seed-mean predictions are a descriptive sensitivity analysis. Seeds are not independent datasets. Intervals are five-session block bootstrap intervals on daily mean losses, unadjusted for multiplicity. Pooled hourly MSE and equally weighted daily gains differ in weighting.','', '| NTD seed mean vs | Mean daily gain | Exploratory95% interval |','|---|---:|---|']
         for c,v in comps.items():lines.append(f"| {c} | {v['mean_daily_gain']:.7f} | [{v['ci95'][0]:.7f}, {v['ci95'][1]:.7f}] |")
+        if max(gain)<0:conclusions.append('三组均未超过最强对照，主要实验目标未达成。门控回退不构成性能提升；原始扩散、仅零模型和置换安慰剂的比较也不足以证明拓扑特异性增益。')
         if modern:conclusions.append('现代对照使用作者 RG-ResMoE 网络及近似参数量匹配 MLP，已按相同预测时刻对齐；任务与原作者论文不同，属于明确标注的适配实验。')
     lines+=['','## Evidence limits / 证据边界','', 'One US survivor-selected equity universe. No independent market confirmation, no full raw-minute reconstruction, no degree-conditioned null test, no faithful Sig-GSPHAR reproduction. The scalar permutation identity and residualization are established tools, not new theorems. Legacy CGI and NTD use different graph information timing and must not be treated as a matched before/after improvement. Negative, zero-weight and placebo outcomes remain in the archive. NTD portable runs use NumPy1.26.4/scikit-learn1.5.2/SciPy1.14.1; modern Kaggle runs use NumPy2.2.6/scikit-learn1.6.1/SciPy1.15.3. Within NTD every control shares the same environment; cross-family comparisons carry this additional software-version difference.','', '## 中文结论','']
     lines+=conclusions or ['尚无完整 NTD 结果；不能据此声称超过最强对照。']
