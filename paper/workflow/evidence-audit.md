@@ -10,10 +10,10 @@ Goal: test whether topology-specific information improves market volatility fore
 | Raw source archive | Complete, verified GitHub Release | Data ends2024; not untouched2025–26 |
 | Legacy full CGI CQ run | j-1125-dd9d4b complete,3644 predictions | Development-only; old graph timestamps unaudited |
 | Legacy CGI improvement | Negative:0.2386624 vs0.2370911 MSE | Gate also worse; no safety guarantee |
-| Node-level NTD implementation | Implemented, code pinned | Prediction evidence pending until r3 finishes |
+| Node-level NTD implementation | Implemented, code pinned | Full prediction evidence pending batch j-1125-a08289 |
 | Timing invariants | Local tests and CQ qualification | Raw minute aggregation not rebuilt |
 | Missingness |14 observed missing cells; past-window node eligibility | Time-varying stock universe and survivor selection |
-| Modern RG-ResMoE | Author code retained under MIT; adapter implemented | Different task/features, not exact paper replication |
+| Modern RG-ResMoE | Author code retained under MIT; three full seeds verified | Different task/features, not exact paper replication |
 | Strong control | Validation selection includes capacity-matched temporal correction | Cannot claim globally strongest possible model |
 | Multiple markets | Not achieved | One US panel;100stocks are not100datasets |
 | Ten methods / two2026 methods | Planning targets only | RG-ResMoE adapted; Sig-GSPHAR not implemented |
@@ -25,7 +25,7 @@ Established ingredients: factor residualization, graph diffusion, permutation nu
 
 ## Required next discriminating evidence
 
-Complete the frozen NTD and modern CQ runs, including negative/zero-weight outcomes. If NTD cannot beat the capacity-matched temporal control or behaves like its permutation placebo, do not claim graph-specific improvement. If it succeeds, test degree-conditioned permutations, edge rewiring, graph lag/window stability, independent market panels and genuinely new dates with methods frozen before reading them. A switch to a new target must be documented as a new study, not used to conceal failure of the present primary endpoint.
+Complete the frozen NTD CQ batch (three modern seeds already verified), including negative/zero-weight outcomes. If NTD cannot beat the capacity-matched temporal control or behaves like its permutation placebo, do not claim graph-specific improvement. If it succeeds, test degree-conditioned permutations, edge rewiring, graph lag/window stability, independent market panels and genuinely new dates with methods frozen before reading them. A switch to a new target must be documented as a new study, not used to conceal failure of the present primary endpoint.
 
 ## 中文结论
 当前可信结论是旧 CGI 未超过强对照；新 NTD 已实现但须由正在执行的实验验证。论文贡献、跨市场稳定性和独立确认仍有明确缺口，不能把代码完成或任务提交写成顶会水平已经达成。

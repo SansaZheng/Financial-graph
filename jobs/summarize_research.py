@@ -62,6 +62,13 @@ def main():
     if 'ntd-002' in families:
         ntd=families['ntd-002'];ref=ntd[0][2]
         for _,_,f in ntd:assert f.index.equals(ref.index);np.testing.assert_allclose(f.target,ref.target,rtol=0,atol=1e-10)
+        for _,_,f in ntd:
+            np.testing.assert_allclose(f.strong_control,ref.strong_control,rtol=0,atol=1e-10)
+        lines+=['','## Primary per-seed comparison','', 'Positive gain favors NTD. These development-only intervals are exploratory, not multiplicity-adjusted confirmation.','', '| Seed | Hourly MSE improvement (%) | Mean daily gain | Daily block95% interval |','|---:|---:|---:|---|']
+        for _,m,f in ntd:
+            v=interval((f.target-f.strong_control)**2-(f.target-f.ntd)**2,f.index.tz_convert('America/New_York').date)
+            g=100*(m['metrics']['strong_control']['mse']-m['metrics']['ntd']['mse'])/m['metrics']['strong_control']['mse']
+            lines.append(f"| {m['seed']} | {g:.4f} | {v['mean_daily_gain']:.7f} | [{v['ci95'][0]:.7f}, {v['ci95'][1]:.7f}] |")
         # Three permutations are Monte Carlo sensitivity, never three independent markets.
         gain=[100*(m['metrics']['strong_control']['mse']-m['metrics']['ntd']['mse'])/m['metrics']['strong_control']['mse'] for _,m,_ in ntd]
         conclusions.append(f'NTD 相对各年度验证集选出的最强非图对照，{len(ntd)} 个排列种子的小时 MSE 改善范围为 {min(gain):.3f}% 至 {max(gain):.3f}%；负值表示更差。')
