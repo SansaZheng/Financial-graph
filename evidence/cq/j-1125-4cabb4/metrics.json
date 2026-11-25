@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "protocol": "modern-adaptation-001",
+  "evidence_type": "development_only_previously_observed_2018_2024",
+  "metrics": {
+    "rg_resmoe_adapted": {
+      "mse": 0.2444566746194529,
+      "mae": 0.3610370321945016,
+      "r2": 0.7545760326621984,
+      "qlike": 0.18582019873089864,
+      "qlike_clip_count": 0
+    },
+    "matched_mlp": {
+      "mse": 0.24291635195126163,
+      "mae": 0.3591908246012715,
+      "r2": 0.7561224502464036,
+      "qlike": 0.18891817624324247,
+      "qlike_clip_count": 0
+    },
+    "small_mlp": {
+      "mse": 0.24574239206066192,
+      "mae": 0.36368220849788724,
+      "r2": 0.7532852277545878,
+      "qlike": 0.18519488814364135,
+      "qlike_clip_count": 0
+    }
+  },
+  "rows": 3644,
+  "seed": 471,
+  "years": [
+    2022,
+    2023,
+    2024
+  ],
+  "elapsed_seconds": 22.599075317382812,
+  "torch": "2.11.0+cpu",
+  "author_commit": "5012deb5c6c376a85c31f55234df2ede4ac9ff3f",
+  "input_sha256": "a3ff9029edcf90cd382a45b4662b650971cdab914a2295868ab7552c8cb6f681",
+  "limitations": [
+    "Architecture adaptation, not exact published result reproduction",
+    "Next-hour market target differs from five-day individual stock target",
+    "Author early stopping protocol does not refit with validation",
+    "No independently untouched confirmation"
+  ]
+}

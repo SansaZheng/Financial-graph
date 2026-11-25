@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-8.3.4, pluggy-1.7.0
+rootdir: /tmp/cq-src
+plugins: anyio-4.15.1, langsmith-0.14.12, platformdirs-4.13.5, typeguard-4.6.0
+collected 10 items
+
+tests/test_cgi.py ...                                                    [ 30%]
+tests/test_ntd.py ..                                                     [ 50%]
+tests/test_topology.py .....                                             [100%]
+
+============================== 10 passed in 2.70s ==============================

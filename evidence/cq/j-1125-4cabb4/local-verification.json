@@ -1,0 +1,33 @@
+{
+  "status": "verified",
+  "metrics_recomputed": {
+    "rg_resmoe_adapted": {
+      "mse": 0.2444566746194529,
+      "mae": 0.3610370321945016,
+      "r2": 0.7545760326621984,
+      "qlike": 0.18582019873089864,
+      "qlike_clip_count": 0
+    },
+    "matched_mlp": {
+      "mse": 0.24291635195126163,
+      "mae": 0.3591908246012715,
+      "r2": 0.7561224502464036,
+      "qlike": 0.18891817624324247,
+      "qlike_clip_count": 0
+    },
+    "small_mlp": {
+      "mse": 0.24574239206066192,
+      "mae": 0.36368220849788724,
+      "r2": 0.7532852277545878,
+      "qlike": 0.18519488814364135,
+      "qlike_clip_count": 0
+    }
+  },
+  "source_hashes_match_pinned_commit": {},
+  "source_verification": "CQ pinned commit only; no runtime source hash output",
+  "input_hashes_checked": {
+    "evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv": true
+  },
+  "timing_audit": null,
+  "rows": 3644
+}
