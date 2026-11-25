@@ -1,0 +1,389 @@
+{
+  "2022": {
+    "control": "density_1",
+    "density": "density_1",
+    "direct": "direct_graph_1",
+    "cgi": {
+      "alpha": 1.0,
+      "orthogonal": true,
+      "weight": 1.0,
+      "mse": 0.2331216112398205,
+      "gain_ci": {
+        "mean_daily_gain": 0.009815053693239144,
+        "ci95": [
+          0.004687139712097928,
+          0.015282262954171701
+        ],
+        "sessions": 250
+      }
+    },
+    "ablation": {
+      "alpha": 10.0,
+      "orthogonal": false,
+      "weight": 1.0,
+      "mse": 0.23576451978924762,
+      "gain_ci": {
+        "mean_daily_gain": 0.007622557387869722,
+        "ci95": [
+          0.0028835738018082465,
+          0.012893494871260881
+        ],
+        "sessions": 250
+      }
+    },
+    "gate": true,
+    "validation_scores": {
+      "seasonal_1": 0.24331674257026828,
+      "density_1": 0.24320498864805382,
+      "direct_graph_1": 0.24095369465311145,
+      "seasonal_10": 0.2436951728831787,
+      "density_10": 0.24358206627728896,
+      "direct_graph_10": 0.24129124611411618,
+      "seasonal_100": 0.2465079044363624,
+      "density_100": 0.2464100464242354,
+      "direct_graph_100": 0.24411883922434915,
+      "nonlinear_control_7": 0.2549832389062739,
+      "nonlinear_control_15": 0.2647468951192506,
+      "nonlinear_graph_7": 0.25731710373957517,
+      "nonlinear_graph_15": 0.26906960796348767
+    },
+    "cgi_search": [
+      {
+        "alpha": 1.0,
+        "orthogonal": true,
+        "weight": 0.0,
+        "mse": 0.24320498864805382,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": true,
+        "weight": 0.25,
+        "mse": 0.23898022756301818,
+        "gain_ci": {
+          "mean_daily_gain": 0.0041557915939025945,
+          "ci95": [
+            0.002876464397931129,
+            0.005590531257153909
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": true,
+        "weight": 0.5,
+        "mse": 0.23589141096663402,
+        "gain_ci": {
+          "mean_daily_gain": 0.0071768977407433605,
+          "ci95": [
+            0.004637824537216359,
+            0.009994730235557782
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": true,
+        "weight": 1.0,
+        "mse": 0.2331216112398205,
+        "gain_ci": {
+          "mean_daily_gain": 0.009815053693239144,
+          "ci95": [
+            0.004687139712097928,
+            0.015282262954171701
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": true,
+        "weight": 0.0,
+        "mse": 0.24358206627728896,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": true,
+        "weight": 0.25,
+        "mse": 0.23935883295008714,
+        "gain_ci": {
+          "mean_daily_gain": 0.004150323603449245,
+          "ci95": [
+            0.0028944847301162805,
+            0.005595468358883915
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": true,
+        "weight": 0.5,
+        "mse": 0.23625586907510826,
+        "gain_ci": {
+          "mean_daily_gain": 0.0071816704670186375,
+          "ci95": [
+            0.00470677605818134,
+            0.010021305187546636
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": true,
+        "weight": 1.0,
+        "mse": 0.23341074968181919,
+        "gain_ci": {
+          "mean_daily_gain": 0.009887433974517919,
+          "ci95": [
+            0.004780038314357303,
+            0.015388646180997998
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": true,
+        "weight": 0.0,
+        "mse": 0.2464100464242354,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": true,
+        "weight": 0.25,
+        "mse": 0.24246259437219617,
+        "gain_ci": {
+          "mean_daily_gain": 0.0038802067601903393,
+          "ci95": [
+            0.0027034643149187925,
+            0.0053113506824997185
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": true,
+        "weight": 0.5,
+        "mse": 0.23946751214557543,
+        "gain_ci": {
+          "mean_daily_gain": 0.006808893625286136,
+          "ci95": [
+            0.004507438106631281,
+            0.00966656885314121
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": true,
+        "weight": 1.0,
+        "mse": 0.23633445716858942,
+        "gain_ci": {
+          "mean_daily_gain": 0.009811707670194122,
+          "ci95": [
+            0.005174507836679004,
+            0.015507972199378689
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": false,
+        "weight": 0.0,
+        "mse": 0.24320498864805382,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": false,
+        "weight": 0.25,
+        "mse": 0.23973984114957467,
+        "gain_ci": {
+          "mean_daily_gain": 0.0034161913075160897,
+          "ci95": [
+            0.002305789694205927,
+            0.004701093491694362
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": false,
+        "weight": 0.5,
+        "mse": 0.23735560637673267,
+        "gain_ci": {
+          "mean_daily_gain": 0.005752579683702276,
+          "ci95": [
+            0.0034769822582735145,
+            0.008348197189912686
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 1.0,
+        "orthogonal": false,
+        "weight": 1.0,
+        "mse": 0.23582987500796007,
+        "gain_ci": {
+          "mean_daily_gain": 0.007185947642084878,
+          "ci95": [
+            0.002416742700574557,
+            0.0123286295410492
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": false,
+        "weight": 0.0,
+        "mse": 0.24358206627728896,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": false,
+        "weight": 0.25,
+        "mse": 0.2400380658311838,
+        "gain_ci": {
+          "mean_daily_gain": 0.0034939382134950058,
+          "ci95": [
+            0.0023822318346347128,
+            0.004793009577159687
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": false,
+        "weight": 0.5,
+        "mse": 0.23755380793447525,
+        "gain_ci": {
+          "mean_daily_gain": 0.005929010515971622,
+          "ci95": [
+            0.0036651322475082576,
+            0.008558129190707585
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 10.0,
+        "orthogonal": false,
+        "weight": 1.0,
+        "mse": 0.23576451978924762,
+        "gain_ci": {
+          "mean_daily_gain": 0.007622557387869722,
+          "ci95": [
+            0.0028835738018082465,
+            0.012893494871260881
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": false,
+        "weight": 0.0,
+        "mse": 0.2464100464242354,
+        "gain_ci": {
+          "mean_daily_gain": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": false,
+        "weight": 0.25,
+        "mse": 0.24286267587938695,
+        "gain_ci": {
+          "mean_daily_gain": 0.003502582447395418,
+          "ci95": [
+            0.0023623203511789347,
+            0.004809499000470541
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": false,
+        "weight": 0.5,
+        "mse": 0.24020785164453312,
+        "gain_ci": {
+          "mean_daily_gain": 0.0061124999905685104,
+          "ci95": [
+            0.0037773946725216416,
+            0.00873355933241546
+          ],
+          "sessions": 250
+        }
+      },
+      {
+        "alpha": 100.0,
+        "orthogonal": false,
+        "weight": 1.0,
+        "mse": 0.23757584210480928,
+        "gain_ci": {
+          "mean_daily_gain": 0.008654340364247712,
+          "ci95": [
+            0.0037658052256983885,
+            0.013932073500812466
+          ],
+          "sessions": 250
+        }
+      }
+    ]
+  }
+}

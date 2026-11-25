@@ -1,3 +1,15 @@
+## Active research — 2026-11-25
+
+Missing iCloud investigation has been discontinued at the user's request. Research uses verified GitHub/c220 inputs.
+
+- [Live checked status](paper/workflow/current.md) and [CQ job snapshot](paper/workflow/cq-status.json).
+- [NTD mechanism and frozen protocol](paper/workflow/protocol-ntd-002.md).
+- [Modern RG-ResMoE adaptation](paper/workflow/protocol-modern-001.md).
+- [Verified experiment report, ending in Chinese](paper/workflow/experiment-report.md).
+- [Reproduction steps](REPRODUCE.md), [claim map](paper/workflow/claim-map.md), [evidence limitations](paper/workflow/evidence-audit.md).
+
+The completed legacy CGI run failed to beat its strong control. New method claims require actual CQ outcomes; CCF A readiness is not established.
+
 # Financial Graph
 
 Research on incremental graph information for volatility forecasting. Target: CCF A research quality, not a claim of achieved novelty, superiority or acceptance.

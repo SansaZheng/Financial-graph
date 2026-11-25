@@ -8,5 +8,28 @@
   "limitations": [
     "Hourly aggregates cannot establish raw minute-window closure without rebuilding from raw source",
     "Legacy graph feature timestamp remains unaudited; excluded from NTD primary comparison"
-  ]
+  ],
+  "temporal_feature_reconstruction": {
+    "lag7": {
+      "closest_past_only_formula": "rolling7",
+      "max_abs_error": 1.7763568394002505e-15,
+      "exact": true
+    },
+    "lag6": {
+      "closest_past_only_formula": "rolling6",
+      "max_abs_error": 1.7763568394002505e-15,
+      "exact": true
+    },
+    "lag30": {
+      "closest_past_only_formula": "rolling30",
+      "max_abs_error": 1.7763568394002505e-15,
+      "exact": true
+    },
+    "shock": {
+      "closest_past_only_formula": "difference1",
+      "max_abs_error": 4.440892098500626e-16,
+      "exact": true
+    }
+  },
+  "additional_limitation": "Earlier forecast-table row curation inherited; full raw minute-window and universe reconstruction pending"
 }

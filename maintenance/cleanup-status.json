@@ -29,5 +29,7 @@
     "source_files_deleted": 0,
     "diagnostic_note": "Scoped bird/cloudd errors included network and timeout categories; cause not established",
     "free_bytes": 7969529856
-  }
+  },
+  "recovery_workflow_status": "discontinued_by_user_2026-11-25",
+  "current_priority": "Research improvement and CQ experiments; do not pursue missing iCloud files"
 }

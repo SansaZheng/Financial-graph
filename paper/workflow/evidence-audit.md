@@ -29,3 +29,5 @@ Complete the frozen NTD and modern CQ runs, including negative/zero-weight outco
 
 ## 中文结论
 当前可信结论是旧 CGI 未超过强对照；新 NTD 已实现但须由正在执行的实验验证。论文贡献、跨市场稳定性和独立确认仍有明确缺口，不能把代码完成或任务提交写成顶会水平已经达成。
+
+Additional input boundary: the forecast table was curated by the earlier pipeline and is not regenerated from all raw minutes in this round. New methods share its exact rows. The current audit verifies target alignment and historical rolling/difference features, but not original raw aggregation or universe construction.
