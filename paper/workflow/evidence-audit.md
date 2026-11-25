@@ -39,3 +39,5 @@ Additional input boundary: the forecast table was curated by the earlier pipelin
 - Outer validation chooses the baseline and correction on the same validation year. Outer-year loss remains temporally separated, but the validation gate's interval is post-selection and is not a formal safety certificate.
 - Nested forward residuals come from expanding-prefix baselines; their distribution may differ from the final refitted baseline. This is an explicit deployment mismatch to diagnose, not evidence of improvement.
 - Provider CPU tests establish executable invariants, not economic value, causal contagion, model novelty or publication readiness.
+
+Float precision audit: the first modern full run initially failed a1e-10 metric check when CSV predictions were parsed as float64 (MSE differences at most7.5e-9). Restoring the original Torch/pandas float32 prediction dtype exactly reproduces all three stored MSE and R² values. The verifier now explicitly restores this dtype for modern-adaptation-001. No metric tolerance was loosened and no predictions were changed.

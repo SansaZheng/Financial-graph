@@ -15,6 +15,10 @@ def main():
         m=json.loads((folder/'metrics.json').read_text())
         if m.get('status')!='complete' or m.get('years')!=[2022,2023,2024]:continue
         f=pd.read_csv(folder/'predictions.csv',index_col=0);f.index=pd.to_datetime(f.index,utc=True)
+        if m.get('protocol')=='modern-adaptation-001':
+            # Author Torch predicts float32; pandas CSV stores shortest float32 decimals.
+            # Restore the producing dtype before demanding exact metric agreement.
+            for c in m['metrics']:f[c]=f[c].astype(np.float32)
         assert not f.index.has_duplicates
         checked={}
         for model,values in m['metrics'].items():
@@ -22,6 +26,20 @@ def main():
             if 'r2' in values:assert abs(actual['r2']-values['r2'])<1e-10
             records.append({'run':folder.name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'model':model,**actual,'rows':len(f),'code_revision':(folder/'code-commit.txt').read_text().strip() if (folder/'code-commit.txt').exists() else 'unknown'})
             checked[model]=actual
+        input_checks={}
+        for path,expected in m.get('inputs',{}).items():
+            assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==expected
+            input_checks[path]=True
+        if 'input_sha256' in m:
+            path=Path('evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv')
+            assert hashlib.sha256(path.read_bytes()).hexdigest()==m['input_sha256'];input_checks[str(path)]=True
+        timing=None
+        if (folder/'model_input.csv').exists():
+            frame=pd.read_csv(folder/'model_input.csv',index_col=0)
+            dates=pd.to_datetime(frame.index,utc=True).tz_convert('America/New_York').date
+            assert (pd.to_datetime(frame.source_day).dt.date.to_numpy()<dates).all()
+            assert (pd.to_datetime(frame.graph_fit_end)<pd.to_datetime(frame.source_day)).all()
+            timing={'previous_session_only':True,'graph_fit_precedes_shock':True,'min_nodes':int(frame.graph_node_count.min())}
         source_checks={}
         if (folder/'source-hashes.json').exists():
             revision=(folder/'code-commit.txt').read_text().strip()
@@ -30,7 +48,7 @@ def main():
                 b=subprocess.check_output(['git','show',revision+':'+path]);assert hashlib.sha256(b).hexdigest()==expected;source_checks[path]=True
         manifest=[{'path':str(p.relative_to(folder)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(folder.rglob('*')) if p.is_file() and p.name not in ['manifest.json','local-verification.json']]
         (folder/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-        (folder/'local-verification.json').write_text(json.dumps({'status':'verified','metrics_recomputed':checked,'source_hashes_match_pinned_commit':source_checks,'rows':len(f)},indent=2)+'\n')
+        (folder/'local-verification.json').write_text(json.dumps({'status':'verified','metrics_recomputed':checked,'source_hashes_match_pinned_commit':source_checks,'source_verification':'runtime hashes and CQ pin' if source_checks else 'CQ pinned commit only; no runtime source hash output','input_hashes_checked':input_checks,'timing_audit':timing,'rows':len(f)},indent=2)+'\n')
         runs.append({'job':folder.name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'seconds':m.get('elapsed_seconds'),'rows':len(f)})
         families.setdefault(m.get('protocol','cgi-001'),[]).append((folder.name,m,f))
     pd.DataFrame(records).to_csv(out/'results.csv',index=False)

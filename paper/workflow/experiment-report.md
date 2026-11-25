@@ -4,12 +4,16 @@ All numbers below are recomputed from CQ prediction files. Historical2018–2024
 
 | CQ job | Protocol | Seed | Rows | Compute seconds |
 |---|---|---:|---:|---:|
+| j-1125-50ac72 | modern-adaptation-001 | 473 | 3644 | 20.98 |
 | j-1125-dd9d4b | cgi-001 | None | 3644 | 10.07 |
 
 ## Verified model results
 
 | Protocol | Seed | Model | MSE↓ | R²↑ | QLIKE↓ |
 |---|---:|---|---:|---:|---:|
+| modern-adaptation-001 | 473 | rg_resmoe_adapted | 0.2451769 | 0.753853 | 0.183992 |
+| modern-adaptation-001 | 473 | matched_mlp | 0.2417617 | 0.757282 | 0.176722 |
+| modern-adaptation-001 | 473 | small_mlp | 0.2461317 | 0.752894 | 0.181959 |
 | cgi-001 | None | strong_control | 0.2370911 | 0.761971 | 0.180252 |
 | cgi-001 | None | density_control | 0.2370575 | 0.762004 | 0.180462 |
 | cgi-001 | None | direct_graph | 0.2378618 | 0.761197 | 0.180787 |

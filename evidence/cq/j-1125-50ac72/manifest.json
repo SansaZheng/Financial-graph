@@ -1,0 +1,52 @@
+[
+  {
+    "path": "code-commit.txt",
+    "bytes": 41,
+    "sha256": "bc91fc3273aa289aaaccff1b2a36e12280f3547d0b84041b8c58d07be936b8b9"
+  },
+  {
+    "path": "cq-threads.json",
+    "bytes": 78,
+    "sha256": "97465c11312150d634db5b0b8026afa70c9c98f003c9f19692063ccfc357b9e5"
+  },
+  {
+    "path": "freeze.txt",
+    "bytes": 16569,
+    "sha256": "e91efd2e9c36b7db84bc4d4c0f0ed09a05ff3ec792cf89e84f4b6f7137acd384"
+  },
+  {
+    "path": "install.txt",
+    "bytes": 4880,
+    "sha256": "38e7391c6f0464a1f1996870ef856f821cadde1a1afdc2d22c7c818640a76bd4"
+  },
+  {
+    "path": "metrics.json",
+    "bytes": 1307,
+    "sha256": "c85c7191d9427a9007218f161c66a89017b4a943794dfed9fe4612ada6df8b9c"
+  },
+  {
+    "path": "predictions.csv",
+    "bytes": 286090,
+    "sha256": "525a2c05891ae330ab70bfef43d5baa85b2881b955e9618b47909a52eb6332e2"
+  },
+  {
+    "path": "progress.txt",
+    "bytes": 504,
+    "sha256": "1e49be5ba2df14acecccfc8dd261e4b3e6a69fde3308a194e19d9a06ffa0e975"
+  },
+  {
+    "path": "selection.json",
+    "bytes": 1417,
+    "sha256": "68d7659e4ca51c61901eee5f066ec91cfd273cfda02715a11434661822720ec3"
+  },
+  {
+    "path": "tests.txt",
+    "bytes": 584,
+    "sha256": "93425eb2068a936171bbe43b7447a4d9d119e9c7586c75ea70a5667ece83b8c3"
+  },
+  {
+    "path": "torch-version.txt",
+    "bytes": 11,
+    "sha256": "22d095c95f6c54b95778ca7cf1eee0ec9b87fbdd95c4cb781be32f9b8b924424"
+  }
+]

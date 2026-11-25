@@ -54,5 +54,10 @@
     "jobs/research-cpu.sh": true,
     "jobs/run.sh": true
   },
+  "source_verification": "runtime hashes and CQ pin",
+  "input_hashes_checked": {
+    "evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv": true
+  },
+  "timing_audit": null,
   "rows": 3644
 }
