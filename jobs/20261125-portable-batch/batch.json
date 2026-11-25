@@ -1,0 +1,109 @@
+{
+  "name": "FinancialGraph frozen NTD three seeds qualified portable env",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "e71914d3e75fda53fb89e14efb2a789604fe4e6b"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c220"
+  },
+  "python": "/home/sudingli/cq-home/financial-graph/env/bin/python",
+  "command": [
+    "bash",
+    "jobs/ntd-portable-batch.sh"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c220",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/ntd-portable-batch-20261125",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "10 passed"
+      },
+      {
+        "path": "seed471/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed471/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed471/selection.json"
+      },
+      {
+        "path": "seed471/model_input.csv"
+      },
+      {
+        "path": "seed472/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed472/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed472/selection.json"
+      },
+      {
+        "path": "seed472/model_input.csv"
+      },
+      {
+        "path": "seed473/metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "seed473/predictions.csv",
+        "min_lines": 3000
+      },
+      {
+        "path": "seed473/selection.json"
+      },
+      {
+        "path": "seed473/model_input.csv"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 10
+    }
+  },
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "e71914d3e75fda53fb89e14efb2a789604fe4e6b"
+  },
+  "depends_on": [
+    "j-1125-83b9e2",
+    "j-1125-4850c7"
+  ]
+}

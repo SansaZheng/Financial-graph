@@ -10,7 +10,7 @@ CQ compute mirror: https://github.com/SuuTTT/financial-graph-cq
 - NTD implements past-only residual graph construction, exact permutation-null centering and cross-fitted residual correction with temporal and graph controls. Qualification passed10tests; Kaggle smoke j-1125-4850c7 completed. Smoke results did not trigger method changes.
 
 ## Remaining experiment
-CQ job j-1125-a08289 runs the unchanged three-seed NTD batch on free Kaggle CPU, pinned to32a4480cd7a739a345abddf0691a5900ceddb9e8. At this update it is queued behind existing platform sessions. Its final predictive results have not been observed.
+CQ job j-1125-0c3a7c runs the unchanged three-seed NTD batch in the already-qualified c225 project environment, pinned toe71914d3e75f (full SHA in its specification). The queued Kaggle batch j-1125-a08289 was cancelled before launch to avoid duplication. At this update the replacement is assigned to c225. Its final predictive results have not been observed.
 
 Lab environment qualification succeeded, but dependency import diagnosis timed out at90seconds and c225 smoke j-1125-194bed stalled before forecasts. That smoke is confirmed cancelled. Superseded unstarted full jobs are cancelled; no other projects or users affected. Diagnostic failure is preserved without an unsupported root-cause claim.
 
