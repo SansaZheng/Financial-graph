@@ -1,0 +1,12 @@
+{
+  "rows": 8494,
+  "hourly_rows": 10523,
+  "max_target_error_against_next_hour": 0.0,
+  "max_current_error": 0.0,
+  "same_session_horizon": true,
+  "daily_sessions": 1777,
+  "limitations": [
+    "Hourly aggregates cannot establish raw minute-window closure without rebuilding from raw source",
+    "Legacy graph feature timestamp remains unaudited; excluded from NTD primary comparison"
+  ]
+}

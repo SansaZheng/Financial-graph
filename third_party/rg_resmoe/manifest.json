@@ -1,0 +1,18 @@
+{
+  "LICENSE": {
+    "sha256": "576e83d6364be1bbbd2561aec6fd39f89e936871b770d4d4b3ef2f6edd48375d",
+    "bytes": 1079
+  },
+  "train_rg_resmoe.py": {
+    "sha256": "3db2014f7ba958a56452d0ceeabf75e20cfe9d2d3d36d452f4afee59c4f9f036",
+    "bytes": 15524
+  },
+  "PROVENANCE.md": {
+    "sha256": "dd5daae243027ffbe404cd474e72d0a4ac39c0a8f3b93c637081e2546ef210ee",
+    "bytes": 763
+  },
+  "walk_forward.py": {
+    "sha256": "cca5b1f28acd3d1bca00fb8cca6767f6715ae5b8eec8cc82ca257f438c1f7c1c",
+    "bytes": 3088
+  }
+}

@@ -1,0 +1,9 @@
+# Modern baseline architecture adaptation — frozen before outcomes
+
+Author reference: RG-ResMoE, Ye & Borde2026, upstream commit5012deb5c6c376a85c31f55234df2ede4ac9ff3f. Vendored MIT source and license under third_party/rg_resmoe. This is not a reproduction of the author's original numbers.
+
+Same next-hour log-variance rows and outer years as NTD-002. Same total X information. Market variance and residual shock energy enter gate only; other13 features enter base and experts. Standardize X and target with train-only fits. BaseMLP width16/lr.03;4 residual experts width16/lr.01,zero output initialization,shrinkage1,load-balance.5. Author two-layer GELU/dropout.1 network; check every5epochs,patience10checks,max2000. Compare MLP with closest width to the total parameter count, using all15features and same base learning rate, plus smallMLP. Report actual counts and mismatch. Seeds471/472/473, matching NTD's declared seed list, without test-based seed selection.
+
+Neural models use validation checkpoint early stopping; unlike linear refits they do not include validation observations in gradient training. This standard protocol difference is recorded and prevents claiming perfectly identical optimization. Target/horizon/features/splits differ from the author's5-day cross-sectional study, so label every result rg_resmoe_adapted. No claim of reproduced paper superiority.
+
+All architecture and budget choices fixed before these outcomes. CQ free CPU environment->smoke2022->full2022/23/24; max1h each,2CPUs/4GB. Provider Torch version saved in freeze because no CUDA training is needed. Save every prediction, selected checkpoint validation MSE, parameters, runtime and input hash. Compare aligned timestamps to NTD, but do not modify NTD in response. Modern numerical results remain pending until CQ verification and local recomputation.
