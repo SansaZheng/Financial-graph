@@ -40,3 +40,7 @@ CQ free CPU only,2 CPUs/4GB per job, no rental. Environment/test -> smoke -> ful
 ## Input correction before first predictive outcome
 
 Smoke stopped before training because the archived daily input contains14 missing cells across8 tickers. Each graph now excludes nodes with a nonfinite return in its60-session fitting window or its shock session. Eligibility uses only already observed rows, never future availability. No market session or target is removed for performance reasons; require at least20 nodes and archive node count/excluded names per source session. The frozen graph mechanism and model grids are unchanged.
+
+## Execution-only backend amendment
+
+Kaggle CPU slot pressure delayed NTD. CQ built and verified an isolated c225 environment at /data3/sudingli/cq-home/financial-graph-ntd, with Python3.11.18, numpy2.2.6,pandas2.2.3,scipy1.15.3,scikit-learn1.6.1. Ten tests passed. Core numerical package versions match Kaggle; Python differs from3.13.18. Scientific source files are byte-identical between9f343af and8b3843c; only execution wrappers changed. The already-assigned Kaggle smoke is retained for a cross-backend consistency check. Three still-unstarted Kaggle full seeds were cancelled and replaced by c225 full runs after a c225 smoke. No full seed is intentionally duplicated. The alternative portable-existing-environment qualification finished too, but is not used for these experiments. No paid resources or other projects' jobs were changed.

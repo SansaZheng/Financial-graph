@@ -1,0 +1,67 @@
+{
+  "name": "FinancialGraph portable existing-env qualification c225",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "8b3843c469c1cd1845aafc5b95a57153103345a1"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c220"
+  },
+  "python": "/home/sudingli/cq-home/financial-graph/env/bin/python",
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONDONTWRITEBYTECODE=1\nprintf \"0/1 qualification\\n\" > \"$CQ_OUTPUT_DIR/progress.txt\"\n/home/sudingli/cq-home/financial-graph/env/bin/python -m pytest -p no:cacheprovider tests > \"$CQ_OUTPUT_DIR/tests.txt\"\n/home/sudingli/cq-home/financial-graph/env/bin/python -m pip freeze > \"$CQ_OUTPUT_DIR/freeze.txt\"\nreadlink -f /home/sudingli/cq-home/financial-graph > \"$CQ_OUTPUT_DIR/storage-root.txt\"\nprintf \"1/1 complete\\n\" >> \"$CQ_OUTPUT_DIR/progress.txt\""
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 4
+  },
+  "limits": {
+    "max_hours": 0.25,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c220",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/ntd-portable-20261125/qualification",
+    "expect": [
+      {
+        "path": "tests.txt",
+        "contains": "10 passed"
+      },
+      {
+        "path": "freeze.txt"
+      },
+      {
+        "path": "storage-root.txt"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 10
+    }
+  }
+}

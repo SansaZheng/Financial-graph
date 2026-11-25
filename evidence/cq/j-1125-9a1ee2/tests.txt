@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-8.3.4, pluggy-1.7.0
+rootdir: /data2/sudingli/cq-jobs/.worktrees/8b3843c469c1cd1845aafc5b95a57153103345a1
+collected 10 items
+
+tests/test_cgi.py ...                                                    [ 30%]
+tests/test_ntd.py ..                                                     [ 50%]
+tests/test_topology.py .....                                             [100%]
+
+============================== 10 passed in 1.14s ==============================
