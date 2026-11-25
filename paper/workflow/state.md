@@ -1,37 +1,21 @@
-# Verified state — 2026-11-23 Asia/Singapore
+# Verified state — 2026-11-25 Asia/Singapore
 
 Primary archive: https://github.com/SansaZheng/Financial-graph
-Private CQ compute mirror: https://github.com/SuuTTT/financial-graph-cq
-Recovery checkout: /Users/zyy/.local/share/financial-graph. Original Documents checkout retained; iCloud hydration timed out with the Mac disk nearly full. No existing research data deleted.
+CQ compute mirror: https://github.com/SuuTTT/financial-graph-cq
 
-## Completed
-- Published CGI code, chronological-development protocol, controls, initial literature audit, immutable job specifications.
-- CQ free Kaggle CPU job **j-1123-9d87e1** done, outputs verified. Three structural tests passed in2.12s; complete logs/freeze under evidence/cq/j-1123-9d87e1. This is NOT a forecasting result.
-- Source data revision and original raw SHA256 match HF API; source metadata says MIT.
+## Completed evidence
+- Raw 11GB multipart GitHub Release verified by sizes and SHA256; see maintenance/raw-release-verification.json. No Mac raw-data download required.
+- Legacy CGI full comparison j-1125-dd9d4b: CGI MSE0.2386624 versus strong control0.2370911; no improvement.
+- Modern adapted RG-ResMoE and matched MLP: seeds471/472/473 completed and independently recomputed. Matched MLP outperformed RG-ResMoE in each seed. See experiment-report.md for exact values and adaptation limitations.
+- NTD implements past-only residual graph construction, exact permutation-null centering and cross-fitted residual correction with temporal and graph controls. Qualification passed10tests; Kaggle smoke j-1125-4850c7 completed. Smoke results did not trigger method changes.
 
-## Actual forecast chain (submitted, not completed)
-- **j-1123-b41d82** c220 read-only legacy input audit. Waiting for CPU quota; no verified input recovered yet.
-- **j-1123-923158** c220 isolated environment and invariant tests.
-- **j-1123-29dbce** smoke, depends on both audit and environment.
-- **j-1123-2e7714** full 2022/2023/2024 rolling-origin development comparison, depends on smoke.
-- **j-1123-373d6c** c225 read-only backup-input audit, waiting for RAM quota.
+## Remaining experiment
+CQ job j-1125-a08289 runs the unchanged three-seed NTD batch on free Kaggle CPU, pinned to32a4480cd7a739a345abddf0691a5900ceddb9e8. At this update it is queued behind existing platform sessions. Its final predictive results have not been observed.
 
-Only our unstarted environment jobs j-1123-fca05c (c225) and j-1123-831238 (c224) were cancelled when capacity was unavailable; the final chain is colocated with c220's legacy inputs. No other user's jobs touched. No GPU, cloud rental or paid Colab units used. No manual remote SSH.
+Lab environment qualification succeeded, but dependency import diagnosis timed out at90seconds and c225 smoke j-1125-194bed stalled before forecasts. That smoke is confirmed cancelled. Superseded unstarted full jobs are cancelled; no other projects or users affected. Diagnostic failure is preserved without an unsupported root-cause claim.
 
-CQ retains GPU resource reserves; c220 currently has40/48 schedulable CPUs booked and the last8 reserved for GPU jobs. Do not bypass this rule. Once capacity frees, dependencies allow automatic execution. This chat has not established a background monitor or automatic result upload.
-
-## Raw-data archive
-GitHub Actions archive workflow runs directly on a public standard runner; it performs data transfer, NOT model experiments. Source: CryptoSpartan/stocks_bars_1m revision0c6f25f287918b1421c2572d2c9e2b75bd8959a9. Expected bytes10927267185; SHA25659bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b.
-First run45133614044 failed on draft-release lookup, before data transfer; fixed to list drafts. Retry45133832878 was in progress at last inspection. A release is published only after whole-file and per-asset remote digest verification. Raw archive is NOT yet certified complete.
-
-## Pending
-Inspect CQ outcomes; repair any genuine failure; fetch successful metrics/predictions/selection/fold audits; run jobs/report.py on actual development results; push evidence to both repositories. Verify raw release manifest and asset sizes/digests. Recover legacy derived outputs and source without relying on an unverified source URL alone.
-
-Scientific objective remains incomplete: no new predictive result, no untouched2025–2026 confirmation, no implemented topology-level extension or broad modern baseline suite. Prior2022–2024 data is consumed development-only. CCF A quality and superiority are not established.
+## Scope and limitations
+Missing iCloud investigation is discontinued at the user's instruction. No original data deleted. No paid rental or paid compute enabled. All historical2022–2024 outcomes are development evidence, not untouched confirmation. No independent market panel or2025–2026 confirmation is complete. CCF A readiness, causal contagion and profitability are not established.
 
 ## 中文结论
-GitHub 发布已成功，真实 CQ 结构测试已通过，正式预测实验依赖链已提交但仍在等待资源。原始数据分块归档重试中，完整上传尚未验收。当前没有新的性能提升结论；后续以实际结果验证是否超过强对照，并保留失败结果。
-
-
-## 2026-11-24 migration update
-Raw release is now verified. Mac cleanup is pending71 inaccessible iCloud placeholders; no source data deleted. CQ input audit and environment build completed, but smoke j-1123-29dbce failed with `/usr/bin/python: No module named src`; development remains blocked. See maintenance/README.md. No new predictive result exists.
+研究已恢复推进，旧方法未超过强对照，三组现代对照和新方法的环境及小规模验证已完成。NTD正式三种子批次仍待免费资源，暂不能声称新方法优于最强对照，也不能声称达到CCF A录用水平。

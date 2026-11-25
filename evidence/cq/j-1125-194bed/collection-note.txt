@@ -1,0 +1,1 @@
+CQ fetch returned HTTP409 for cancelled job: no results to fetch. Before cancellation, CQ browse showed only code-commit.txt,freeze.txt,tests.txt(227bytes),and a CQ lock; no forecast artifacts existed. tests.txt contained the pytest platform/rootdir header without collected tests. See bounded import diagnostic j-1125-82844f for archived import timing.

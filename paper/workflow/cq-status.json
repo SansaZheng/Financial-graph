@@ -1,197 +1,61 @@
 {
-  "checked_at": "2026-11-25T18:10:48.759011+08:00",
+  "checked_at": "2026-11-25T10:58:16.468841+00:00",
   "jobs": [
     {
-      "id": "j-1125-50ac72",
-      "name": "FinancialGraph 003r3 modern-seed473",
+      "id": "j-1125-a08289",
       "state": "queued",
-      "reason": "waiting for dependency j-1125-9e6a4b (queued)"
-    },
-    {
-      "id": "j-1125-6121b4",
-      "name": "FinancialGraph 003r3 modern-seed472",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-9e6a4b (queued)"
-    },
-    {
-      "id": "j-1125-4cabb4",
-      "name": "FinancialGraph 003r3 modern-seed471",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-9e6a4b (queued)"
-    },
-    {
-      "id": "j-1125-db59f8",
-      "name": "FinancialGraph 003r3 ntd-seed473",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-4850c7 (queued)"
-    },
-    {
-      "id": "j-1125-7c5ea9",
-      "name": "FinancialGraph 003r3 ntd-seed472",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-4850c7 (queued)"
-    },
-    {
-      "id": "j-1125-fc009b",
-      "name": "FinancialGraph 003r3 ntd-seed471",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-4850c7 (queued)"
-    },
-    {
-      "id": "j-1125-9e6a4b",
-      "name": "FinancialGraph 003r3 modern-smoke",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-09dfa8 (assigned)"
+      "reason": "waiting: 2 Kaggle notebooks already running (limit 2)",
+      "started": null,
+      "finished": null,
+      "exit_code": null
     },
     {
       "id": "j-1125-4850c7",
-      "name": "FinancialGraph 003r3 ntd-smoke",
-      "state": "queued",
-      "reason": "waiting for dependency j-1125-09dfa8 (assigned)"
-    },
-    {
-      "id": "j-1125-09dfa8",
-      "name": "FinancialGraph 003r3 qualification",
-      "state": "assigned",
-      "reason": "Kaggle notebook submitted; waiting for provider RUNNING status"
-    },
-    {
-      "id": "j-1125-0dc141",
-      "name": "FinancialGraph modern001 seed473",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-50ac72; cancelled before launch"
-    },
-    {
-      "id": "j-1125-2636a3",
-      "name": "FinancialGraph modern001 seed472",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-6121b4; cancelled before launch"
-    },
-    {
-      "id": "j-1125-5be71e",
-      "name": "FinancialGraph modern001 seed471",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-4cabb4; cancelled before launch"
-    },
-    {
-      "id": "j-1125-d24723",
-      "name": "FinancialGraph modern001 smoke",
-      "state": "failed",
-      "reason": "replaced by j-1125-9e6a4b; Kaggle: exit 1:                ~~~~^^\n  File \"/tmp/cq-src/src/modern_baseline.py\", line 29, in main\n    features=build_features(daily,seed=471,progress=log)\n  File \"/tmp/cq-src/src/topology.py\", line "
-    },
-    {
-      "id": "j-1125-f2da84",
-      "name": "FinancialGraph modern001 qualification",
       "state": "done",
-      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-f2da84/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-modern-qualification"
+      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-4850c7/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r3-ntd-smoke",
+      "started": 1795603292.693726,
+      "finished": 1795603356.6063309,
+      "exit_code": 0
     },
     {
-      "id": "j-1125-d9e516",
-      "name": "FinancialGraph 003r2 ntd-seed473",
+      "id": "j-1125-194bed",
       "state": "cancelled",
-      "reason": "replaced by j-1125-db59f8; cancelled before launch"
+      "reason": "cancelled",
+      "started": 1795603336.577224,
+      "finished": 1795603992.698678,
+      "exit_code": -15
     },
     {
-      "id": "j-1125-b10115",
-      "name": "FinancialGraph 003r2 ntd-seed472",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-7c5ea9; cancelled before launch"
+      "id": "j-1125-4cabb4",
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.04 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-4cabb4/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r3-modern-seed471",
+      "started": 1795602636.536489,
+      "finished": 1795602733.77697,
+      "exit_code": 0
     },
     {
-      "id": "j-1125-1122a3",
-      "name": "FinancialGraph 003r2 ntd-seed471",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-fc009b; cancelled before launch"
+      "id": "j-1125-6121b4",
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.04 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-6121b4/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r3-modern-seed472",
+      "started": 1795602373.591593,
+      "finished": 1795602470.915176,
+      "exit_code": 0
     },
     {
-      "id": "j-1125-592926",
-      "name": "FinancialGraph 003r2 ntd-smoke",
-      "state": "failed",
-      "reason": "replaced by j-1125-4850c7; Kaggle: exit 1: uate.py\", line 95, in main\n    feats=build_features(daily,seed=a.seed,progress=log);feats.to_csv(out/'daily_graph_features.csv',index=False)\n  File \"/tmp/cq-src/src/topology.py\", line "
+      "id": "j-1125-50ac72",
+      "state": "done",
+      "reason": "outputs verified (Kaggle, 0.04 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-50ac72/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r3-modern-seed473",
+      "started": 1795601982.411308,
+      "finished": 1795602081.164927,
+      "exit_code": 0
     },
     {
       "id": "j-1125-dd9d4b",
-      "name": "FinancialGraph 003r2 legacy-development",
       "state": "done",
-      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-dd9d4b/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r2-legacy-development"
-    },
-    {
-      "id": "j-1125-6b3829",
-      "name": "FinancialGraph 003r2 legacy-smoke",
-      "state": "done",
-      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-6b3829/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r2-legacy-smoke"
-    },
-    {
-      "id": "j-1125-fb2707",
-      "name": "FinancialGraph 003r2 qualification",
-      "state": "done",
-      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-fb2707/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r2-qualification"
-    },
-    {
-      "id": "j-1125-e2bf9d",
-      "name": "FinancialGraph 003 legacy-development",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-dd9d4b; cancelled before launch"
-    },
-    {
-      "id": "j-1125-01e879",
-      "name": "FinancialGraph 003 legacy-smoke",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-6b3829; cancelled before launch"
-    },
-    {
-      "id": "j-1125-aa61b8",
-      "name": "FinancialGraph 003 qualification",
-      "state": "failed",
-      "reason": "replaced by j-1125-fb2707; Kaggle: exit 128: fatal: not a git repository (or any of the parent directories): .git\n"
-    },
-    {
-      "id": "j-1123-2e7714",
-      "name": "FinancialGraph CGI-001 development",
-      "state": "cancelled",
-      "reason": "replaced by j-1125-e2bf9d; cancelled before launch"
-    },
-    {
-      "id": "j-1123-29dbce",
-      "name": "FinancialGraph CGI-001 smoke",
-      "state": "failed",
-      "reason": "replaced by j-1125-01e879; exit 1: /usr/bin/python: No module named src"
-    },
-    {
-      "id": "j-1123-923158",
-      "name": "FinancialGraph CGI c220 co-located environment",
-      "state": "done",
-      "reason": "outputs verified"
-    },
-    {
-      "id": "j-1123-9d87e1",
-      "name": "FinancialGraph free CPU invariant qualification",
-      "state": "done",
-      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1123-9d87e1/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/invariants-20261123"
-    },
-    {
-      "id": "j-1123-831238",
-      "name": "FinancialGraph CGI isolated environment c224",
-      "state": "cancelled",
-      "reason": "cancelled before launch"
-    },
-    {
-      "id": "j-1123-373d6c",
-      "name": "FinancialGraph legacy c225 input audit",
-      "state": "done",
-      "reason": "outputs verified"
-    },
-    {
-      "id": "j-1123-fca05c",
-      "name": "FinancialGraph CGI environment and invariant tests",
-      "state": "cancelled",
-      "reason": "cancelled before launch"
-    },
-    {
-      "id": "j-1123-b41d82",
-      "name": "FinancialGraph legacy c220 input recovery audit",
-      "state": "done",
-      "reason": "outputs verified"
+      "reason": "outputs verified (Kaggle, 0.03 h); results in /Users/sudingli/.local/share/cq/kaggle/results/j-1125-dd9d4b/out; copied to /Users/sudingli/.local/share/cq/kaggle/financial-graph/20261125-r2-legacy-development",
+      "started": 1795595864.3699572,
+      "finished": 1795595930.409075,
+      "exit_code": 0
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "src/cgi.py": "5c7fe2d897f24c40faa85b8846e48ed5ae6e54acf98c0fc3fbbe742d69960bfb",
+  "src/evaluate.py": "92223a75e9f5284beb4c2ef4004977a1f53333f0f09f1f740b6f60224c103f33",
+  "src/modern_baseline.py": "029909c48cb84c31eeed6c55765fe0d91c3c56447d442b8c8bf25b5e560b0cf0",
+  "src/ntd_evaluate.py": "4009189f66adc8b71e262c067a7cf13e91c4c69768d0bebe746b9699867fef9f",
+  "src/topology.py": "d70db5e92086cf87b58a60ae950d225ef30020c5a71f10a9d56397763dbd972c",
+  "jobs/build.sh": "238e2e1fc465fd5cc8acb694879108b4e137eba306d4204adefddb0beb6c4b3a",
+  "jobs/kaggle-smoke.sh": "348155d3d90e25f5842832d22c4e76683beccc5a5558225f41fe8083d1cc430b",
+  "jobs/modern-cpu.sh": "2b84462db86bc44e6e2d540f850ae957e8e0ff7262ba9638c69405b808ceb21b",
+  "jobs/research-cpu.sh": "2e15d113927728851b228881862678859cc9fb16d1c5cda1620baed351794b31",
+  "jobs/run.sh": "274c44bb8f8f848ffb990db85790b9265a5c8e7d058cbc888916b272bc100d4d"
+}

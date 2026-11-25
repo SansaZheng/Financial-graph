@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "freeze.txt",
+      "bytes": 331,
+      "sha256": "2b2458a2ca041441169123023de729bd41e6cfe1177a64783a782177f5aec5cd"
+    },
+    {
+      "path": "progress.txt",
+      "bytes": 31,
+      "sha256": "f05361e5ae92f8e547e26474aa3fcc54bb41e8a2278d6fe7a9fefa34d3abdee7"
+    },
+    {
+      "path": "storage-root.txt",
+      "bytes": 40,
+      "sha256": "a0a5067f5bc75311334aaf73dc78ac1dcaa22ccf5e4db11518f001387528bd93"
+    },
+    {
+      "path": "tests.txt",
+      "bytes": 569,
+      "sha256": "61507b5247349676e7095c54983e85180d8bef0ea6dd5127dfb389bf7752b5ac"
+    }
+  ]
+}
