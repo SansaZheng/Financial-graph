@@ -1,0 +1,95 @@
+{
+  "id": "j-1125-82844f",
+  "state": "failed",
+  "reason": "exit 124",
+  "spec": {
+    "workdir": ".",
+    "env": {
+      "FINANCIAL_GRAPH_REVISION": "8b3843c469c1cd1845aafc5b95a57153103345a1"
+    },
+    "resources": {
+      "gpus": 0,
+      "gpu_mem_gb": 0,
+      "exclusive_gpu": false,
+      "cpus": 1,
+      "ram_gb": 1,
+      "disk_gb": 0,
+      "gpu_models": [],
+      "requires": []
+    },
+    "data": [],
+    "limits": {
+      "max_hours": 0.1,
+      "max_usd": 0,
+      "max_attempts": 1,
+      "max_wait_hours": 24
+    },
+    "placement": {
+      "prefer": [
+        "c225"
+      ],
+      "avoid": [],
+      "never": [
+        "c220",
+        "c223",
+        "c224",
+        "c219",
+        "c237",
+        "c203",
+        "c221",
+        "c222",
+        "c227",
+        "c226",
+        "pc4070"
+      ],
+      "allow_rent": false,
+      "target": "school"
+    },
+    "idempotent": true,
+    "depends_on": [
+      "j-1125-9a1ee2"
+    ],
+    "priority": 0,
+    "work": "FinancialGraph",
+    "code": {
+      "git": "git@github.com:SuuTTT/financial-graph-cq.git",
+      "commit": "8b3843c469c1cd1845aafc5b95a57153103345a1",
+      "repo": "/home/sudingli/cq-home/financial-graph-ntd/repo"
+    },
+    "home": {
+      "name": "financial-graph-ntd",
+      "from": "c225"
+    },
+    "name": "FinancialGraph bounded c225 import diagnostic",
+    "command": [
+      "bash",
+      "-lc",
+      "set -euo pipefail\nexport OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1\nprintf \"0/1 import diagnostic\\n\" > \"$CQ_OUTPUT_DIR/progress.txt\"\ntimeout 90 /home/sudingli/cq-home/financial-graph-ntd/env/bin/python -X importtime -c 'import src.ntd_evaluate; print(\"import-ok\")' > \"$CQ_OUTPUT_DIR/import.txt\" 2> \"$CQ_OUTPUT_DIR/import-timing.txt\"\nprintf \"1/1 complete\\n\" >> \"$CQ_OUTPUT_DIR/progress.txt\""
+    ],
+    "outputs": {
+      "dest": "/home/sudingli/cq-home/financial-graph-ntd/results/ntd-002-20261125/import-diagnostic",
+      "expect": [
+        {
+          "path": "import.txt",
+          "contains": "import-ok"
+        },
+        {
+          "path": "import-timing.txt"
+        }
+      ],
+      "progress": {
+        "path": "progress.txt",
+        "stall_min": 5
+      },
+      "direct": false
+    }
+  },
+  "ram": {
+    "now_gb": 0.0,
+    "peak_gb": 0.0,
+    "declared_gb": 1.0
+  },
+  "progress": "{\"lines\": 1, \"mtime\": 1795603749.8733442, \"newest_mtime\": 1795603805.381431}",
+  "started": 1795603755.635587,
+  "updated": 1795603869.704459
+}

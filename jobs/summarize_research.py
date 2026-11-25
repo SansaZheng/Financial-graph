@@ -10,7 +10,9 @@ from src.ntd_evaluate import metrics
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--root',default='evidence/cq');ap.add_argument('--out',default='paper/workflow');a=ap.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=True)
     records=[];runs=[];families={}
-    for folder in sorted(Path(a.root).iterdir()):
+    for metric_path in sorted(Path(a.root).rglob('metrics.json')):
+        folder=metric_path.parent
+        run_name=str(folder.relative_to(Path(a.root)))
         if not (folder/'metrics.json').exists() or not (folder/'predictions.csv').exists():continue
         m=json.loads((folder/'metrics.json').read_text())
         if m.get('status')!='complete' or m.get('years')!=[2022,2023,2024]:continue
@@ -24,7 +26,7 @@ def main():
         for model,values in m['metrics'].items():
             actual=metrics(f.target,f[model]);assert abs(actual['mse']-values['mse'])<1e-10
             if 'r2' in values:assert abs(actual['r2']-values['r2'])<1e-10
-            records.append({'run':folder.name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'model':model,**actual,'rows':len(f),'code_revision':(folder/'code-commit.txt').read_text().strip() if (folder/'code-commit.txt').exists() else 'unknown'})
+            records.append({'run':run_name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'model':model,**actual,'rows':len(f),'code_revision':(folder/'code-commit.txt').read_text().strip() if (folder/'code-commit.txt').exists() else 'unknown'})
             checked[model]=actual
         input_checks={}
         for path,expected in m.get('inputs',{}).items():
@@ -49,8 +51,8 @@ def main():
         manifest=[{'path':str(p.relative_to(folder)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(folder.rglob('*')) if p.is_file() and p.name not in ['manifest.json','local-verification.json']]
         (folder/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
         (folder/'local-verification.json').write_text(json.dumps({'status':'verified','metrics_recomputed':checked,'source_hashes_match_pinned_commit':source_checks,'source_verification':'runtime hashes and CQ pin' if source_checks else 'CQ pinned commit only; no runtime source hash output','input_hashes_checked':input_checks,'timing_audit':timing,'rows':len(f)},indent=2)+'\n')
-        runs.append({'job':folder.name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'seconds':m.get('elapsed_seconds'),'rows':len(f)})
-        families.setdefault(m.get('protocol','cgi-001'),[]).append((folder.name,m,f))
+        runs.append({'job':run_name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'seconds':m.get('elapsed_seconds'),'rows':len(f)})
+        families.setdefault(m.get('protocol','cgi-001'),[]).append((run_name,m,f))
     pd.DataFrame(records).to_csv(out/'results.csv',index=False)
     lines=['# Research experiment report / 研究实验报告','', 'All numbers below are recomputed from CQ prediction files. Historical2018–2024 data is development-only. No CCF A readiness or untouched confirmation is claimed.','', '| CQ job | Protocol | Seed | Rows | Compute seconds |','|---|---|---:|---:|---:|']
     for r in runs:lines.append(f"| {r['job']} | {r['protocol']} | {r['seed']} | {r['rows']} | {r['seconds']:.2f} |")

@@ -1,0 +1,69 @@
+{
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "8b3843c469c1cd1845aafc5b95a57153103345a1"
+  },
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "8b3843c469c1cd1845aafc5b95a57153103345a1"
+  },
+  "home": {
+    "name": "financial-graph-ntd",
+    "from": "c225"
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c220",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 1
+  },
+  "limits": {
+    "max_hours": 0.1,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "name": "FinancialGraph bounded c225 import diagnostic",
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1\nprintf \"0/1 import diagnostic\\n\" > \"$CQ_OUTPUT_DIR/progress.txt\"\ntimeout 90 /home/sudingli/cq-home/financial-graph-ntd/env/bin/python -X importtime -c 'import src.ntd_evaluate; print(\"import-ok\")' > \"$CQ_OUTPUT_DIR/import.txt\" 2> \"$CQ_OUTPUT_DIR/import-timing.txt\"\nprintf \"1/1 complete\\n\" >> \"$CQ_OUTPUT_DIR/progress.txt\""
+  ],
+  "depends_on": [
+    "j-1125-9a1ee2"
+  ],
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph-ntd/results/ntd-002-20261125/import-diagnostic",
+    "expect": [
+      {
+        "path": "import.txt",
+        "contains": "import-ok"
+      },
+      {
+        "path": "import-timing.txt"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 5
+    }
+  }
+}
