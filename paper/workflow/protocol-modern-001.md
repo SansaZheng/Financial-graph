@@ -7,3 +7,7 @@ Same next-hour log-variance rows and outer years as NTD-002. Same total X inform
 Neural models use validation checkpoint early stopping; unlike linear refits they do not include validation observations in gradient training. This standard protocol difference is recorded and prevents claiming perfectly identical optimization. Target/horizon/features/splits differ from the author's5-day cross-sectional study, so label every result rg_resmoe_adapted. No claim of reproduced paper superiority.
 
 All architecture and budget choices fixed before these outcomes. CQ free CPU environment->smoke2022->full2022/23/24; max1h each,2CPUs/4GB. Provider Torch version saved in freeze because no CUDA training is needed. Save every prediction, selected checkpoint validation MSE, parameters, runtime and input hash. Compare aligned timestamps to NTD, but do not modify NTD in response. Modern numerical results remain pending until CQ verification and local recomputation.
+
+## Input correction before first predictive outcome
+
+Smoke stopped before training because the archived daily input contains14 missing cells across8 tickers. Each graph now excludes nodes with a nonfinite return in its60-session fitting window or its shock session. Eligibility uses only already observed rows, never future availability. No market session or target is removed for performance reasons; require at least20 nodes and archive node count/excluded names per source session. The frozen graph mechanism and model grids are unchanged.

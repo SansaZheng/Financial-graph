@@ -1,0 +1,14 @@
+==> stdout (reported 16:41:19) <==
+
+==> stderr (reported 16:41:19) <==
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/cq-src/src/modern_baseline.py", line 60, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/tmp/cq-src/src/modern_baseline.py", line 29, in main
+    features=build_features(daily,seed=471,progress=log)
+  File "/tmp/cq-src/src/topology.py", line 71, in build_features
+    raise ValueError('daily returns must be finite')
+ValueError: daily returns must be finite

@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "evidence_type": "development_only_previously_observed_2018_2024",
+  "metrics": {
+    "strong_control": {
+      "mse": 0.23709106664307344,
+      "r2": 0.7619707856761304
+    },
+    "density_control": {
+      "mse": 0.23705749430877884,
+      "r2": 0.7620044908530833
+    },
+    "direct_graph": {
+      "mse": 0.23786181566351788,
+      "r2": 0.7611969868722578
+    },
+    "cgi": {
+      "mse": 0.23866241174809838,
+      "r2": 0.7603932229021444
+    },
+    "no_orthogonalization": {
+      "mse": 0.23900454519256703,
+      "r2": 0.7600497356669067
+    },
+    "gated_cgi": {
+      "mse": 0.23922808661621625,
+      "r2": 0.7598253097102756
+    }
+  },
+  "paired_intervals": {
+    "cgi_vs_strong_control": {
+      "mean_daily_gain": -0.0014850166754150802,
+      "ci95": [
+        -0.0032235397113195697,
+        0.00024906427160201964
+      ],
+      "sessions": 749
+    },
+    "cgi_vs_density_control": {
+      "mean_daily_gain": -0.0015219106088349332,
+      "ci95": [
+        -0.0032773775940100106,
+        0.0002146680461380337
+      ],
+      "sessions": 749
+    },
+    "gated_cgi_vs_strong_control": {
+      "mean_daily_gain": -0.002083394079617367,
+      "ci95": [
+        -0.003763905856677382,
+        -0.0003608914653862196
+      ],
+      "sessions": 749
+    },
+    "gated_cgi_vs_density_control": {
+      "mean_daily_gain": -0.00212028801303722,
+      "ci95": [
+        -0.0038265409616644354,
+        -0.0003897469186644302
+      ],
+      "sessions": 749
+    },
+    "direct_graph_vs_strong_control": {
+      "mean_daily_gain": -0.0007763457897910488,
+      "ci95": [
+        -0.0015341014241525917,
+        -3.928817294733051e-05
+      ],
+      "sessions": 749
+    },
+    "direct_graph_vs_density_control": {
+      "mean_daily_gain": -0.0008132397232109016,
+      "ci95": [
+        -0.0015596683400505467,
+        -7.963419367831815e-05
+      ],
+      "sessions": 749
+    },
+    "no_orthogonalization_vs_strong_control": {
+      "mean_daily_gain": -0.001835339343365906,
+      "ci95": [
+        -0.0037510955398193557,
+        1.3697644384443002e-05
+      ],
+      "sessions": 749
+    },
+    "no_orthogonalization_vs_density_control": {
+      "mean_daily_gain": -0.0018722332767857593,
+      "ci95": [
+        -0.003796075803522347,
+        -2.939601853703089e-05
+      ],
+      "sessions": 749
+    }
+  },
+  "rows": 3644,
+  "years": [
+    2022,
+    2023,
+    2024
+  ],
+  "elapsed_seconds": 10.068727016448975,
+  "peak_rss_platform_units": 212060,
+  "input_sha256": "a3ff9029edcf90cd382a45b4662b650971cdab914a2295868ab7552c8cb6f681",
+  "python": "3.13.18",
+  "limitations": [
+    "Not untouched confirmation",
+    "Aggregate daily graph scores only",
+    "Intervals exploratory without multiplicity correction",
+    "Novelty and CCF A quality not established"
+  ]
+}

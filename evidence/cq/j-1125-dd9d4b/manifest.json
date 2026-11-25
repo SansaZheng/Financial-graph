@@ -1,0 +1,87 @@
+[
+  {
+    "path": "code-commit.txt",
+    "bytes": 41,
+    "sha256": "4a4496e1601a45faf11fcab75d25e2dcd34c12d16d658ff7f515a7c05011cd6d"
+  },
+  {
+    "path": "cq-threads.json",
+    "bytes": 78,
+    "sha256": "97465c11312150d634db5b0b8026afa70c9c98f003c9f19692063ccfc357b9e5"
+  },
+  {
+    "path": "fold_audit_2022_cgi.json",
+    "bytes": 398,
+    "sha256": "ff2070c2860fa79297c10e58b91ad9fc46a705b7fdb2a055191305b7207c220c"
+  },
+  {
+    "path": "fold_audit_2022_no_orthogonalization.json",
+    "bytes": 398,
+    "sha256": "ff2070c2860fa79297c10e58b91ad9fc46a705b7fdb2a055191305b7207c220c"
+  },
+  {
+    "path": "fold_audit_2023_cgi.json",
+    "bytes": 530,
+    "sha256": "409105329ade0be497f8f717d0f5985d212ce3a965c550d89c28b42716d90dd2"
+  },
+  {
+    "path": "fold_audit_2023_no_orthogonalization.json",
+    "bytes": 530,
+    "sha256": "409105329ade0be497f8f717d0f5985d212ce3a965c550d89c28b42716d90dd2"
+  },
+  {
+    "path": "fold_audit_2024_cgi.json",
+    "bytes": 662,
+    "sha256": "e83262974ad8a02e8571d950625b2422efee1627cec27ec87122ac6eb09d37b2"
+  },
+  {
+    "path": "fold_audit_2024_no_orthogonalization.json",
+    "bytes": 662,
+    "sha256": "e83262974ad8a02e8571d950625b2422efee1627cec27ec87122ac6eb09d37b2"
+  },
+  {
+    "path": "freeze.txt",
+    "bytes": 16569,
+    "sha256": "e91efd2e9c36b7db84bc4d4c0f0ed09a05ff3ec792cf89e84f4b6f7137acd384"
+  },
+  {
+    "path": "install.txt",
+    "bytes": 4880,
+    "sha256": "0d0fd44c907baac2c7cf6ea706496161c361c3d69bfbf1bdfb5231dec8ba7567"
+  },
+  {
+    "path": "metrics.json",
+    "bytes": 2802,
+    "sha256": "473c9aa04a6875afefd6b8cfe57921ba6d22d0cf2e8344a2553a7f78f7acc804"
+  },
+  {
+    "path": "predictions.csv",
+    "bytes": 599397,
+    "sha256": "ad0ab9661adfa0fb6a1e605544384e628a1a7b34029cdfac5332c1e8788e6dde"
+  },
+  {
+    "path": "progress.txt",
+    "bytes": 55,
+    "sha256": "54af93a4e3546db8797646ad3cb331a87bd87851056a3ff1c090333e3ee90d53"
+  },
+  {
+    "path": "report.md",
+    "bytes": 1869,
+    "sha256": "737094c895fcbec838253e4966bca2853ffecb6a82ca66b1944d5cd2ff288301"
+  },
+  {
+    "path": "selection.json",
+    "bytes": 27497,
+    "sha256": "dd42bc87a7cbf89b852f1af0af494327ba286b0b9bab3d2c56fbaf78c80b0641"
+  },
+  {
+    "path": "source-hashes.json",
+    "bytes": 717,
+    "sha256": "9fa39ca0e420af0ce09bdd4026485a79bd484f0d799fc73be1eec679d0e8fc46"
+  },
+  {
+    "path": "tests.txt",
+    "bytes": 583,
+    "sha256": "d91a2dee2ec833e80163e7a7f0b6b07a50b04ff56d387d98170df7e81af781fb"
+  }
+]

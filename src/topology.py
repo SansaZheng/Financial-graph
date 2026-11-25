@@ -67,11 +67,14 @@ def graph_snapshot(history, shock, seed=471, permutations=32):
 def build_features(daily, window=60, seed=471, progress=None):
     if daily.index.has_duplicates or not daily.index.is_monotonic_increasing:
         raise ValueError('daily index must be unique and increasing')
-    if not np.isfinite(daily.to_numpy()).all():
-        raise ValueError('daily returns must be finite')
     rows = []
     for j in range(window, len(daily)):
-        row = graph_snapshot(daily.iloc[j-window:j].to_numpy(), daily.iloc[j].to_numpy(), seed=seed)
+        history=daily.iloc[j-window:j].to_numpy(); shock=daily.iloc[j].to_numpy()
+        valid=np.isfinite(history).all(axis=0) & np.isfinite(shock)
+        if valid.sum()<20: raise ValueError('fewer than 20 eligible past-window nodes')
+        row = graph_snapshot(history[:,valid], shock[valid], seed=seed)
+        row['graph_node_count']=int(valid.sum())
+        row['graph_excluded_nodes']='|'.join(daily.columns[~valid].astype(str))
         row.update(source_day=str(daily.index[j].date()), graph_fit_end=str(daily.index[j-1].date()))
         rows.append(row)
         if progress and j % 100 == 0: progress(f'{j}/{len(daily)} graph features')

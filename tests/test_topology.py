@@ -5,7 +5,7 @@ from src.topology import build_features, attach_features, graph_snapshot
 
 def test_future_returns_cannot_change_past_features():
     rng=np.random.default_rng(71)
-    daily=pd.DataFrame(rng.normal(size=(75,8)),index=pd.date_range('2020-01-01',periods=75))
+    daily=pd.DataFrame(rng.normal(size=(75,24)),index=pd.date_range('2020-01-01',periods=75))
     a=build_features(daily,window=20)
     daily.iloc[50:]*=100
     b=build_features(daily,window=20)
@@ -31,3 +31,13 @@ def test_exact_null_matches_exhaustive_permutations():
     rng=np.random.default_rng(1);m=rng.normal(size=(5,5));q=np.arange(5.)-2
     actual=np.mean([np.asarray(p)@m@np.asarray(p)/5 for p in permutations(q)])
     np.testing.assert_allclose(actual,permutation_mean(m,q),atol=1e-12)
+
+
+def test_missing_nodes_use_only_past_window():
+    rng=np.random.default_rng(5)
+    daily=pd.DataFrame(rng.normal(size=(75,24)),index=pd.date_range('2020-01-01',periods=75))
+    daily.iloc[40,3]=np.nan
+    a=build_features(daily,window=20)
+    assert (a.iloc[:20].graph_node_count==24).all()
+    assert (a.iloc[20:41].graph_node_count==23).all()
+    assert (a.iloc[41:].graph_node_count==24).all()

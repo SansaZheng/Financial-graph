@@ -36,3 +36,7 @@ CQ free CPU only,2 CPUs/4GB per job, no rental. Environment/test -> smoke -> ful
 
 ## 中文结论
 创新假设是“网络中的冲击位置是否提供超越历史波动、密度和相同容量非图模型的信息”。残差学习或图融合本身不算创新。先通过真实 CQ 开发实验证伪或支持该机制，再决定是否值得扩大到独立市场、现代图模型和未观察样本；当前不能宣称超过最强对照或达到 CCF A 水平。
+
+## Input correction before first predictive outcome
+
+Smoke stopped before training because the archived daily input contains14 missing cells across8 tickers. Each graph now excludes nodes with a nonfinite return in its60-session fitting window or its shock session. Eligibility uses only already observed rows, never future availability. No market session or target is removed for performance reasons; require at least20 nodes and archive node count/excluded names per source session. The frozen graph mechanism and model grids are unchanged.
