@@ -46,6 +46,14 @@ def main():
         gain=[100*(m['metrics']['strong_control']['mse']-m['metrics']['ntd']['mse'])/m['metrics']['strong_control']['mse'] for _,m,_ in ntd]
         conclusions.append(f'NTD 相对各年度验证集选出的最强非图对照，{len(ntd)} 个排列种子的小时 MSE 改善范围为 {min(gain):.3f}% 至 {max(gain):.3f}%；负值表示更差。')
         aligned=pd.DataFrame({'target':ref.target,'ntd_mean':np.mean([f.ntd.to_numpy() for _,_,f in ntd],axis=0),'strong_control':ref.strong_control})
+        for c in ['raw_diffusion','null_only','placebo','direct_ntd','ntd_no_orth']:
+            aligned[c+'_mean']=np.mean([f[c].to_numpy() for _,_,f in ntd],axis=0)
+        lines+=['','## Validation decisions','', '| Seed | Year | Base family | Strong control | NTD alpha | NTD weight | Gate |','|---:|---:|---|---|---:|---:|---|']
+        for job,m,_ in ntd:
+            selections=json.loads((Path(a.root)/job/'selection.json').read_text())
+            for year,sel in selections.items():
+                c=sel['branches']['ntd']['selected']
+                lines.append(f"| {m['seed']} | {year} | {sel['base']} | {sel['strong_control']} | {c['alpha']} | {c['weight']} | {sel['gate']} |")
         modern=families.get('modern-adaptation-001',[])
         for _,_,f in modern:assert f.index.equals(ref.index);np.testing.assert_allclose(f.target,ref.target,rtol=0,atol=1e-10)
         for c in ['rg_resmoe_adapted','matched_mlp','small_mlp']:
@@ -53,7 +61,7 @@ def main():
         aligned.to_csv(out/'aligned-ensemble-predictions.csv')
         comps={c:interval((aligned.target-aligned[c])**2-(aligned.target-aligned.ntd_mean)**2,aligned.index.tz_convert('America/New_York').date) for c in aligned if c not in ['target','ntd_mean']}
         (out/'aligned-comparisons.json').write_text(json.dumps({'ntd_seeds':[m['seed'] for _,m,_ in ntd],'modern_seeds':[m['seed'] for _,m,_ in modern],'metrics':{c:metrics(aligned.target,aligned[c]) for c in aligned if c!='target'},'daily_intervals':comps,'status':'exploratory; seed-mean predictions are additional descriptive analysis, not primary preregistered endpoint'},indent=2)+'\n')
-        lines+=['','## Aligned comparisons','', 'Seed-mean predictions are a descriptive sensitivity analysis. Seeds are not independent datasets. Intervals are five-session block bootstrap intervals, unadjusted for multiplicity.','', '| NTD seed mean vs | Mean daily gain | Exploratory95% interval |','|---|---:|---|']
+        lines+=['','## Aligned comparisons','', 'Seed-mean predictions are a descriptive sensitivity analysis. Seeds are not independent datasets. Intervals are five-session block bootstrap intervals on daily mean losses, unadjusted for multiplicity. Pooled hourly MSE and equally weighted daily gains differ in weighting.','', '| NTD seed mean vs | Mean daily gain | Exploratory95% interval |','|---|---:|---|']
         for c,v in comps.items():lines.append(f"| {c} | {v['mean_daily_gain']:.7f} | [{v['ci95'][0]:.7f}, {v['ci95'][1]:.7f}] |")
         if modern:conclusions.append('现代对照使用作者 RG-ResMoE 网络及近似参数量匹配 MLP，已按相同预测时刻对齐；任务与原作者论文不同，属于明确标注的适配实验。')
     lines+=['','## Evidence limits / 证据边界','', 'One US survivor-selected equity universe. No independent market confirmation, no full raw-minute reconstruction, no degree-conditioned null test, no faithful Sig-GSPHAR reproduction. The scalar permutation identity and residualization are established tools, not new theorems. Legacy CGI and NTD use different graph information timing and must not be treated as a matched before/after improvement. Negative, zero-weight and placebo outcomes remain in the archive.','', '## 中文结论','']

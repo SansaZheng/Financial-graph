@@ -31,3 +31,11 @@ Complete the frozen NTD and modern CQ runs, including negative/zero-weight outco
 当前可信结论是旧 CGI 未超过强对照；新 NTD 已实现但须由正在执行的实验验证。论文贡献、跨市场稳定性和独立确认仍有明确缺口，不能把代码完成或任务提交写成顶会水平已经达成。
 
 Additional input boundary: the forecast table was curated by the earlier pipeline and is not regenerated from all raw minutes in this round. New methods share its exact rows. The current audit verifies target alignment and historical rolling/difference features, but not original raw aggregation or universe construction.
+
+## Adversarial implementation review (before full NTD outcomes)
+
+- The temporal residual control matches the18-column target-correction design and its alpha/weight search. It does not match all unsupervised graph/nuisance preprocessing parameters. Call this matching correction capacity, not perfectly equal total pipelines.
+- A global shock-permutation null does not remove shock-degree alignment. Strength-conditioned shuffles and edge rewiring remain necessary to distinguish detailed topology from node centrality effects.
+- Outer validation chooses the baseline and correction on the same validation year. Outer-year loss remains temporally separated, but the validation gate's interval is post-selection and is not a formal safety certificate.
+- Nested forward residuals come from expanding-prefix baselines; their distribution may differ from the final refitted baseline. This is an explicit deployment mismatch to diagnose, not evidence of improvement.
+- Provider CPU tests establish executable invariants, not economic value, causal contagion, model novelty or publication readiness.
