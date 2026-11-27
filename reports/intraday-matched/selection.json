@@ -1,0 +1,173 @@
+{
+  "2022": {
+    "train_rows": 2732,
+    "validation_rows": 954,
+    "test_rows": 986,
+    "strongest": "node",
+    "models": {
+      "temporal": {
+        "validation_mse": 0.24398866785969006,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "node": {
+        "validation_mse": 0.23456423186310477,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "density": {
+        "validation_mse": 0.23510445921181852,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "raw_diffusion": {
+        "validation_mse": 0.2350745143776757,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "conditional_null": {
+        "validation_mse": 0.2351240190501582,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "rewired": {
+        "validation_mse": 0.23497495050722242,
+        "config": [
+          "ridge",
+          1
+        ]
+      },
+      "graph": {
+        "validation_mse": 0.23454704368858836,
+        "config": [
+          "ridge",
+          1
+        ]
+      }
+    }
+  },
+  "2023": {
+    "train_rows": 3686,
+    "validation_rows": 986,
+    "test_rows": 983,
+    "strongest": "node",
+    "models": {
+      "temporal": {
+        "validation_mse": 0.2426151624446795,
+        "config": [
+          "ridge",
+          100
+        ]
+      },
+      "node": {
+        "validation_mse": 0.2387743336797677,
+        "config": [
+          "ridge",
+          10
+        ]
+      },
+      "density": {
+        "validation_mse": 0.2397638435153891,
+        "config": [
+          "ridge",
+          100
+        ]
+      },
+      "raw_diffusion": {
+        "validation_mse": 0.24011159804836735,
+        "config": [
+          "ridge",
+          100
+        ]
+      },
+      "conditional_null": {
+        "validation_mse": 0.2397550679682893,
+        "config": [
+          "ridge",
+          100
+        ]
+      },
+      "rewired": {
+        "validation_mse": 0.23974242938596615,
+        "config": [
+          "ridge",
+          100
+        ]
+      },
+      "graph": {
+        "validation_mse": 0.2406108733348493,
+        "config": [
+          "ridge",
+          100
+        ]
+      }
+    }
+  },
+  "2024": {
+    "train_rows": 4672,
+    "validation_rows": 983,
+    "test_rows": 943,
+    "strongest": "node",
+    "models": {
+      "temporal": {
+        "validation_mse": 0.2555632083729013,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "node": {
+        "validation_mse": 0.25510549067938476,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "density": {
+        "validation_mse": 0.25661249819418613,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "raw_diffusion": {
+        "validation_mse": 0.2567747901053176,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "conditional_null": {
+        "validation_mse": 0.2567117028835967,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "rewired": {
+        "validation_mse": 0.25664872712000164,
+        "config": [
+          "ridge",
+          1000
+        ]
+      },
+      "graph": {
+        "validation_mse": 0.2567294299039234,
+        "config": [
+          "ridge",
+          1000
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "verified",
+  "job": "j-1128-cd5685",
+  "host": "c225",
+  "code_commit": "9e923aa78e6d5a1eec86520ddcbd33a05c87add3",
+  "preprocessing_job": "j-1128-b367d3",
+  "output_dir": "/home/sudingli/cq-home/financial-graph-intraday-005/results/evaluation-v2",
+  "output_receipts": [
+    {
+      "path": "metrics.json",
+      "bytes": 3938,
+      "sha256": "3d6307de73f8160499ff38ebe6c490e7740b773efd09b5daa63993dbb29a40f2",
+      "lines": 117
+    },
+    {
+      "path": "selection.json",
+      "bytes": 3326,
+      "sha256": "a013c7ef9172fd68d464a7aca0095a88952aaf935585442db80831b6d9ba1947",
+      "lines": 173
+    },
+    {
+      "path": "predictions.csv",
+      "bytes": 611582,
+      "sha256": "b0b6fcc90fe97693ccab4e47c2948150e518dc3084a4fa35b77cef07618100f0",
+      "lines": 2913
+    }
+  ],
+  "independent_checks": [
+    "Recomputed SHA-256 of node panel and prediction CSV on c225",
+    "Verified the 2912 unique 11:31\u201314:31 New York prediction rows and each outer year count",
+    "Verified each yearly control minimizes validation MSE among control families",
+    "Recomputed all pooled MSE values and the paired mean loss difference from the prediction CSV"
+  ],
+  "independently_recomputed_mse": {
+    "graph": 0.2498512575623935,
+    "strong_control": 0.2478195517231468
+  },
+  "independently_recomputed_paired_gain": -0.0020317058392466704,
+  "compute_seconds": 51.294
+}

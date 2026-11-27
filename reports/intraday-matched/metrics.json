@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "protocol": "005-intraday-matched",
+  "seed": 471,
+  "code_commit": "9e923aa78e6d5a1eec86520ddcbd33a05c87add3",
+  "panel_sha256": "01d7b186d328015ca4c864ee48a7e7dafd9d3dcc1579c76c3aba17a8eb856f90",
+  "label_source": {
+    "repo_id": "Sansa005/financial-graph-assets",
+    "revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49",
+    "sha256": "a3ff9029edcf90cd382a45b4662b650971cdab914a2295868ab7552c8cb6f681"
+  },
+  "raw_source": {
+    "repo_id": "CryptoSpartan/stocks_bars_1m",
+    "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+    "raw_expected_sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+    "whole_file_sha256_verified": false,
+    "projected_compressed_bytes": 57961923,
+    "row_groups": 96,
+    "endpoint_price_rows": 77835,
+    "duplicate_endpoint_rows": 0,
+    "invalid_endpoint_rows": 0
+  },
+  "rows": 2912,
+  "rows_with_graph_features": 6598,
+  "rows_with_no_successful_rewire": 0,
+  "predictions_sha256": "b0b6fcc90fe97693ccab4e47c2948150e518dc3084a4fa35b77cef07618100f0",
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "sklearn": "1.5.2"
+  },
+  "pooled_mse": {
+    "temporal": 0.24909359543703974,
+    "node": 0.2478195517231468,
+    "density": 0.24961201559051413,
+    "raw_diffusion": 0.24962386947947202,
+    "conditional_null": 0.24960670830470894,
+    "rewired": 0.24960349253417582,
+    "graph": 0.24985125756239346,
+    "strong_control": 0.2478195517231468
+  },
+  "per_year_mse": {
+    "2022": {
+      "temporal": 0.24296353066568263,
+      "node": 0.23893179286457236,
+      "density": 0.2405704612343245,
+      "raw_diffusion": 0.24079769341662186,
+      "conditional_null": 0.24059765373409253,
+      "rewired": 0.24060948217120864,
+      "graph": 0.24139243206237898,
+      "strong_control": 0.23893179286457236
+    },
+    "2023": {
+      "temporal": 0.2586974128850024,
+      "node": 0.25865816722462254,
+      "density": 0.25911316804519746,
+      "raw_diffusion": 0.25914155648541726,
+      "conditional_null": 0.25911945869857334,
+      "rewired": 0.2591284357748033,
+      "graph": 0.25922979189545287,
+      "strong_control": 0.25865816722462254
+    },
+    "2024": {
+      "temporal": 0.2454919955570937,
+      "node": 0.24581421895178288,
+      "density": 0.24916168656850923,
+      "raw_diffusion": 0.2489311051858625,
+      "conditional_null": 0.2491103076360547,
+      "rewired": 0.24907865161407908,
+      "graph": 0.24891944705721522,
+      "strong_control": 0.24581421895178288
+    }
+  },
+  "graph_mse_reduction_pct": -0.8198327473033284,
+  "paired_graph_vs_strong": {
+    "block_trading_days": 5,
+    "draws": 10000,
+    "days": 748,
+    "mse_gain": -0.0020317058392466704,
+    "ci95": [
+      -0.003508212012795772,
+      -0.0007421976785860512
+    ],
+    "centered_bootstrap_p_two_sided": 0.004199580041995801
+  },
+  "block_length_sensitivity": [
+    {
+      "block_trading_days": 10,
+      "draws": 10000,
+      "days": 748,
+      "mse_gain": -0.0020317058392466704,
+      "ci95": [
+        -0.003540073511175324,
+        -0.00063813795150563
+      ],
+      "centered_bootstrap_p_two_sided": 0.006299370062993701
+    },
+    {
+      "block_trading_days": 20,
+      "draws": 10000,
+      "days": 748,
+      "mse_gain": -0.0020317058392466704,
+      "ci95": [
+        -0.003558153339529641,
+        -0.0004767783874268626
+      ],
+      "centered_bootstrap_p_two_sided": 0.0093990600939906
+    }
+  ],
+  "significant_mse_reduction_at_95pct": false,
+  "limitations": [
+    "2022\u20132024 are previously used development years, with three overlapping training prefixes.",
+    "Nine fixed pilot equities do not constitute a point-in-time representation of the full market.",
+    "The archived target and temporal covariates are pinned, but their original construction is not fully reconstructed.",
+    "Block intervals condition on the validation decisions and cannot establish out-of-archive superiority."
+  ]
+}

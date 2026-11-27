@@ -4,7 +4,7 @@
 
 Build the matched 11:31–14:31 New York panel and compare conditional-null graph diffusion with the strongest validation-selected control. See [active task](prompts/005-intraday-matched.md). Venue unspecified. Topic: incremental topology for market volatility forecasting.
 
-Panel CQ job `j-1128-b367d3` completed on c225. It found 2,912 complete endpoint rows in 2022–2024. Comparison job `j-1128-cd5685` uses the verified inputs and pinned runtime in a separate staging home. It replaces the unstarted c225-only job `j-1128-b74995`, which was blocked by the RAM reservation. All models fit the same samples and select configurations on validation. Primary result is paired hourly MSE gain with a 95% trading-day block interval.
+CQ completed the matched study on c225. On 2,912 identical 2022–2024 decisions, the graph reached MSE 0.249851 and the validation-selected node-only control reached 0.247820. The graph increased MSE by 0.82%. Five-day paired gain was −0.002032 (95% interval [−0.003508, −0.000742]). The 10- and 20-day sensitivity intervals remained negative. The next scientific stage needs a qualified untouched period and a fresh mechanism before claiming topology helps. See the [report](../../reports/intraday-matched/report.md).
 
 ## Earlier data qualification
 
