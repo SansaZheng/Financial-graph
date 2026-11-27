@@ -28,7 +28,7 @@ CQ `j-1128-9e92e8` uploaded and read back all 69 selected files (44,218,695 byte
 - Git index policy passes after untracking assets; source originals remain on disk.
 - Upstream HF metadata and card verified. No full raw download to Mac.
 - Clean remote qualification passed on c225, CQ `j-1128-647b69`, code `921a5d38fc2bd152a2fc5ac6e793a0c10ccfb1f1`: clean shallow GitHub checkout, exact dependencies, 23 tests passed, pinned card full SHA256 verification, and five rows/three columns streamed from Parquet. Streaming does not verify the whole 11GB file hash. See `remote-validation.json` and `remote-tests.txt`.
-- Authenticated private upload and full pinned readback succeeded. The separate CQ replay `j-1128-cb02e7` uses the manifest committed to GitHub and an empty data/cache directory.
+- Authenticated private upload and full pinned readback succeeded. CQ replay `j-1128-cb02e7` fetched the pinned GitHub checkout into a fresh directory, downloaded and verified six private inputs and one historical metrics file, then ran 2022 NTD with seed 471. All 13 MSE values matched the corresponding historical 2022 results exactly across 1,238 predictions. See the [replay receipt](private-replay-receipt.json).
 
 CQ `j-1127-647b22` staged all 69 selected files (44,218,695 bytes) on c225 at `/data3/sudingli/cq-home/financial-graph/results/asset-staging-20261127/source`; every file passed SHA256 verification. See `remote-staging-receipt.json` for the source copies used by the upload.
 

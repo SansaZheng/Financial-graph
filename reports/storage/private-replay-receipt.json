@@ -1,0 +1,30 @@
+{
+  "status": "clean-private-replay-passed",
+  "cq_job": "j-1128-cb02e7",
+  "host": "c225",
+  "code_commit": "e792b25537e3dcd64e44b2c38788db88acc43218",
+  "asset_manifest_sha256": "f64c068f9ce9896145e0ffc9df9e1b0d10609efc7a546f90dd8e4d264daa36ab",
+  "derived_inputs": {
+    "status": "verified",
+    "asset": "derived-inputs",
+    "files": 6,
+    "revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49"
+  },
+  "evidence_sample_revision": "dcefc2163ef4c583085be39d239356ef6f024972",
+  "evidence_sample_sha256": "699ec1d971edbe3a4c54c88594bfddf28510844defa5fba882855d64fc34be49",
+  "smoke": {
+    "method": "ntd",
+    "seed": 471,
+    "years": [
+      2022
+    ],
+    "rows": 1238,
+    "ntd_mse": 0.22946422578281123,
+    "strong_control_mse": 0.23122332110482696,
+    "historical_reference": "reports/evaluations/j-1125-0c3a7c/seed471/metrics.json",
+    "mse_series_compared": 13,
+    "maximum_absolute_mse_difference": 0.0,
+    "metrics_sha256": "1179593481c7ab6d4694259fd294f90ed54aa11fff535075caadfb86e6a7c740"
+  },
+  "results_dir": "/home/sudingli/cq-home/financial-graph/results/private-assets-replay-20261128"
+}
