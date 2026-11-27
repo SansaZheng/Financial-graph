@@ -82,7 +82,7 @@ python scripts/assets.py stream --asset raw-minute-bars \
   --file stocks_bars_1m.parquet --columns timestamp ticker close --rows 5
 ```
 
-Each asset materializes under `$FG_DATA_ROOT/<asset-id>/<local_path>`. `--data-root` and the global `--cache-root` arguments override the corresponding environment variables. Downloads require a full40-character revision and SHA256; they validate existing files rather than overwriting mismatched originals. Streaming is revision-pinned but **does not** verify a whole-file checksum; a full remote download plus `verify` is needed for that. Do not invoke `fetch --asset raw-minute-bars` unless the full11GB file is actually required on remote storage.
+Each asset materializes under `$FG_DATA_ROOT/<asset-id>/<local_path>`. `--data-root` and the global `--cache-root` arguments override the corresponding environment variables. Downloads require a full40-character revision and SHA256; they validate existing files rather than overwriting mismatched originals. For the observed server HEAD/cache zero-byte failure, the downloader falls back to the official `HfFileSystem` pinned range API. Its project-owned content-addressed partial file supports seeking/resumption under a lock and is promoted only after full size/SHA256 checks. The damaged original cache and any existing user file are left intact; nonempty checksum mismatches still fail. Streaming is revision-pinned but **does not** verify a whole-file checksum; a full remote download plus `verify` is needed for that. Do not invoke `fetch --asset raw-minute-bars` unless the full11GB file is actually required on remote storage.
 
 ## Execute reproducibly
 

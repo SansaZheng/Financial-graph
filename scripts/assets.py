@@ -44,6 +44,8 @@ def load_manifest(path=MANIFEST):
     if m.get('schema_version') != 1: raise ValueError('Unknown manifest schema')
     seen = set()
     for a in m['assets']:
+        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*',a['id']): raise ValueError('Unsafe asset ID')
+        if a.get('repo_id') and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*',a['repo_id']): raise ValueError('Unsafe repo ID')
         if a['id'] in seen: raise ValueError('Duplicate asset ID')
         seen.add(a['id'])
         if a['repo_type'] not in ['dataset', 'model']: raise ValueError('Invalid repo type')
@@ -108,15 +110,45 @@ def configure_cache(cache):
     return p
 
 
+def filesystem_download(a, f, cache):
+    """Official pinned range reads for the observed zero-byte HEAD/cache failure.
+
+    Resume our own content-addressed partial file, under a lock; promote only
+    after full size/SHA verification. Never alter an existing user asset/cache blob.
+    """
+    from huggingface_hub import HfFileSystem
+    from filelock import FileLock
+    folder=cache/'verified-ranges';folder.mkdir(parents=True,exist_ok=True)
+    complete=folder/f['sha256'];partial=folder/(f['sha256']+'.partial')
+    with FileLock(str(complete)+'.lock',timeout=60):
+        if complete.exists():verify_file(complete,f);return complete
+        offset=partial.stat().st_size if partial.exists() else 0
+        if offset>f['bytes']:raise ValueError('Oversized partial transfer; inspect it or choose a new project cache')
+        prefix='datasets/' if a['repo_type']=='dataset' else ''
+        uri=prefix+a['repo_id']+'@'+a['revision']+'/'+f['path']
+        with HfFileSystem().open(uri,'rb',block_size=1024*1024) as src,partial.open('ab') as dst:
+            src.seek(offset)
+            while offset<f['bytes']:
+                block=src.read(min(1024*1024,f['bytes']-offset))
+                if not block:raise ConnectionError('Range transfer ended before expected file length')
+                dst.write(block);offset+=len(block)
+        verify_file(partial,f);os.replace(partial,complete)
+    return complete
+
+
 def fetch(a, files, root, cache, allow_local=False):
     remote_guard(allow_local)
     from huggingface_hub import hf_hub_download
     results = []
     for f in files:
         dest = under(Path(root) / a['id'], f['local_path'])
+        transport='existing-verified-file'
         if dest.exists(): verify_file(dest, f)
         else:
             src = Path(hf_hub_download(a['repo_id'], f['path'], repo_type=a['repo_type'], revision=a['revision'], cache_dir=str(cache / 'hub')))
+            transport='hf_hub_download'
+            if src.is_file() and src.stat().st_size==0 and f['bytes']>0:
+                src=filesystem_download(a,f,cache);transport='hf-filesystem-verified-range-fallback'
             verify_file(src, f)
             dest.parent.mkdir(parents=True, exist_ok=True)
             # Preserve cache objects: never modify hardlinks or cached files in place.
@@ -126,7 +158,7 @@ def fetch(a, files, root, cache, allow_local=False):
                 shutil.copyfile(src, tmp); verify_file(tmp, f); os.replace(tmp, dest)
             finally:
                 if tmp.exists(): tmp.unlink()  # only our temporary transfer file
-        results.append({'path':str(dest), 'sha256':f['sha256'], 'bytes':f['bytes']})
+        results.append({'path':str(dest), 'sha256':f['sha256'], 'bytes':f['bytes'], 'transport':transport})
     return {'asset':a['id'], 'revision':a['revision'], 'status':'verified', 'files':results}
 
 

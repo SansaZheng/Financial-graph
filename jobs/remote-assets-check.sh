@@ -12,9 +12,24 @@ git -C "$RUN_ROOT/clean-code" remote add origin https://github.com/SansaZheng/Fi
 git -C "$RUN_ROOT/clean-code" fetch --depth=1 --filter=blob:none origin "$FINANCIAL_GRAPH_REVISION" > "$RUN_ROOT/git-fetch.txt" 2>&1
 git -C "$RUN_ROOT/clean-code" checkout -q --detach FETCH_HEAD
 cd "$RUN_ROOT/clean-code"
-/home/sudingli/cq-home/financial-graph/env/bin/python -m venv "$RUN_ROOT/venv"
-PY="$RUN_ROOT/venv/bin/python"
-"$PY" -m pip install --disable-pip-version-check --no-cache-dir -r requirements.txt -r requirements-assets.txt -r requirements-streaming.txt > "$RUN_ROOT/install.txt" 2>&1
+if [ -n "${FG_RUNTIME_PYTHON:-}" ]; then
+  PY="$FG_RUNTIME_PYTHON"
+  # Reuse only our already-created isolated environment, read-only; verify every pin.
+  "$PY" - <<'PINS'
+from pathlib import Path
+from importlib.metadata import version
+for filename in ['requirements.txt','requirements-assets.txt','requirements-streaming.txt']:
+    for line in Path(filename).read_text().splitlines():
+        line=line.strip()
+        if line and not line.startswith('#') and '==' in line:
+            name,expected=line.split('==',1)
+            assert version(name)==expected, name+' version mismatch'
+PINS
+else
+  /home/sudingli/cq-home/financial-graph/env/bin/python -m venv "$RUN_ROOT/venv"
+  PY="$RUN_ROOT/venv/bin/python"
+  "$PY" -m pip install --disable-pip-version-check --no-cache-dir -r requirements.txt -r requirements-assets.txt -r requirements-streaming.txt > "$RUN_ROOT/install.txt" 2>&1
+fi
 "$PY" -m pip freeze > "$RUN_ROOT/environment.txt"
 printf '1/4 dependencies\n' >> "$RUN_ROOT/progress.txt"
 "$PY" scripts/check_storage_policy.py > "$RUN_ROOT/git-policy.txt"
@@ -31,7 +46,7 @@ from pathlib import Path
 root=Path(os.environ['CQ_OUTPUT_DIR']);m=json.loads(Path('assets/manifest.json').read_text())
 sample=json.loads((root/'stream-sample.json').read_text())
 ready=next(a for a in m['assets'] if a['id']=='derived-inputs')['status']=='published'
-report={'status':'passed-public-workflow','code_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'clean_checkout':True,'tracked_payload_policy':'passed','pinned_hf_card':json.loads((root/'hf-integrity.json').read_text()),'test_log':'tests.txt','derived_hf_upload_ready':ready,'scientific_data_reproduction':'not run: derived asset unpublished' if not ready else 'available for next dependent smoke','runtime_root':str(root),'cache_root':os.environ['FG_CACHE_ROOT'],'raw_stream':{'rows':len(sample['rows']),'columns':['timestamp','ticker','close'],'integrity':sample['integrity'],'full_raw_download':False},'private_upload_verification':'not performed without authentication and confirmed quota'}
+report={'status':'passed-public-workflow','code_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'clean_checkout':True,'reused_environment':os.getenv('FG_RUNTIME_PYTHON'),'tracked_payload_policy':'passed','pinned_hf_card':json.loads((root/'hf-integrity.json').read_text()),'test_log':'tests.txt','derived_hf_upload_ready':ready,'scientific_data_reproduction':'not run: derived asset unpublished' if not ready else 'available for next dependent smoke','runtime_root':str(root),'cache_root':os.environ['FG_CACHE_ROOT'],'raw_stream':{'rows':len(sample['rows']),'columns':['timestamp','ticker','close'],'integrity':sample['integrity'],'full_raw_download':False},'private_upload_verification':'not performed without authentication and confirmed quota'}
 (root/'validation-report.json').write_text(json.dumps(report,indent=2)+'\n')
 PY
 printf '4/4 public path and tests complete\n' >> "$RUN_ROOT/progress.txt"

@@ -1,4 +1,4 @@
-import hashlib,json,sys,tempfile,unittest
+import hashlib,json,sys,tempfile,unittest,io
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 from types import SimpleNamespace
@@ -62,6 +62,20 @@ class AssetTests(unittest.TestCase):
         api=self.api();api.repo_info.return_value.siblings=[SimpleNamespace(rfilename=self.file['path'],lfs=SimpleNamespace(sha256=self.file['sha256']),blob_id=None)]
         with patch('assets.fetch',return_value={'status':'verified'}):assets.upload(self.manifest,'sample',self.root,'owner/sample',self.quota,self.root/'cache',api=api)
         api.create_commit.assert_not_called();self.assertEqual(self.asset['verification']['status'],'downloaded-and-sha256-verified')
+    def test_zero_byte_hub_download_uses_verified_official_range_read(self):
+        empty=self.root/'empty';empty.write_bytes(b'');body=self.src.read_bytes()
+        fs=Mock();fs.open.return_value=io.BytesIO(body)
+        with patch('huggingface_hub.hf_hub_download',return_value=str(empty)),patch('huggingface_hub.HfFileSystem',return_value=fs),patch('assets.platform.system',return_value='Linux'):
+            r=assets.fetch(self.asset,[self.file],self.root/'data',self.root/'cache')
+        self.assertEqual(r['files'][0]['transport'],'hf-filesystem-verified-range-fallback')
+        self.assertIn('@'+'a'*40,fs.open.call_args.args[0])
+        self.assertEqual(empty.stat().st_size,0)  # damaged original cache is not overwritten
+    def test_range_resume_requires_full_checksum(self):
+        cache=self.root/'cache';folder=cache/'verified-ranges';folder.mkdir(parents=True)
+        partial=folder/(self.file['sha256']+'.partial');partial.write_bytes(self.src.read_bytes()[:2])
+        fs=Mock();fs.open.return_value=io.BytesIO(self.src.read_bytes())
+        with patch('huggingface_hub.HfFileSystem',return_value=fs):out=assets.filesystem_download(self.asset,self.file,cache)
+        self.assertEqual(out.read_bytes(),self.src.read_bytes());self.assertFalse(partial.exists())
     def test_unknown_selected_file_rejected(self):
         with self.assertRaises(ValueError):assets.choose(self.manifest,'sample',['other.csv'])
 
