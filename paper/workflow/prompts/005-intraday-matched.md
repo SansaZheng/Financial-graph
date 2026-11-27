@@ -1,0 +1,9 @@
+# 005-intraday-matched — local task specification
+
+Configuration revision 1. Codex implements and verifies. CQ runs the experiment on c225, with free CPU and project data-disk storage. The topic remains incremental topology information for market volatility forecasting. The venue is unspecified and CCF A remains the quality goal.
+
+Build the 2018–2024 intraday development panel from the nine predetermined equities in the timing pilot. Freeze decisions at New York 11:31, 12:31, 13:31 and 14:31. Join only exact timestamps with the original verified one-hour log-variance labels. Use the closes of the bars opened at decision minus 62 minutes and minus 2 minutes for the 60-minute return. Reject duplicates, invalid prices and missing endpoints. Reserve the 2025–2026 observations for future qualification.
+
+Build graphs from the preceding 60 complete same-clock observations. Use residual correlations to choose edges. Contrast current diffusion energy against shock shuffles within historical strength bins. Compare temporal-only, node aggregates, density, raw diffusion, conditional null and rewired graph controls on the identical rows. Use equal hyperparameter grids and select the strongest control on validation for each outer year. Use 2022–2024 as rolling development evaluation, with the previous year for validation and refits through validation.
+
+Primary endpoint is pooled hourly log-variance MSE against the strongest validation control. Report positive gain as control minus graph MSE, with a 95% paired moving-block interval over trading days stratified by outer year. Record 2022–2024 year-wise results and null comparisons as diagnostics. Interpret significance only within this historical development protocol. Publish code, CQ specs, compact metrics and audit receipts to GitHub. Store row-level predictions remotely.
