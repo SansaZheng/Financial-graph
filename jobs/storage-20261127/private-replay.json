@@ -1,0 +1,82 @@
+{
+  "name": "FinancialGraph clean GitHub checkout with pinned private HF inputs and NTD smoke",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "e792b25537e3dcd64e44b2c38788db88acc43218"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "jobs/private-assets-remote.sh",
+    "replay"
+  ],
+  "env": {
+    "FG_RUNTIME_PYTHON": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python",
+    "HF_HOME": "/data3/sudingli/cq-home/financial-graph/.hf-auth",
+    "FG_PRIVATE_REPO": "Sansa005/financial-graph-assets",
+    "FG_PRIVATE_WORKSPACE": "/data3/sudingli/cq-home/financial-graph/results/private-assets-20261128",
+    "FINANCIAL_GRAPH_REVISION": "e792b25537e3dcd64e44b2c38788db88acc43218"
+  },
+  "depends_on": [
+    "j-1128-9e92e8"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/private-assets-replay-20261128",
+    "expect": [
+      {
+        "path": "run-provenance.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "smoke-metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "derived-verify.json",
+        "contains": "verified"
+      },
+      {
+        "path": "evidence-sample-fetch.json",
+        "contains": "verified"
+      },
+      {
+        "path": "git-policy.txt",
+        "contains": "PASS"
+      }
+    ]
+  }
+}

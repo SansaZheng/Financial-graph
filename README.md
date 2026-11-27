@@ -2,7 +2,7 @@
 
 GitHub contains code, configuration, dependencies, documentation, compact evaluation summaries and [asset version manifests](assets/manifest.json). Datasets, predictions, model inputs, weights, environments and caches are excluded from the current Git index. Existing history and the old verified raw-data Release are preserved; this is not a history rewrite.
 
-**Migration status:** the original raw dataset and its card are pinned on HF. Project-derived inputs and selected experiment outputs have complete local hashes but are pending authenticated private upload and quota verification. `revision: null` is deliberate; the downloader refuses unpublished assets. No saved model checkpoint has been identified. Do not create an empty Model repository or claim that weights were preserved. See [migration report](reports/storage/migration.md) and [manifest](assets/manifest.json).
+**Migration status.** The raw dataset and card are pinned on HF. The private project dataset holds 69 verified files across the derived inputs and completed experiment assets. All 69 files were read back on c225 and checked against their SHA-256 values. See the [migration report](reports/storage/migration.md) and [manifest](assets/manifest.json).
 
 ## Repositories and data layout
 
@@ -10,10 +10,10 @@ GitHub contains code, configuration, dependencies, documentation, compact evalua
 - CQ code mirror: https://github.com/SuuTTT/financial-graph-cq
 - Reused raw source: https://huggingface.co/datasets/CryptoSpartan/stocks_bars_1m
 - Raw revision: `0c6f25f287918b1421c2572d2c9e2b75bd8959a9`
-- Private project Dataset destination: choose an existing appropriate repository after account inspection; proposed name `<your-namespace>/financial-graph-assets`, **not yet created**.
+- Private project Dataset: https://huggingface.co/datasets/Sansa005/financial-graph-assets
 - Model destination: create a private Model repository only when actual selected checkpoints exist.
 
-The Dataset layout is `derived/`, `splits/`, `provenance/`, and `experiments/<job>/<seed>/`. Small original CSV files are practical logical shards; their bytes and existing audit hashes are preserved. The11GB upstream Parquet is reused rather than downloaded to the Mac or uploaded twice. For a new large derived dataset, make bounded Parquet shards (e.g.128–512MiB) on remote storage and add each explicit shard to the manifest. Do not silently repartition or change existing split membership.
+The Dataset layout is `derived/`, `splits/`, `provenance/`, and `experiments/<job>/<seed>/`. Small original CSV files are practical logical shards; their bytes and existing audit hashes are preserved. The11 GB upstream Parquet is reused rather than downloaded to the Mac or uploaded twice. For a new large derived dataset, make bounded Parquet shards (e.g.128–512MiB) on remote storage and add each explicit shard to the manifest. Do not silently repartition or change existing split membership.
 
 ## Install and authenticate
 
@@ -64,7 +64,7 @@ The pinned `huggingface_hub==0.36.0` client exposes no account-wide storage-quot
 }
 ```
 
-Replace zero with the observed remaining included bytes; zero deliberately blocks upload. The receipt expires after24hours and must cover at least twice the selected asset bytes conservatively. Unknown quota blocks upload; the workflow never upgrades a plan, enables paid storage, publishes private assets, or changes a license. Current [HF storage policies](https://huggingface.co/docs/hub/storage-limits) do not prove any particular account's free headroom.
+Replace zero with the observed remaining included bytes; zero deliberately blocks upload. The receipt expires after 24 hours and must cover at least twice the selected asset bytes conservatively. Unknown quota blocks upload; the workflow never upgrades a plan, enables paid storage, publishes private assets, or changes a license. Current [HF storage policies](https://huggingface.co/docs/hub/storage-limits) do not prove any particular account's free headroom.
 
 ## Retrieve only required, immutable assets
 
@@ -101,7 +101,7 @@ python scripts/run_experiment.py --method ntd --seed 471 \
 
 The wrapper rejects Mac execution, unpublished input assets, dirty tracked code, corrupted inputs and output inside the checkout. It records code commit, HF revision, split configuration, seed, dependency freeze and metrics digest. Modern runs use `--method modern` once Torch is installed in the selected remote environment. The existing evaluators do not save trained weights; do not invent checkpoints from prediction files.
 
-For a clean remote infrastructure qualification, submit the pinned CQ spec under `jobs/storage-20261127/` (inspect existing IDs first to avoid duplicates). `jobs/remote-assets-check.sh` makes a shallow clean GitHub checkout, installs an isolated environment, validates storage policy, fetches the pinned HF card, performs a bounded raw Parquet read, and runs the science/asset tests. Private-data scientific reproduction remains blocked until authenticated uploads and pinned revisions exist. Fetch only `validation-report.json`, `tests.txt` and other small receipts from CQ; never fetch the entire runtime directory containing its environment and caches.
+For a clean remote infrastructure qualification, submit the pinned CQ spec under `jobs/storage-20261127/` (inspect existing IDs first to avoid duplicates). `jobs/remote-assets-check.sh` makes a shallow clean GitHub checkout, installs an isolated environment, validates storage policy, fetches the pinned HF card, performs a bounded raw Parquet read, and runs the science/asset tests. For a clean replay of the private inputs, use `jobs/private-assets-remote.sh replay` with a read-capable HF login and the [CQ replay specification](jobs/storage-20261127/private-replay.json). The replay fetches the six pinned inputs and one historical metrics file, then runs the NTD 2022 smoke check. Fetch only `validation-report.json`, `tests.txt` and other small receipts from CQ; never fetch the entire runtime directory containing its environment and caches.
 
 ## Upload new versions and update the manifest
 
@@ -121,11 +121,11 @@ python scripts/stage_upload.py --asset completed-experiments \
 cp assets/manifest.json "$FG_WORK_ROOT/manifest.json"
 python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" upload --asset derived-inputs \
   --source-root "$FG_WORK_ROOT/upload-source" \
-  --repo-id your-namespace/financial-graph-assets \
+  --repo-id Sansa005/financial-graph-assets \
   --quota-receipt "$FG_WORK_ROOT/quota.json"
 python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" upload --asset completed-experiments \
   --source-root "$FG_WORK_ROOT/upload-source" \
-  --repo-id your-namespace/financial-graph-assets \
+  --repo-id Sansa005/financial-graph-assets \
   --quota-receipt "$FG_WORK_ROOT/quota.json"
 python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" validate
 ```
@@ -142,18 +142,18 @@ git commit -m 'Pin verified HF asset revisions'
 git push
 ```
 
-`jobs/stage-assets-remote.sh` prepares these exact allowlisted sources and a SHA256 receipt in a separate CQ data-disk directory. It does not upload or duplicate entire working directories. Use the full legacy SHA from `assets/provenance/derived.json`, never an unresolved short SHA in a shallow checkout. Upload uses official `HfApi.create_commit`, at most50files per commit, remote content deduplication and parent-commit checks. Rerun the same command after interruption: already committed matching files are skipped. For genuinely large uploads, add `--large`; official `upload_large_folder` keeps resumable hash/preupload/commit task metadata under the staging folder's `.cache/huggingface`. Keep that metadata until transfer completes. It is not a promise that every interrupted HTTP request resumes byte-for-byte. Do not change staged source bytes mid-transfer.
+`jobs/stage-assets-remote.sh` prepares these exact allowlisted sources and a SHA256 receipt in a separate CQ data-disk directory. It does not upload or duplicate entire working directories. Use the full legacy SHA from `assets/provenance/derived.json`, never an unresolved short SHA in a shallow checkout. Upload uses official `HfApi.create_commit`, at most 50 files per commit, remote content deduplication and parent-commit checks. Rerun the same command after interruption: already committed matching files are skipped. For genuinely large uploads, add `--large`; official `upload_large_folder` keeps resumable hash/preupload/commit task metadata under the staging folder's `.cache/huggingface`. Keep that metadata until transfer completes. It is not a promise that every interrupted HTTP request resumes byte-for-byte. Do not change staged source bytes mid-transfer.
 
 Every upload reads back the pinned revision and verifies all listed files before writing the new manifest.
 
 To rebuild the detailed report on the remote server, fetch both `derived-inputs` and `completed-experiments`, then run `python -m jobs.summarize_research --out "$FG_RUN_ROOT/summary"`. In a shallow clone, first fetch the exact training-code commits listed in the manifest/run records using `git fetch --depth=1 --filter=blob:none origin FULL_CODE_SHA`; the verifier reads only the named source files from those commits. It refuses missing evidence instead of overwriting the report with an empty result. Copy only the final Markdown and lightweight summary tables back to GitHub; aligned per-row predictions stay in remote/HF storage.
- The destination must be private; the tool refuses to overwrite a different existing root dataset card. It never deletes remote files. For models, set `repo_type: model`, an actual model `repo_id`, full `code_revision`, `dataset_revisions`, `random_seeds`, `configuration` and `evaluation` paths; every checkpoint must declare `roles: [best]`, `[final]`, `[recovery]`, or a combination. Retain best/final and needed recovery state, not every epoch. Reuse the same upload command with the model asset ID. Prefer safe weight formats; this tool never deserializes uploaded weights.
+The destination must be private; the tool refuses to overwrite a different existing root dataset card. It never deletes remote files. For models, set `repo_type: model`, an actual model `repo_id`, full `code_revision`, `dataset_revisions`, `random_seeds`, `configuration` and `evaluation` paths; every checkpoint must declare `roles: [best]`, `[final]`, `[recovery]`, or a combination. Retain best/final and needed recovery state, not every epoch. Reuse the same upload command with the model asset ID. Prefer safe weight formats; this tool never deserializes uploaded weights.
 
 ## Local retention, Git history and cache cleanup
 
 `git rm --cached` removed assets from tracking **without deleting local originals**. The old Git history still contains data; new users should use a shallow clone. `reports/storage/untracked-assets.json` records the retained local paths. No shared history rewrite, force push, shared-cache deletion, Release deletion or original-file deletion was performed. See [migration/cleanup gates](reports/storage/migration.md).
 
-After a pinned remote download and checksum verification, an independent backup, and explicit approval for the particular original files, local originals can be considered for removal. **No originals are eligible under the current incomplete HF migration.** A dry run of dependency/cache tools is not proof of backup.
+After a pinned remote download and checksum verification, an independent backup, and explicit approval for the particular original files, local originals can be considered for removal. 65 retained files (44,214,959 bytes) match both the verified private HF assets and the legacy GitHub backup. See the migration report for the cleanup boundary. Deletion of local originals requires approval.
 
 For an explicitly approved disposable **project-owned remote cache**, inspect then interactively choose HF revisions; do not point this at a shared cache:
 

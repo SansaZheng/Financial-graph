@@ -30,5 +30,10 @@
         "hf-filesystem-verified-range-fallback"
       ]
     }
-  ]
+  ],
+  "visibility_check": {
+    "authenticated_private_flag": true,
+    "anonymous_http_status": 401,
+    "verified_asset_file_count": 69
+  }
 }
