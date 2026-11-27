@@ -1,0 +1,73 @@
+{
+  "url": "https://github.com/SansaZheng/Financial-graph/releases/tag/raw-stocks-bars-1m-59bc5acc",
+  "draft": false,
+  "assets": [
+    {
+      "name": "manifest.json",
+      "bytes": 4163,
+      "digest": "sha256:f60e513ec5cc2d3d7c60395cf50fd4931240173e087b29eced56069e78135229"
+    },
+    {
+      "name": "SOURCE_README.md",
+      "bytes": 1272,
+      "digest": "sha256:b446f960c92fc6579d43c1df2cfb23be598e8ffbe1ec820b06a791efc1bbf2f7"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part000",
+      "bytes": 1073741824,
+      "digest": "sha256:18fbb162c2eb63dad48195786b4028fdcb7d8c326611b4efbda33d8a84de2ac8"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part001",
+      "bytes": 1073741824,
+      "digest": "sha256:83c08c007fadcc22e122f2c94ca08cd975608112de8c66e1ec7fce6285806312"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part002",
+      "bytes": 1073741824,
+      "digest": "sha256:b485635b7eee8702e84f409839e5c454669c04be3e031034f794e5e8bf05ff92"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part003",
+      "bytes": 1073741824,
+      "digest": "sha256:83e763f4f1550181abd51971a5f31074cc68976cd32a0e792ea03454dd62459c"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part004",
+      "bytes": 1073741824,
+      "digest": "sha256:06b1eb396a8b62877f7f4ba976570c66e37cedbc269283573176fb545c8a1202"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part005",
+      "bytes": 1073741824,
+      "digest": "sha256:856c12362732fc2b04e52c3b7146378fbb19d9a5b08be2faa92db512e1935e8d"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part006",
+      "bytes": 1073741824,
+      "digest": "sha256:8d52e0e6a11f7e190690d046c5fbd6f4d8d6f37eb5a9bda482c436c39784f4d2"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part007",
+      "bytes": 1073741824,
+      "digest": "sha256:62d70d4f4e19a44ecd98c9527dc71002f980b10c53287d4538891acead0d7c0a"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part008",
+      "bytes": 1073741824,
+      "digest": "sha256:5131c139c8401caed1e249273726d4b5c44983d764cabfbea46ff2fb9a2b626c"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part009",
+      "bytes": 1073741824,
+      "digest": "sha256:492066ae1e01e3b5037c6cb1c19bb4d99e1982dc0468baccc0df59372fb6dd91"
+    },
+    {
+      "name": "stocks_bars_1m.parquet.part010",
+      "bytes": 189848945,
+      "digest": "sha256:97e91343da7babfd2390b84eedcfa479c7e99b41c5ad1b10137dd3b6babba650"
+    }
+  ],
+  "checked_on": "2026-11-27",
+  "verification": "API-reported digests and sizes; no raw Mac download"
+}

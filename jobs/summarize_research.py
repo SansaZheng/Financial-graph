@@ -1,5 +1,5 @@
 """Verify downloaded CQ outcomes and build bilingual evidence, without training."""
-import argparse, hashlib, json
+import argparse, hashlib, json, os
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -8,7 +8,16 @@ from src.ntd_evaluate import metrics
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--root',default='evidence/cq');ap.add_argument('--out',default='paper/workflow');a=ap.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=True)
+    data_root=os.getenv('FG_DATA_ROOT')
+    ap=argparse.ArgumentParser();ap.add_argument('--root',default=str(Path(data_root)/'completed-experiments/experiments') if data_root else 'evidence/cq');ap.add_argument('--inputs-root',default=str(Path(data_root)/'derived-inputs/derived') if data_root else None);ap.add_argument('--out',default=str(Path(os.getenv('FG_RUN_ROOT','paper/workflow'))/'summary') if os.getenv('FG_RUN_ROOT') else 'paper/workflow');a=ap.parse_args();out=Path(a.out)
+    if not Path(a.root).is_dir() or not list(Path(a.root).rglob('metrics.json')):raise ValueError('Fetch the pinned completed-experiments asset before summarizing; report unchanged')
+    out.mkdir(parents=True,exist_ok=True)
+    def input_path(path):
+        if a.inputs_root:
+            name=Path(path).name
+            if name not in ['forecast_data.csv','daily_returns.csv','hourly.csv']:raise ValueError('Unrecognized historical input path')
+            return Path(a.inputs_root)/name
+        return Path(path)
     records=[];runs=[];families={}
     for metric_path in sorted(Path(a.root).rglob('metrics.json')):
         folder=metric_path.parent
@@ -30,10 +39,10 @@ def main():
             checked[model]=actual
         input_checks={}
         for path,expected in m.get('inputs',{}).items():
-            assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==expected
+            assert hashlib.sha256(input_path(path).read_bytes()).hexdigest()==expected
             input_checks[path]=True
         if 'input_sha256' in m:
-            path=Path('evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv')
+            path=input_path('evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv')
             assert hashlib.sha256(path.read_bytes()).hexdigest()==m['input_sha256'];input_checks[str(path)]=True
         timing=None
         if (folder/'model_input.csv').exists():
@@ -49,8 +58,9 @@ def main():
             for path,expected in json.loads((folder/'source-hashes.json').read_text()).items():
                 b=subprocess.check_output(['git','show',revision+':'+path]);assert hashlib.sha256(b).hexdigest()==expected;source_checks[path]=True
         manifest=[{'path':str(p.relative_to(folder)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(folder.rglob('*')) if p.is_file() and p.name not in ['manifest.json','local-verification.json']]
-        (folder/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-        (folder/'local-verification.json').write_text(json.dumps({'status':'verified','metrics_recomputed':checked,'source_hashes_match_pinned_commit':source_checks,'source_verification':'runtime hashes and CQ pin' if source_checks else 'CQ pinned commit only; no runtime source hash output','input_hashes_checked':input_checks,'timing_audit':timing,'rows':len(f)},indent=2)+'\n')
+        receipt_dir=out/'verification'/run_name;receipt_dir.mkdir(parents=True,exist_ok=True)
+        (receipt_dir/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        (receipt_dir/'local-verification.json').write_text(json.dumps({'status':'verified','metrics_recomputed':checked,'source_hashes_match_pinned_commit':source_checks,'source_verification':'runtime hashes and CQ pin' if source_checks else 'CQ pinned commit only; no runtime source hash output','input_hashes_checked':input_checks,'timing_audit':timing,'rows':len(f)},indent=2)+'\n')
         runs.append({'job':run_name,'protocol':m.get('protocol','cgi-001'),'seed':m.get('seed'),'seconds':m.get('elapsed_seconds'),'rows':len(f)})
         families.setdefault(m.get('protocol','cgi-001'),[]).append((run_name,m,f))
     pd.DataFrame(records).to_csv(out/'results.csv',index=False)
