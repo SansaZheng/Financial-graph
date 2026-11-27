@@ -1,0 +1,33 @@
+{
+  "client_version": "0.36.0",
+  "trusted_ca_path": "/etc/ssl/certs/ca-certificates.crt",
+  "expected": {
+    "path": "README.md",
+    "local_path": "README.md",
+    "bytes": 1272,
+    "sha256": "b446f960c92fc6579d43c1df2cfb23be598e8ffbe1ec820b06a791efc1bbf2f7"
+  },
+  "old_cache": [
+    {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "first16_hex": ""
+    }
+  ],
+  "api": {
+    "sha": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+    "file": [
+      {
+        "path": "README.md",
+        "size": 1272,
+        "blob_id": "c67a8ac1d8e6003abe0a32d16c3032025351b83c"
+      }
+    ]
+  },
+  "fresh": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "first16_hex": ""
+  },
+  "fresh_match": false
+}
