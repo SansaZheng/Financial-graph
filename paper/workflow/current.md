@@ -8,3 +8,7 @@ All current scientific jobs are terminal. Shared-slot Kaggle batch was cancelled
 Full CQ fetch succeeded:38 files, approximately7.5MB compressed. A redundant read-only c220 archive-transfer attempt j-1125-6c7e6f failed exit1; no retry needed, no effect on scientific output. Failure status retained.
 Next research decision: next-study-decision.md. No new experiments beyond this frozen study are claimed complete.
 Missing iCloud investigation discontinued. No paid compute, no original source deletion, no other projects modified.
+
+## Storage migration — 2026-11-27
+
+Current Git index no longer carries datasets or prediction tables. See ../../assets/manifest.json and ../../reports/storage/migration.md. Compact numerical evidence is under ../../reports/evaluations; original run paths in historical reports refer to preserved legacy artifacts, not files in a fresh checkout. Derived private HF uploads are pending authentication and included-quota confirmation.

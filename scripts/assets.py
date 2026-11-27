@@ -87,6 +87,18 @@ def remote_guard(allow_local):
         raise ValueError('Mac downloads/streaming disabled by default; use remote CQ execution or explicit --allow-local')
 
 
+def configure_tls():
+    # Use administrator-installed OS roots, never disable TLS or trust a downloaded certificate.
+    bundle=os.getenv('FG_CA_BUNDLE') or os.getenv('REQUESTS_CA_BUNDLE')
+    if not bundle and platform.system()=='Linux' and Path('/etc/ssl/certs/ca-certificates.crt').is_file():
+        bundle='/etc/ssl/certs/ca-certificates.crt'
+    if bundle:
+        if not Path(bundle).is_file(): raise ValueError('Configured CA bundle does not exist')
+        os.environ['REQUESTS_CA_BUNDLE']=bundle
+        os.environ.setdefault('SSL_CERT_FILE',bundle)
+    return bundle
+
+
 def configure_cache(cache):
     if not cache: raise ValueError('--cache-root or FG_CACHE_ROOT required; use a project-owned remote path')
     p = Path(cache).expanduser().resolve(); p.mkdir(parents=True, exist_ok=True)
@@ -240,7 +252,7 @@ def main():
         s=sub.add_parser(name);s.add_argument('--asset',required=True);s.add_argument('--file',action='append');s.add_argument('--data-root',default=os.getenv('FG_DATA_ROOT'));s.add_argument('--allow-local',action='store_true')
         if name=='stream':s.add_argument('--rows',type=int,default=5);s.add_argument('--columns',nargs='+');s.add_argument('--max-row-group-mb',type=int,default=128)
     u=sub.add_parser('upload');u.add_argument('--asset',required=True);u.add_argument('--source-root',required=True);u.add_argument('--repo-id',required=True);u.add_argument('--quota-receipt',required=True);u.add_argument('--large',action='store_true')
-    args=p.parse_args();m=load_manifest(args.manifest)
+    args=p.parse_args();configure_tls();m=load_manifest(args.manifest)
     if args.command=='validate':result={'status':'valid','assets':[{k:a[k] for k in ['id','status','repo_type','revision']} for a in m['assets']]}
     elif args.command=='account':result=account_audit()
     else:

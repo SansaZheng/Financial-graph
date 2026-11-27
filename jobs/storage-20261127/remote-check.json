@@ -1,0 +1,77 @@
+{
+  "name": "FinancialGraph clean remote pinned HF selective-stream workflow check",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "954e032d204203c3462337ff60aa42edb5e7713e"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "jobs/remote-assets-check.sh"
+  ],
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "954e032d204203c3462337ff60aa42edb5e7713e"
+  },
+  "depends_on": [
+    "j-1127-bbe6f6"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127",
+    "expect": [
+      {
+        "path": "validation-report.json",
+        "contains": "passed-public-workflow"
+      },
+      {
+        "path": "tests.txt",
+        "contains": "21 passed"
+      },
+      {
+        "path": "hf-integrity.json",
+        "contains": "verified"
+      },
+      {
+        "path": "git-policy.txt",
+        "contains": "PASS"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 15
+    }
+  }
+}

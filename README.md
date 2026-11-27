@@ -37,12 +37,15 @@ python -m pip install --no-cache-dir -r requirements-streaming.txt
 Use the official interactive login **in your own remote terminal**, not in a CQ JSON spec, chat message or Git file:
 
 ```bash
+umask 077
+# On the lab hosts, use their administrator-installed trusted roots:
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 hf auth login
 hf auth whoami
 python scripts/assets.py account
 ```
 
-`HF_TOKEN` can alternatively be supplied by an authorized runtime secret manager, never as a literal in scripts/specs. `HF_HOME`/`HF_TOKEN_PATH` may point to a protected existing login; do not copy tokens into this repository. `FG_CACHE_ROOT` configures Hub/Xet caches without changing the authentication location. The account command lists accessible own/org dataset/model repositories so they can be reused. Fine-grained token permissions are ultimately verified by the actual API operations.
+`HF_TOKEN` can alternatively be supplied by an authorized runtime secret manager, never as a literal in scripts/specs. `HF_HOME`/`HF_TOKEN_PATH` may point to a protected existing login; do not copy tokens into this repository. `FG_CACHE_ROOT` configures Hub/Xet caches without changing the authentication location. Linux requests use the administrator-installed system CA bundle by default; `FG_CA_BUNDLE` selects an explicitly trusted alternative. TLS verification is never disabled. The account command lists accessible own/org dataset/model repositories so they can be reused. Fine-grained token permissions are ultimately verified by the actual API operations.
 
 The pinned `huggingface_hub==0.36.0` client exposes no account-wide storage-quota method. Inspect HF billing/storage settings and record available **included, unbilled** headroom in a private runtime receipt (do not commit it):
 

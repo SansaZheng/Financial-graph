@@ -553,7 +553,7 @@
     }
   ],
   "models": {
-    "status": "no-saved-checkpoints-observed; remote inventory pending",
+    "status": "no-saved-checkpoints-in-local-checkout-or-c225-project; strict-c220-inventory-pending",
     "selected": []
   },
   "privacy": "New destinations private; existing upstream public source is read-only. No license changes.",
