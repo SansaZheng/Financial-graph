@@ -2,9 +2,11 @@
 
 004-intraday-audit | Codex + CQ | prepared 2026-11-28T04:20:40+08:00
 
-CQ job `j-1128-890d91` submitted at 2026-11-28T04:21:55+08:00. Verify the pinned minute-bar file and audit a 2024-only, causally aligned hourly sample. Use metadata for later-date inventory. Venue unspecified, CCF A quality goal. Topic: incremental topology information for market volatility forecasting. See [active task](prompts/004-intraday-audit.md).
+Full source audit `j-1128-99bea1` awaits a c220 CPU slot. It verifies the 10.93 GB archive by SHA-256 and checks all source symbols in five 2024 sessions. CQ is reserving the last eight c220 CPU slots for GPU jobs. See the [task](prompts/004-intraday-audit.md).
 
-Parallel timing pilot `004b-intraday-bounded` (CQ `j-1128-cbd585`): read up to 40 projected HF row groups on c225 while c220 awaits CPU. See [pilot task](prompts/004b-intraday-bounded.md).
+The bounded HF timing pilot `j-1128-cbd585` completed on c225. It returned 17,550 unique valid bars across nine requested equities. All 25 decisions had nine eligible nodes. SPY was absent in the pilot, leaving zero forward SPY realized-variance labels. Raw metadata spans through 2026-07-07 UTC. Later-date observations still need qualification. See the [pilot report](../../reports/intraday-audit/bounded-pilot.json).
+
+The five-day slice of the archived NTD target has hourly New York cutoffs at 10:31, 11:31, 12:31, 13:31 and 14:31. None match the exact-hour timing pilot. Twenty rows have enough regular-session history for the new lagged return. Align the development pipeline to the archived cutoffs and verify the assembled panel before fitting any model. See the [alignment receipt](../../reports/intraday-audit/legacy-label-alignment.json).
 
 ## Completed work
 
@@ -12,7 +14,7 @@ Parallel timing pilot `004b-intraday-bounded` (CQ `j-1128-cbd585`): read up to 4
 
 Completed and independently verified: legacy CGI, three modern RG-ResMoE/MLP seeds, and NTD three-seed batch j-1125-0c3a7c. Each full run has3644 matched forecasts for2022–2024. All NTD input/code hashes and causal-time output checks passed.
 Result: NTD loses to validation-selected strong control by0.404–0.507% MSE; gates fall back in all years. No superiority or CCF A readiness established. See experiment-report.md.
-All current scientific jobs are terminal. Shared-slot Kaggle batch was cancelled before launch; qualified portable c225 environment completed actual predictions. Core version differences from modern Kaggle runs are documented.
+All NTD-002 and modern comparison jobs are terminal. Shared-slot Kaggle batch was cancelled before launch; qualified portable c225 environment completed actual predictions. Core version differences from modern Kaggle runs are documented.
 Full CQ fetch succeeded:38 files, approximately7.5MB compressed. A redundant read-only c220 archive-transfer attempt j-1125-6c7e6f failed exit1; no retry needed, no effect on scientific output. Failure status retained.
 Transition rationale: next-study-decision.md.
 Missing iCloud investigation discontinued. No paid compute, remote originals preserved, no other projects modified.

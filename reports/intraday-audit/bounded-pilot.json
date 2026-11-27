@@ -1,0 +1,324 @@
+{
+  "status": "coverage-issues",
+  "code_commit": "5e07163c24a4e545a77a096b33a6f6903f7955b6",
+  "source": {
+    "repo_id": "CryptoSpartan/stocks_bars_1m",
+    "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+    "path": "stocks_bars_1m.parquet",
+    "bytes": 10927267185,
+    "sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+    "whole_file_verified": false
+  },
+  "versions": {
+    "pyarrow": "18.1.0",
+    "pandas": "2.2.3",
+    "numpy": "1.26.4"
+  },
+  "coverage": {
+    "rows": 604208214,
+    "row_groups": 4918,
+    "groups_with_time_bounds": 4918,
+    "first_utc": "2016-01-01T00:00:00+00:00",
+    "last_utc": "2026-07-07T23:33:00+00:00",
+    "spy_only_group_first_utc": null,
+    "spy_only_group_last_utc": null,
+    "later_year_metadata": {
+      "2025": {
+        "row_groups_overlapping_year": 1448,
+        "spy_only_groups_overlapping_year": 0
+      },
+      "2026": {
+        "row_groups_overlapping_year": 909,
+        "spy_only_groups_overlapping_year": 0
+      }
+    }
+  },
+  "sample": {
+    "regular_session_rows": 17550,
+    "invalid_rows": 0,
+    "rows_with_duplicate_keys": 0,
+    "retained_rows": 17550,
+    "observed_symbols": 9,
+    "requested_symbols": [
+      "SPY",
+      "AAPL",
+      "AMZN",
+      "JNJ",
+      "JPM",
+      "MSFT",
+      "NVDA",
+      "PG",
+      "WMT",
+      "XOM"
+    ],
+    "selected_row_groups": 28,
+    "projected_column_compressed_bytes": 16567915,
+    "sessions": [
+      "2024-01-08",
+      "2024-01-09",
+      "2024-01-10",
+      "2024-01-11",
+      "2024-01-12"
+    ],
+    "timezone": "America/New_York",
+    "candidate_forecasts": 25,
+    "valid_forecasts": 0,
+    "hourly_checks": [
+      {
+        "decision_utc": "2024-01-08T16:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-08T14:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-08T15:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-08T15:59:00+00:00",
+        "target_end_utc": "2024-01-08T17:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-08T17:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-08T15:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-08T16:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-08T16:59:00+00:00",
+        "target_end_utc": "2024-01-08T18:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-08T18:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-08T16:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-08T17:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-08T17:59:00+00:00",
+        "target_end_utc": "2024-01-08T19:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-08T19:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-08T17:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-08T18:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-08T18:59:00+00:00",
+        "target_end_utc": "2024-01-08T20:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-08T20:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-08T18:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-08T19:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-08T19:59:00+00:00",
+        "target_end_utc": "2024-01-08T21:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-09T16:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-09T14:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-09T15:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-09T15:59:00+00:00",
+        "target_end_utc": "2024-01-09T17:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-09T17:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-09T15:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-09T16:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-09T16:59:00+00:00",
+        "target_end_utc": "2024-01-09T18:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-09T18:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-09T16:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-09T17:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-09T17:59:00+00:00",
+        "target_end_utc": "2024-01-09T19:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-09T19:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-09T17:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-09T18:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-09T18:59:00+00:00",
+        "target_end_utc": "2024-01-09T20:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-09T20:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-09T18:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-09T19:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-09T19:59:00+00:00",
+        "target_end_utc": "2024-01-09T21:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-10T16:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-10T14:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-10T15:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-10T15:59:00+00:00",
+        "target_end_utc": "2024-01-10T17:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-10T17:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-10T15:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-10T16:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-10T16:59:00+00:00",
+        "target_end_utc": "2024-01-10T18:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-10T18:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-10T16:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-10T17:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-10T17:59:00+00:00",
+        "target_end_utc": "2024-01-10T19:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-10T19:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-10T17:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-10T18:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-10T18:59:00+00:00",
+        "target_end_utc": "2024-01-10T20:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-10T20:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-10T18:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-10T19:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-10T19:59:00+00:00",
+        "target_end_utc": "2024-01-10T21:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-11T16:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-11T14:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-11T15:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-11T15:59:00+00:00",
+        "target_end_utc": "2024-01-11T17:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-11T17:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-11T15:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-11T16:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-11T16:59:00+00:00",
+        "target_end_utc": "2024-01-11T18:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-11T18:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-11T16:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-11T17:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-11T17:59:00+00:00",
+        "target_end_utc": "2024-01-11T19:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-11T19:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-11T17:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-11T18:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-11T18:59:00+00:00",
+        "target_end_utc": "2024-01-11T20:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-11T20:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-11T18:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-11T19:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-11T19:59:00+00:00",
+        "target_end_utc": "2024-01-11T21:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-12T16:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-12T14:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-12T15:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-12T15:59:00+00:00",
+        "target_end_utc": "2024-01-12T17:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-12T17:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-12T15:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-12T16:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-12T16:59:00+00:00",
+        "target_end_utc": "2024-01-12T18:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-12T18:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-12T16:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-12T17:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-12T17:59:00+00:00",
+        "target_end_utc": "2024-01-12T19:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-12T19:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-12T17:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-12T18:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-12T18:59:00+00:00",
+        "target_end_utc": "2024-01-12T20:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      },
+      {
+        "decision_utc": "2024-01-12T20:00:00+00:00",
+        "feature_price_bar_start_utc": "2024-01-12T18:58:00+00:00",
+        "feature_price_bar_end_utc": "2024-01-12T19:58:00+00:00",
+        "last_feature_bar_closed_utc": "2024-01-12T19:59:00+00:00",
+        "target_end_utc": "2024-01-12T21:00:00+00:00",
+        "eligible_nodes": 9,
+        "missing_spy_bars": 61,
+        "target_available": false
+      }
+    ]
+  },
+  "limits": [
+    "Archived bars do not record the arrival time of late trade corrections.",
+    "Causal membership within this archive does not establish an unbiased source universe.",
+    "Later-year row-group bounds do not establish exact coverage or a valid held-out panel."
+  ]
+}

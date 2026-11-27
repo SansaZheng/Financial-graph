@@ -17,7 +17,9 @@ A next protocol should separate these mechanisms, rather than add neural capacit
 
 Freeze one candidate that uses equally lagged returns and a graph estimated on earlier sessions. Measure the energy of propagated shocks relative to permutations within bins of past node strength. The bins and random seeds must use only information available at each decision. Match the node-only, graph-density and rewired controls on inputs, samples, learner capacity and validation budget. Re-select the strongest competing model on validation under the new target definition. Compare paired MSE and day-block intervals on an evaluation window selected in advance. An informative result must show an improvement over the strongest forecast control and distinguish genuine graph alignment from the matched nulls.
 
-The development label in the timing pilot is forward one-hour SPY realized variance. It differs from the historical NTD target. Rebuild and compare every baseline on the new label before comparing performance. Treat the 2025–2026 metadata as a source inventory. Confirm source-universe construction, arrival timing and available sessions before treating the later-date panel as independent evidence.
+The timing pilot's forward SPY variance target could not be constructed in its five-session slice. For the next development comparison, align nodes to the archived NTD decision clock and qualify the finite historical labels with exact one-hour horizons. The 11:31–14:31 New York cutoffs leave room for the 60-minute lookback and availability buffer. Exclude the 10:31 cutoff from every model in this matched protocol. Use the same intersection of valid feature and label rows for all controls. Re-estimate the baseline MSE on those rows before measuring any improvement.
+
+A later-date holdout requires a documented forward-variance source and defined universe. Verify the calendar, as-of membership, arrival timing and coverage before selecting dates. Keep the 2025–2026 prices out of method selection.
 
 ## 中文结论
 本轮结果不支持“NTD已超过最强对照”。下一阶段的重点应是补足因果时间对齐、节点强度条件对照和独立数据，而不是在已看过的年份不断调参争取一个更好数字。这是待执行的研究计划，不是已经完成的实验或CCF A贡献证明。

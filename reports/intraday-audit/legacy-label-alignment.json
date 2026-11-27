@@ -1,0 +1,27 @@
+{
+  "pilot_job": "j-1128-cbd585",
+  "host": "c225",
+  "status": "legacy_label_clock_mismatch",
+  "derived_repo": "Sansa005/financial-graph-assets",
+  "derived_revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49",
+  "path": "derived/forecast_data.csv",
+  "sha256": "a3ff9029edcf90cd382a45b4662b650971cdab914a2295868ab7552c8cb6f681",
+  "pilot_candidate_dates": [
+    "2024-01-08",
+    "2024-01-09",
+    "2024-01-10",
+    "2024-01-11",
+    "2024-01-12"
+  ],
+  "pilot_candidate_timestamps": 25,
+  "exact_time_and_one_hour_label_matches": 0,
+  "finite_legacy_one_hour_labels_by_new_york_cutoff": {
+    "10:31": 5,
+    "11:31": 5,
+    "12:31": 5,
+    "13:31": 5,
+    "14:31": 5
+  },
+  "labels_with_enough_regular_session_history_for_new_feature": 20,
+  "scope": "Timestamp and availability check. No model scores or later-date labels were computed."
+}
