@@ -1,6 +1,10 @@
 # Current research stage
 
-004-intraday-audit | Codex + CQ | prepared 2026-11-28T04:20:40+08:00
+005-intraday-matched | Codex + CQ | requested 2026-11-28
+
+Build the matched 11:31–14:31 New York panel and compare conditional-null graph diffusion with the strongest validation-selected control. See [active task](prompts/005-intraday-matched.md). Venue unspecified. Topic: incremental topology for market volatility forecasting.
+
+## Earlier data qualification
 
 Full source audit `j-1128-99bea1` awaits a c220 CPU slot. It verifies the 10.93 GB archive by SHA-256 and checks all source symbols in five 2024 sessions. CQ is reserving the last eight c220 CPU slots for GPU jobs. See the [task](prompts/004-intraday-audit.md).
 

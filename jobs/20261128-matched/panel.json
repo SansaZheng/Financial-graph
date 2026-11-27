@@ -1,0 +1,63 @@
+{
+  "name": "FinancialGraph 005 matched intraday minute endpoints",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "ad31c0ae9151ee81334ff08912c75ecc7aa875c8"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "-c",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONDONTWRITEBYTECODE=1\nroot=/data3/sudingli/cq-home/financial-graph/results\nrun=\"$root/intraday-matched-005/panel-v1\"\nlabels=\"$root/asset-staging-20261127/source/evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv\"\nmkdir -p \"$run\"\n\"$FG_RUNTIME_PYTHON\" -m src.intraday_panel --labels \"$labels\" --out \"$run\" --workers 6\ncp \"$run/panel-audit.json\" \"$run/progress.txt\" \"$CQ_OUTPUT_DIR/\"\n"
+  ],
+  "env": {
+    "FG_RUNTIME_PYTHON": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python"
+  },
+  "depends_on": [
+    "j-1128-cbd585",
+    "j-1128-9e92e8"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 3
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/intraday-matched-005/panel-receipt-v1",
+    "expect": [
+      {
+        "path": "panel-audit.json",
+        "contains": "\"status\": \"built\""
+      }
+    ]
+  }
+}
