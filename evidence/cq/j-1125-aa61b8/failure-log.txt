@@ -1,4 +1,0 @@
-==> stdout (reported 16:29:44) <==
-
-==> stderr (reported 16:29:44) <==
-fatal: not a git repository (or any of the parent directories): .git

@@ -15,7 +15,7 @@ import walk_forward as wf
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--data',required=True);ap.add_argument('--out',default=os.environ.get('CQ_OUTPUT_DIR'));ap.add_argument('--smoke',action='store_true');ap.add_argument('--seed',type=int,default=471);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--data',required=True);ap.add_argument('--daily',default=os.getenv('FG_DAILY_PATH','evidence/cq/j-1123-b41d82/root0/data/daily_returns.csv'));ap.add_argument('--out',default=os.environ.get('CQ_OUTPUT_DIR'));ap.add_argument('--smoke',action='store_true');ap.add_argument('--seed',type=int,default=471);a=ap.parse_args()
     torch.set_num_threads(2);torch.set_num_interop_threads(1)
     author.DEVICE=torch.device('cpu');wf.DEVICE=torch.device('cpu')
     author.MAX_EPOCHS=2000;author.CHECK_EVERY=5;author.PATIENCE_CHECKS=10
@@ -23,7 +23,7 @@ def main():
     def log(s):
         print(s,flush=True)
         with (out/'progress.txt').open('a') as f:f.write(s+'\n')
-    daily_path='evidence/cq/j-1123-b41d82/root0/data/daily_returns.csv'
+    daily_path=a.daily
     daily=pd.read_csv(daily_path,index_col=0,parse_dates=True)
     if a.smoke:daily=daily[daily.index.year<=2022]
     features=build_features(daily,seed=471,progress=log)

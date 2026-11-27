@@ -1,0 +1,23 @@
+{
+  "roots": [
+    {
+      "path": "/home/sudingli/cq-home/financial-graph",
+      "exists": true,
+      "real_path": "/archive/sudingli/cq-home/financial-graph",
+      "free_bytes": 6697637593088,
+      "scoped_bytes": 204,
+      "large_files": [],
+      "model_files": []
+    },
+    {
+      "path": "/data/zyy/FinancialAD/gae-instability-v2",
+      "exists": false
+    }
+  ],
+  "hf": {
+    "client_installed": false,
+    "credential_present": false
+  },
+  "actual_host": "c227",
+  "cq_job": "j-1127-2f2c3a"
+}

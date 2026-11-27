@@ -1,0 +1,4 @@
+# Official client; supports upload_large_folder resumable task metadata.
+huggingface_hub==0.36.0
+# System Python on this Mac uses LibreSSL; keep tooling compatible.
+urllib3==1.26.20

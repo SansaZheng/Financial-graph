@@ -1,9 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.13.18, pytest-8.3.4, pluggy-1.7.0
-rootdir: /tmp/cq-src
-plugins: anyio-4.15.1, langsmith-0.14.12, platformdirs-4.13.5, typeguard-4.6.0
-collected 3 items
-
-tests/test_cgi.py ...                                                    [100%]
-
-============================== 3 passed in 2.12s ===============================

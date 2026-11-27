@@ -1,0 +1,2 @@
+# Optional: bounded Parquet range reads on remote hosts only.
+pyarrow==18.1.0

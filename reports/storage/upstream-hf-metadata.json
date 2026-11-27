@@ -1,0 +1,35 @@
+{
+  "repo_id": "CryptoSpartan/stocks_bars_1m",
+  "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+  "private": false,
+  "card": {
+    "license": "mit",
+    "size_categories": [
+      "100M<n<1B"
+    ],
+    "tags": [
+      "stocks"
+    ]
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 2461,
+      "lfs": null
+    },
+    {
+      "path": "README.md",
+      "size": 1272,
+      "lfs": null
+    },
+    {
+      "path": "stocks_bars_1m.parquet",
+      "size": 10927267185,
+      "lfs": {
+        "size": 10927267185,
+        "sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+        "pointer_size": 136
+      }
+    }
+  ]
+}

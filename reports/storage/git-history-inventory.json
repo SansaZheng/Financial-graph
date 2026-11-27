@@ -1,0 +1,102 @@
+{
+  "unique_blob_bytes": 55830190,
+  "large_blobs_over_500KB": [
+    {
+      "oid": "2338eb07a5cdffdd497bbef0bc2a48d24f30a323",
+      "bytes": 3827444,
+      "path": "evidence/cq/j-1123-b41d82/root0/data/daily_returns.csv"
+    },
+    {
+      "oid": "f62bbdb02364b2b171f188908e8ac1d5baf766c5",
+      "bytes": 709217,
+      "path": "evidence/cq/j-1123-b41d82/root0/data/hourly.csv"
+    },
+    {
+      "oid": "d082a8835bc04ff7d4dc17eeb4b09a487ee3a922",
+      "bytes": 3001635,
+      "path": "evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv"
+    },
+    {
+      "oid": "6d6f7f6047802ffbb9b6551f7507104a277349db",
+      "bytes": 1115287,
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/daily_graph_features.csv"
+    },
+    {
+      "oid": "b1ff6eb5c4c4506643b410226cbbce130929c60f",
+      "bytes": 8350314,
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/model_input.csv"
+    },
+    {
+      "oid": "13d1f94e695beb896cf8f37f8868182bb9949e91",
+      "bytes": 1126040,
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/predictions.csv"
+    },
+    {
+      "oid": "2fa2667f7b2c8c37e3150270cb3f0da74bbe0227",
+      "bytes": 1048218,
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/validation_predictions.csv"
+    },
+    {
+      "oid": "cf0ce7a6d9302127ebe8dc29e8ed4a86a8708e56",
+      "bytes": 1115766,
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/daily_graph_features.csv"
+    },
+    {
+      "oid": "cc8b3eaa012da6a88c3edb4268499dc7a6485ce5",
+      "bytes": 8352525,
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/model_input.csv"
+    },
+    {
+      "oid": "68fa8c145436343a8c62fcbf472113fcb254a672",
+      "bytes": 1125951,
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/predictions.csv"
+    },
+    {
+      "oid": "1553785313418bd3d86938f9abd8e5c45095936b",
+      "bytes": 1048128,
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/validation_predictions.csv"
+    },
+    {
+      "oid": "be8f5424653fbc5bb64299c1653d961f5f223209",
+      "bytes": 1115589,
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/daily_graph_features.csv"
+    },
+    {
+      "oid": "8bf9717fe936caec17f7650077eb777e8239bf7c",
+      "bytes": 8351461,
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/model_input.csv"
+    },
+    {
+      "oid": "de6a89dc58d63ed803264cf79752104a58491aa1",
+      "bytes": 1125947,
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/predictions.csv"
+    },
+    {
+      "oid": "871522c65f5afd19500ba7e04efe89e9dd176896",
+      "bytes": 1048064,
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/validation_predictions.csv"
+    },
+    {
+      "oid": "d5c68e186572025640a7ffa80f6e2a33bb22fa8a",
+      "bytes": 791448,
+      "path": "evidence/cq/j-1125-4850c7/daily_graph_features.csv"
+    },
+    {
+      "oid": "f4c47ebc07ebc72a273db70ef6a7198b2118f39d",
+      "bytes": 8295918,
+      "path": "evidence/cq/j-1125-4850c7/model_input.csv"
+    },
+    {
+      "oid": "f3c2cbe9f12c97920ed2280aa0fa73af029c8dc4",
+      "bytes": 599397,
+      "path": "evidence/cq/j-1125-dd9d4b/predictions.csv"
+    },
+    {
+      "oid": "7907b063b8ab15a540cafb2a9c974c401b263581",
+      "bytes": 790355,
+      "path": "paper/workflow/aligned-ensemble-predictions.csv"
+    }
+  ],
+  "history_rewritten": false,
+  "force_push_used": false
+}

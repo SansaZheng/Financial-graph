@@ -1,0 +1,15 @@
+{
+  "code_revision": "e71914d3e75fda53fb89e14efb2a789604fe4e6b",
+  "source_evidence_commit": "616f99b77efb84537ddbf3229c25661854d4827e",
+  "upstream_repo": "CryptoSpartan/stocks_bars_1m",
+  "upstream_revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+  "source_license_metadata": "mit",
+  "license_change": false,
+  "preprocessing_status": "Legacy aggregates preserved; full original minute transformation and universe curation not reconstructed",
+  "split_definition": "configs/rolling-development.json",
+  "seeds": [
+    471,
+    472,
+    473
+  ]
+}

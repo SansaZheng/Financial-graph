@@ -1,0 +1,13 @@
+{
+  "protocol": "ntd-002",
+  "evidence_status": "development-only; previously observed years",
+  "training_start_year": 2018,
+  "evaluation_years": [2022, 2023, 2024],
+  "validation": "year immediately preceding each evaluation year",
+  "training": "all eligible rows before the validation year",
+  "refit": "training plus validation after hyperparameters are selected",
+  "horizon": "next hour within the same New York trading session",
+  "seeds": [471, 472, 473],
+  "eligibility": "src.evaluate.load and src.topology.attach_features; strict timestamp and finite-value checks",
+  "warning": "Do not relabel these years as independent confirmation. Upstream minute aggregation/universe selection is not fully reconstructed."
+}

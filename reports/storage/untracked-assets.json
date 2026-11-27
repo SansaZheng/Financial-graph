@@ -1,0 +1,794 @@
+{
+  "action": "removed from index only; local originals retained",
+  "bytes": 55478858,
+  "files": [
+    {
+      "path": "evidence/cq/j-1123-923158/freeze.txt",
+      "bytes": 318
+    },
+    {
+      "path": "evidence/cq/j-1123-923158/progress.txt",
+      "bytes": 62
+    },
+    {
+      "path": "evidence/cq/j-1123-923158/tests.txt",
+      "bytes": 407
+    },
+    {
+      "path": "evidence/cq/j-1123-9d87e1/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1123-9d87e1/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1123-9d87e1/manifest.json",
+      "bytes": 544
+    },
+    {
+      "path": "evidence/cq/j-1123-9d87e1/progress.txt",
+      "bytes": 45
+    },
+    {
+      "path": "evidence/cq/j-1123-9d87e1/tests.txt",
+      "bytes": 423
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/audit.json",
+      "bytes": 1376
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/progress.txt",
+      "bytes": 20
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/root0/data/daily_returns.csv",
+      "bytes": 3827444
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/root0/data/hourly.csv",
+      "bytes": 709217
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/root0/results/expanded_metrics.json",
+      "bytes": 4904
+    },
+    {
+      "path": "evidence/cq/j-1123-b41d82/root0/results/forecast_data.csv",
+      "bytes": 3001635
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/progress.txt",
+      "bytes": 39
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-09dfa8/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/archive-manifest.json",
+      "bytes": 6661
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/cq-status.json",
+      "bytes": 7205
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/freeze.txt",
+      "bytes": 331
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/progress.txt",
+      "bytes": 111
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/daily_graph_features.csv",
+      "bytes": 1115287
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/freeze.txt",
+      "bytes": 331
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/local-verification.json",
+      "bytes": 3388
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/manifest.json",
+      "bytes": 1558
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/metrics.json",
+      "bytes": 18234
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/model_input.csv",
+      "bytes": 8350314
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/predictions.csv",
+      "bytes": 1126040
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/progress.txt",
+      "bytes": 1059
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/selection.json",
+      "bytes": 37234
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/source-hashes.json",
+      "bytes": 1284
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed471/validation_predictions.csv",
+      "bytes": 1048218
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/daily_graph_features.csv",
+      "bytes": 1115766
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/freeze.txt",
+      "bytes": 331
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/local-verification.json",
+      "bytes": 3387
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/manifest.json",
+      "bytes": 1558
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/metrics.json",
+      "bytes": 18239
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/model_input.csv",
+      "bytes": 8352525
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/predictions.csv",
+      "bytes": 1125951
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/progress.txt",
+      "bytes": 1059
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/selection.json",
+      "bytes": 37239
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/source-hashes.json",
+      "bytes": 1284
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed472/validation_predictions.csv",
+      "bytes": 1048128
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/daily_graph_features.csv",
+      "bytes": 1115589
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/freeze.txt",
+      "bytes": 331
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/local-verification.json",
+      "bytes": 3386
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/manifest.json",
+      "bytes": 1558
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/metrics.json",
+      "bytes": 18239
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/model_input.csv",
+      "bytes": 8351461
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/predictions.csv",
+      "bytes": 1125947
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/progress.txt",
+      "bytes": 1059
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/selection.json",
+      "bytes": 37231
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/source-hashes.json",
+      "bytes": 1284
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/seed473/validation_predictions.csv",
+      "bytes": 1048064
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/source-hashes.json",
+      "bytes": 1284
+    },
+    {
+      "path": "evidence/cq/j-1125-0c3a7c/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-194bed/collection-note.txt",
+      "bytes": 354
+    },
+    {
+      "path": "evidence/cq/j-1125-194bed/status-before-stop.json",
+      "bytes": 2435
+    },
+    {
+      "path": "evidence/cq/j-1125-194bed/status-final.json",
+      "bytes": 2465
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/daily_graph_features.csv",
+      "bytes": 791448
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/manifest.json",
+      "bytes": 1976
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/metrics.json",
+      "bytes": 12846
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/model_input.csv",
+      "bytes": 8295918
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/predictions.csv",
+      "bytes": 382402
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/progress.txt",
+      "bytes": 514
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/selection.json",
+      "bytes": 11958
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/source-hashes.json",
+      "bytes": 905
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-4850c7/validation_predictions.csv",
+      "bytes": 349491
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/install.txt",
+      "bytes": 4878
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/local-verification.json",
+      "bytes": 901
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/manifest.json",
+      "bytes": 1378
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/metrics.json",
+      "bytes": 1311
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/predictions.csv",
+      "bytes": 286161
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/progress.txt",
+      "bytes": 504
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/selection.json",
+      "bytes": 1417
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-4cabb4/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/local-verification.json",
+      "bytes": 898
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/manifest.json",
+      "bytes": 1378
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/metrics.json",
+      "bytes": 1307
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/predictions.csv",
+      "bytes": 286090
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/progress.txt",
+      "bytes": 504
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/selection.json",
+      "bytes": 1417
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-50ac72/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-592926/failure-log.txt",
+      "bytes": 677
+    },
+    {
+      "path": "evidence/cq/j-1125-592926/status.json",
+      "bytes": 2166
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/local-verification.json",
+      "bytes": 899
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/manifest.json",
+      "bytes": 1378
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/metrics.json",
+      "bytes": 1309
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/predictions.csv",
+      "bytes": 286120
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/progress.txt",
+      "bytes": 504
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/selection.json",
+      "bytes": 1417
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-6121b4/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/fold_audit_2022_cgi.json",
+      "bytes": 398
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/fold_audit_2022_no_orthogonalization.json",
+      "bytes": 398
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/install.txt",
+      "bytes": 4878
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/metrics.json",
+      "bytes": 2764
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/predictions.csv",
+      "bytes": 203632
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/progress.txt",
+      "bytes": 27
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/selection.json",
+      "bytes": 9156
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/source-hashes.json",
+      "bytes": 717
+    },
+    {
+      "path": "evidence/cq/j-1125-6b3829/tests.txt",
+      "bytes": 583
+    },
+    {
+      "path": "evidence/cq/j-1125-6c7e6f/status.json",
+      "bytes": 4181
+    },
+    {
+      "path": "evidence/cq/j-1125-82844f/import-timing.txt",
+      "bytes": 51161
+    },
+    {
+      "path": "evidence/cq/j-1125-82844f/import.txt",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/cq/j-1125-82844f/progress.txt",
+      "bytes": 22
+    },
+    {
+      "path": "evidence/cq/j-1125-82844f/status-before-stop.json",
+      "bytes": 2506
+    },
+    {
+      "path": "evidence/cq/j-1125-83b9e2/freeze.txt",
+      "bytes": 331
+    },
+    {
+      "path": "evidence/cq/j-1125-83b9e2/manifest.json",
+      "bytes": 601
+    },
+    {
+      "path": "evidence/cq/j-1125-83b9e2/progress.txt",
+      "bytes": 31
+    },
+    {
+      "path": "evidence/cq/j-1125-83b9e2/storage-root.txt",
+      "bytes": 40
+    },
+    {
+      "path": "evidence/cq/j-1125-83b9e2/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-9a1ee2/freeze.txt",
+      "bytes": 339
+    },
+    {
+      "path": "evidence/cq/j-1125-9a1ee2/progress.txt",
+      "bytes": 68
+    },
+    {
+      "path": "evidence/cq/j-1125-9a1ee2/storage-root.txt",
+      "bytes": 44
+    },
+    {
+      "path": "evidence/cq/j-1125-9a1ee2/tests.txt",
+      "bytes": 569
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/metrics.json",
+      "bytes": 1291
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/predictions.csv",
+      "bytes": 97206
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/progress.txt",
+      "bytes": 337
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/selection.json",
+      "bytes": 473
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/tests.txt",
+      "bytes": 584
+    },
+    {
+      "path": "evidence/cq/j-1125-9e6a4b/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-aa61b8/failure-log.txt",
+      "bytes": 140
+    },
+    {
+      "path": "evidence/cq/j-1125-aa61b8/status.json",
+      "bytes": 1527
+    },
+    {
+      "path": "evidence/cq/j-1125-d24723/failure-log.txt",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/cq/j-1125-d24723/status.json",
+      "bytes": 2138
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2022_cgi.json",
+      "bytes": 398
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2022_no_orthogonalization.json",
+      "bytes": 398
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2023_cgi.json",
+      "bytes": 530
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2023_no_orthogonalization.json",
+      "bytes": 530
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2024_cgi.json",
+      "bytes": 662
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/fold_audit_2024_no_orthogonalization.json",
+      "bytes": 662
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/local-verification.json",
+      "bytes": 1686
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/manifest.json",
+      "bytes": 2453
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/metrics.json",
+      "bytes": 2802
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/predictions.csv",
+      "bytes": 599397
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/progress.txt",
+      "bytes": 55
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/report.md",
+      "bytes": 1869
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/selection.json",
+      "bytes": 27497
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/source-hashes.json",
+      "bytes": 717
+    },
+    {
+      "path": "evidence/cq/j-1125-dd9d4b/tests.txt",
+      "bytes": 583
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/install.txt",
+      "bytes": 4879
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/progress.txt",
+      "bytes": 39
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/tests.txt",
+      "bytes": 583
+    },
+    {
+      "path": "evidence/cq/j-1125-f2da84/torch-version.txt",
+      "bytes": 11
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/code-commit.txt",
+      "bytes": 41
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/cq-threads.json",
+      "bytes": 78
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/freeze.txt",
+      "bytes": 16569
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/install.txt",
+      "bytes": 4880
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/progress.txt",
+      "bytes": 27
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/source-hashes.json",
+      "bytes": 717
+    },
+    {
+      "path": "evidence/cq/j-1125-fb2707/tests.txt",
+      "bytes": 583
+    },
+    {
+      "path": "maintenance/mac-data-20261124.tar.gz",
+      "bytes": 21072
+    },
+    {
+      "path": "paper/workflow/aligned-ensemble-predictions.csv",
+      "bytes": 790355
+    }
+  ]
+}
