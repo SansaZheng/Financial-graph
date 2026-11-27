@@ -1,0 +1,34 @@
+{
+  "status": "all-files-downloaded-and-sha256-verified",
+  "cq_job": "j-1128-9e92e8",
+  "host": "c225",
+  "code_commit": "f72c8d9dab0e2254c76d1907cc4fa7d57c804bbf",
+  "quota_source": "authenticated HF Billing page",
+  "observed_private_storage": "801 MB of 100 GB used",
+  "assets": [
+    {
+      "asset": "derived-inputs",
+      "repo_id": "Sansa005/financial-graph-assets",
+      "revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49",
+      "files": 6,
+      "bytes": 7541137,
+      "readback_sha256": "177c51054be04a5450913739999a8a374cec9753662bcbbde69448b07fb26334",
+      "checked_at": "2026-11-27T19:55:38.244109+00:00",
+      "transports": [
+        "hf-filesystem-verified-range-fallback"
+      ]
+    },
+    {
+      "asset": "completed-experiments",
+      "repo_id": "Sansa005/financial-graph-assets",
+      "revision": "dcefc2163ef4c583085be39d239356ef6f024972",
+      "files": 63,
+      "bytes": 36677558,
+      "readback_sha256": "efccd30919c25e562c5d353e50d5b26a203d2ae36d2248a7268978ed7cbd7630",
+      "checked_at": "2026-11-27T19:57:45.876565+00:00",
+      "transports": [
+        "hf-filesystem-verified-range-fallback"
+      ]
+    }
+  ]
+}

@@ -48,10 +48,10 @@
     },
     {
       "id": "derived-inputs",
-      "status": "pending-authentication-and-upload",
-      "repo_id": null,
+      "status": "published",
+      "repo_id": "Sansa005/financial-graph-assets",
       "repo_type": "dataset",
-      "revision": null,
+      "revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49",
       "private": true,
       "code_revision": "e71914d3e75fda53fb89e14efb2a789604fe4e6b",
       "files": [
@@ -98,14 +98,18 @@
           "sha256": "abe8cee9c5cc331c1bf6521cd83de7a7ac6a89ce477d37ce07e174317ed2af9f"
         }
       ],
-      "code_revision_role": "consumer evaluation; original preprocessing revision unavailable"
+      "code_revision_role": "consumer evaluation; original preprocessing revision unavailable",
+      "verification": {
+        "status": "downloaded-and-sha256-verified",
+        "checked_at": "2026-11-27T19:55:38.244109+00:00"
+      }
     },
     {
       "id": "completed-experiments",
-      "status": "pending-authentication-and-upload",
-      "repo_id": null,
+      "status": "published",
+      "repo_id": "Sansa005/financial-graph-assets",
       "repo_type": "dataset",
-      "revision": null,
+      "revision": "dcefc2163ef4c583085be39d239356ef6f024972",
       "private": true,
       "code_revision": "e71914d3e75fda53fb89e14efb2a789604fe4e6b",
       "files": [
@@ -550,11 +554,15 @@
           "bytes": 1686,
           "sha256": "f16d21ce558c2e5aa462ea610742f44780382f28783d964139ecf435b69b5eca"
         }
-      ]
+      ],
+      "verification": {
+        "status": "downloaded-and-sha256-verified",
+        "checked_at": "2026-11-27T19:57:45.876565+00:00"
+      }
     }
   ],
   "models": {
-    "status": "no-saved-checkpoints-in-local-checkout-or-c225-project; strict-c220-inventory-pending",
+    "status": "no-saved-checkpoints-found-in-audited-local-c225-c220-project-paths",
     "selected": []
   },
   "privacy": "New destinations private; existing upstream public source is read-only. No license changes.",

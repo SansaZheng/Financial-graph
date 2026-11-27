@@ -1,0 +1,80 @@
+{
+  "name": "FinancialGraph private HF upload and full pinned readback",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "f72c8d9dab0e2254c76d1907cc4fa7d57c804bbf"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "jobs/private-assets-remote.sh",
+    "upload"
+  ],
+  "env": {
+    "FG_RUNTIME_PYTHON": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python",
+    "HF_HOME": "/data3/sudingli/cq-home/financial-graph/.hf-auth",
+    "FG_PRIVATE_REPO": "Sansa005/financial-graph-assets",
+    "FG_PRIVATE_WORKSPACE": "/data3/sudingli/cq-home/financial-graph/results/private-assets-20261128",
+    "FG_QUOTA_RECEIPT": "/data3/sudingli/cq-home/financial-graph/results/private-assets-20261128/quota.json",
+    "FG_UPLOAD_SOURCE": "/data3/sudingli/cq-home/financial-graph/results/asset-staging-20261127/source"
+  },
+  "depends_on": [
+    "j-1127-647b22",
+    "j-1128-647b69"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/private-assets-upload-20261128",
+    "expect": [
+      {
+        "path": "manifest.json",
+        "contains": "verified"
+      },
+      {
+        "path": "derived-inputs-readback.json",
+        "contains": "verified"
+      },
+      {
+        "path": "completed-experiments-readback.json",
+        "contains": "verified"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 15
+    }
+  }
+}
