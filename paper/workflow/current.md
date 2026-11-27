@@ -4,6 +4,8 @@
 
 Build the matched 11:31–14:31 New York panel and compare conditional-null graph diffusion with the strongest validation-selected control. See [active task](prompts/005-intraday-matched.md). Venue unspecified. Topic: incremental topology for market volatility forecasting.
 
+Panel CQ job `j-1128-b367d3` assigned to c225. Comparison job `j-1128-b74995` depends on the audited panel. All models fit the same samples and select configurations on validation. Primary result is paired hourly MSE gain with a 95% trading-day block interval.
+
 ## Earlier data qualification
 
 Full source audit `j-1128-99bea1` awaits a c220 CPU slot. It verifies the 10.93 GB archive by SHA-256 and checks all source symbols in five 2024 sessions. CQ is reserving the last eight c220 CPU slots for GPU jobs. See the [task](prompts/004-intraday-audit.md).
