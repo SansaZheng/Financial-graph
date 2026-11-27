@@ -1,0 +1,72 @@
+{
+  "name": "FinancialGraph 006 same-row fixed-penalty diagnosis and frozen-node correction",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "6cf6bca630bd3c062580781e35561c8fe545abce"
+  },
+  "home": {
+    "name": "financial-graph-intraday-005",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "-c",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONDONTWRITEBYTECODE=1\nroot=/home/sudingli/cq-home/financial-graph-intraday-005\ncase \"$(realpath \"$root\")\" in /data/*|/data[0-9]/*|/date/*|/date[0-9]/*) ;; *) exit 70;; esac\n\"$root/env/bin/python\" -m src.intraday_residual --panel-dir \"$root/data\" --reference-predictions \"$root/data/reference-005-predictions.csv\" --out \"$CQ_OUTPUT_DIR\"\n"
+  ],
+  "env": {},
+  "depends_on": [
+    "j-1128-cd5685"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225",
+      "c224"
+    ],
+    "never": [
+      "c223",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph-intraday-005/results/residual-006",
+    "expect": [
+      {
+        "path": "diagnosis.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "selection.json",
+        "contains": "\"validation_mse_by_weight\""
+      },
+      {
+        "path": "predictions.csv",
+        "min_lines": 2913
+      }
+    ]
+  }
+}

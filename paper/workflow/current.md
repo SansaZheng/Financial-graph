@@ -4,6 +4,8 @@
 
 Diagnose the previous graph MSE penalty, then test a residual correction on the frozen 005 predictions. See [active task](prompts/006-intraday-residual.md). Topic: incremental topology information for market volatility forecasting. Venue unspecified. Original source audit remains a separate CQ job.
 
+CQ job `j-1128-1fd048` holds the original 2,912 rows and baseline predictions fixed. It writes the fixed-penalty diagnosis before fitting and evaluating the single correction.
+
 ## Previous stage
 
 005-intraday-matched | Codex + CQ | requested 2026-11-28
