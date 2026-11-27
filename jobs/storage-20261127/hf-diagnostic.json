@@ -1,0 +1,67 @@
+{
+  "name": "FinancialGraph bounded public HF integrity diagnostic",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "9e87b564c3af1db401ca40c30d5f9e96881bd53e"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "-lc",
+    "set -euo pipefail; printf \"0/1 diagnostic\\n\" > \"$CQ_OUTPUT_DIR/progress.txt\"; /home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python scripts/diagnose_hf.py --cached-root /home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/cache/hub --out \"$CQ_OUTPUT_DIR\"; printf \"1/1 diagnostic\\n\" >> \"$CQ_OUTPUT_DIR/progress.txt\""
+  ],
+  "env": {
+    "FINANCIAL_GRAPH_REVISION": "9e87b564c3af1db401ca40c30d5f9e96881bd53e"
+  },
+  "depends_on": [
+    "j-1127-bbe6f6"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 1
+  },
+  "limits": {
+    "max_hours": 0.16666666666666666,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/hf-diagnostic-20261127",
+    "expect": [
+      {
+        "path": "hf-diagnostic.json",
+        "contains": "fresh_match"
+      }
+    ],
+    "progress": {
+      "path": "progress.txt",
+      "stall_min": 8
+    }
+  },
+  "python": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python"
+}

@@ -113,23 +113,31 @@ python scripts/stage_upload.py --asset derived-inputs \
 python scripts/stage_upload.py --asset completed-experiments \
   --source-root "$FG_WORK_ROOT/upload-source" --legacy-commit "$LEGACY_COMMIT"
 
-python scripts/assets.py upload --asset derived-inputs \
+cp assets/manifest.json "$FG_WORK_ROOT/manifest.json"
+python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" upload --asset derived-inputs \
   --source-root "$FG_WORK_ROOT/upload-source" \
   --repo-id your-namespace/financial-graph-assets \
   --quota-receipt "$FG_WORK_ROOT/quota.json"
-python scripts/assets.py upload --asset completed-experiments \
+python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" upload --asset completed-experiments \
   --source-root "$FG_WORK_ROOT/upload-source" \
   --repo-id your-namespace/financial-graph-assets \
   --quota-receipt "$FG_WORK_ROOT/quota.json"
-python scripts/assets.py validate
-# Review and commit ONLY the updated lightweight manifest after readback succeeds:
+python scripts/assets.py --manifest "$FG_WORK_ROOT/manifest.json" validate
+```
+
+Then retrieve only the small manifest on the Mac (replace `UPLOAD_JOB_ID` with the actual successful upload job; no token file or data transfer):
+
+```bash
+cq fetch UPLOAD_JOB_ID --path manifest.json --to /tmp/financial-graph-pins
+# In the GitHub code checkout, preserve unrelated changes and review this small-file replacement:
+cp /tmp/financial-graph-pins/UPLOAD_JOB_ID/manifest.json assets/manifest.json
 git diff -- assets/manifest.json
 git add assets/manifest.json
 git commit -m 'Pin verified HF asset revisions'
 git push
 ```
 
-Use the full legacy SHA from `assets/provenance/derived.json` in a shallow checkout where `616f99b` cannot be resolved. Upload uses official `HfApi.create_commit`, at most50files per commit, remote content deduplication and parent-commit checks. Rerun the same command after interruption: already committed matching files are skipped. For genuinely large uploads, add `--large`; official `upload_large_folder` keeps resumable hash/preupload/commit task metadata under the staging folder's `.cache/huggingface`. Keep that metadata until transfer completes. It is not a promise that every interrupted HTTP request resumes byte-for-byte. Do not change staged source bytes mid-transfer.
+`jobs/stage-assets-remote.sh` prepares these exact allowlisted sources and a SHA256 receipt in a separate CQ data-disk directory. It does not upload or duplicate entire working directories. Use the full legacy SHA from `assets/provenance/derived.json`, never an unresolved short SHA in a shallow checkout. Upload uses official `HfApi.create_commit`, at most50files per commit, remote content deduplication and parent-commit checks. Rerun the same command after interruption: already committed matching files are skipped. For genuinely large uploads, add `--large`; official `upload_large_folder` keeps resumable hash/preupload/commit task metadata under the staging folder's `.cache/huggingface`. Keep that metadata until transfer completes. It is not a promise that every interrupted HTTP request resumes byte-for-byte. Do not change staged source bytes mid-transfer.
 
 Every upload reads back the pinned revision and verifies all listed files before writing the new manifest.
 
