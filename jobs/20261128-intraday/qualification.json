@@ -1,0 +1,59 @@
+{
+  "name": "FinancialGraph intraday causal input qualification",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "bdb23b122a1234e23c52ace33d3afd94b9313f15"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c220"
+  },
+  "command": [
+    "bash",
+    "-c",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1\nroot=/data/zyy/FinancialAD/gae-instability-v2\nmkdir -p \"$root/results\"\nrun=$(mktemp -d \"$root/results/intraday-qualification-20261128.XXXXXXXX\")\n/usr/bin/python3 -m jobs.intraday_qualification --raw \"$root/data/raw/stocks_bars_1m.parquet\" --out \"$run\"\ncp \"$run/qualification.json\" \"$run/progress.txt\" \"$CQ_OUTPUT_DIR/\"\n"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 3
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c220"
+    ],
+    "never": [
+      "c225",
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/intraday-audit-20261128",
+    "expect": [
+      {
+        "path": "qualification.json",
+        "contains": "\"whole_file_verified\": true"
+      }
+    ]
+  },
+  "depends_on": [
+    "j-1127-f8f1aa"
+  ]
+}

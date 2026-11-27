@@ -11,14 +11,17 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import pandas as pd
 import pyarrow
+import pyarrow.compute as pc
 import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 
-from scripts.assets import MANIFEST, choose, load_manifest, verify_file
+from scripts.assets import MANIFEST, choose, configure_tls, load_manifest, verify_file
 
 NY = ZoneInfo("America/New_York")
 DAYS = tuple(date(2024, 1, day) for day in range(8, 13))
 MINUTE = timedelta(minutes=1)
+COLUMNS = ["ticker", "timestamp", "close"]
+PILOT_SYMBOLS = ("SPY", "AAPL", "AMZN", "JNJ", "JPM", "MSFT", "NVDA", "PG", "WMT", "XOM")
 
 
 def data_disk(path):
@@ -67,15 +70,24 @@ def coverage_metadata(parquet):
     }
 
 
-def sample_bars(source):
+def sample_bounds():
     start = datetime.combine(DAYS[0], time(9, 30), NY).astimezone(timezone.utc)
     end = datetime.combine(DAYS[-1], time(16), NY).astimezone(timezone.utc)
+    return start, end
+
+
+def sample_bars(source):
+    start, end = sample_bounds()
     stamp = ds.field("timestamp")
     table = ds.dataset(source, format="parquet").to_table(
-        columns=["ticker", "timestamp", "close"],
+        columns=COLUMNS,
         filter=(stamp >= start) & (stamp < end),
         use_threads=False,
     )
+    return clean_sample(table)
+
+
+def clean_sample(table):
     bars = table.to_pandas()
     eastern = bars["timestamp"].dt.tz_convert(NY)
     minute_of_day = eastern.dt.hour * 60 + eastern.dt.minute
@@ -93,6 +105,53 @@ def sample_bars(source):
         "retained_rows": len(clean),
         "observed_symbols": len(prices.columns),
     }
+
+
+def bounded_hf_sample(asset, file):
+    from huggingface_hub import HfFileSystem
+
+    configure_tls()
+    start, end = sample_bounds()
+    uri = f"datasets/{asset['repo_id']}@{asset['revision']}/{file['path']}"
+    fs = HfFileSystem()
+    with fs.open(uri, "rb", block_size=1024**2, cache_type="none") as handle:
+        pq_file = pq.ParquetFile(handle)
+        if str(pq_file.schema_arrow.field("timestamp").type) != "timestamp[ms, tz=UTC]":
+            raise ValueError("Unexpected timestamp schema")
+        coverage = coverage_metadata(pq_file)
+        names = pq_file.schema_arrow.names
+        indexes = {name: names.index(name) for name in COLUMNS}
+        selected, compressed = [], 0
+        for i in range(pq_file.num_row_groups):
+            group = pq_file.metadata.row_group(i)
+            ts = group.column(indexes["timestamp"]).statistics
+            sym = group.column(indexes["ticker"]).statistics
+            if not ts or not ts.has_min_max or not sym or not sym.has_min_max:
+                continue
+            if ts.max < start or ts.min >= end:
+                continue
+            if any(sym.min <= ticker <= sym.max for ticker in PILOT_SYMBOLS):
+                selected.append(i)
+                compressed += sum(group.column(j).total_compressed_size for j in indexes.values())
+        if not selected or len(selected) > 40 or compressed > 64 * 1024**2:
+            raise ValueError("Pilot row group request outside the declared read budget")
+        tables = []
+        for i in selected:
+            table = pq_file.read_row_group(i, columns=COLUMNS, use_threads=False)
+            allowed = pyarrow.array(PILOT_SYMBOLS, type=table.schema.field("ticker").type)
+            stamps = table["timestamp"]
+            keep = pc.and_(
+                pc.is_in(table["ticker"], value_set=allowed),
+                pc.and_(pc.greater_equal(stamps, start), pc.less(stamps, end)),
+            )
+            tables.append(table.filter(keep))
+    prices, sample = clean_sample(pyarrow.concat_tables(tables))
+    sample.update({
+        "requested_symbols": list(PILOT_SYMBOLS),
+        "selected_row_groups": len(selected),
+        "projected_column_compressed_bytes": compressed,
+    })
+    return coverage, prices, sample
 
 
 def hourly_rows(prices):
@@ -123,26 +182,33 @@ def hourly_rows(prices):
 
 def main():
     args = argparse.ArgumentParser(description=__doc__)
-    args.add_argument("--raw", required=True, type=Path)
+    source_args = args.add_mutually_exclusive_group(required=True)
+    source_args.add_argument("--raw", type=Path)
+    source_args.add_argument("--bounded-hf", action="store_true")
     args.add_argument("--out", required=True, type=Path)
     options = args.parse_args()
-    source = data_disk(options.raw)
     out = data_disk(options.out)
     progress = out / "progress.txt"
     manifest = load_manifest(MANIFEST)
     asset, files = choose(manifest, "raw-minute-bars")
     if len(files) != 1:
         raise ValueError("Expected one pinned raw minute-bar file")
-    progress.write_text("Verifying the pinned raw file\n")
-    verify_file(source, files[0])
-
-    parquet = pq.ParquetFile(source)
-    if str(parquet.schema_arrow.field("timestamp").type) != "timestamp[ms, tz=UTC]":
-        raise ValueError("Unexpected timestamp schema")
-    coverage = coverage_metadata(parquet)
-    with progress.open("a") as log:
-        log.write("Scanning the five 2024 development sessions\n")
-    prices, sample = sample_bars(source)
+    if options.bounded_hf:
+        progress.write_text("Reading the pinned HF pilot slice\n")
+        coverage, prices, sample = bounded_hf_sample(asset, files[0])
+        whole_file_verified = False
+    else:
+        source = data_disk(options.raw)
+        progress.write_text("Verifying the pinned raw file\n")
+        verify_file(source, files[0])
+        parquet = pq.ParquetFile(source)
+        if str(parquet.schema_arrow.field("timestamp").type) != "timestamp[ms, tz=UTC]":
+            raise ValueError("Unexpected timestamp schema")
+        coverage = coverage_metadata(parquet)
+        with progress.open("a") as log:
+            log.write("Scanning the five 2024 development sessions\n")
+        prices, sample = sample_bars(source)
+        whole_file_verified = True
     rows = hourly_rows(prices)
     valid = sum(r["target_available"] and r["eligible_nodes"] > 0 for r in rows)
     report = {
@@ -150,7 +216,7 @@ def main():
         "code_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
         "source": {
             "repo_id": asset["repo_id"], "revision": asset["revision"], "path": files[0]["path"],
-            "bytes": files[0]["bytes"], "sha256": files[0]["sha256"], "whole_file_verified": True,
+            "bytes": files[0]["bytes"], "sha256": files[0]["sha256"], "whole_file_verified": whole_file_verified,
         },
         "versions": {"pyarrow": pyarrow.__version__, "pandas": pd.__version__, "numpy": np.__version__},
         "coverage": coverage,
