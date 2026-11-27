@@ -1,0 +1,96 @@
+{
+  "status": "complete",
+  "rows": 2912,
+  "panel_sha256": "01d7b186d328015ca4c864ee48a7e7dafd9d3dcc1579c76c3aba17a8eb856f90",
+  "reference_predictions_sha256": "b0b6fcc90fe97693ccab4e47c2948150e518dc3084a4fa35b77cef07618100f0",
+  "archived_pooled": {
+    "node_mse": 0.2478195517231468,
+    "density_mse": 0.24961201559051413,
+    "graph_mse": 0.24985125756239346,
+    "density_minus_node": 0.0017924638673673388,
+    "graph_minus_density": 0.00023924197187932816,
+    "graph_minus_node": 0.002031705839246667,
+    "density_share_of_archived_gap": 0.8822457625223756
+  },
+  "per_year": {
+    "2022": {
+      "archived": {
+        "node_mse": 0.23893179286457236,
+        "density_mse": 0.2405704612343245,
+        "graph_mse": 0.24139243206237898,
+        "density_minus_node": 0.0016386683697521276,
+        "graph_minus_density": 0.0008219708280544913,
+        "graph_minus_node": 0.002460639197806619
+      },
+      "fixed_node_config": [
+        "ridge",
+        1
+      ],
+      "fixed_penalty_mse": {
+        "node": 0.23893179286457236,
+        "density": 0.2405704612343245,
+        "graph": 0.24139243206237898,
+        "node_plus_graph_without_density": 0.23974925863819554
+      },
+      "fixed_penalty_density_minus_node": 0.0016386683697521276,
+      "fixed_penalty_graph_minus_density": 0.0008219708280544913,
+      "test_mc_null_error_rmse": 0.023137798913663334,
+      "test_exact_surplus_sd": 0.3022042624484838,
+      "validation_year": 2021,
+      "validation_residual_correlation": 0.06533434904946674
+    },
+    "2023": {
+      "archived": {
+        "node_mse": 0.25865816722462254,
+        "density_mse": 0.25911316804519746,
+        "graph_mse": 0.25922979189545287,
+        "density_minus_node": 0.0004550008205749245,
+        "graph_minus_density": 0.000116623850255404,
+        "graph_minus_node": 0.0005716246708303285
+      },
+      "fixed_node_config": [
+        "ridge",
+        10
+      ],
+      "fixed_penalty_mse": {
+        "node": 0.25865816722462254,
+        "density": 0.25998127137606186,
+        "graph": 0.2600951791138874,
+        "node_plus_graph_without_density": 0.25877881178050066
+      },
+      "fixed_penalty_density_minus_node": 0.001323104151439325,
+      "fixed_penalty_graph_minus_density": 0.00011390773782554708,
+      "test_mc_null_error_rmse": 0.015710955185924403,
+      "test_exact_surplus_sd": 0.23201294125068328,
+      "validation_year": 2022,
+      "validation_residual_correlation": -0.04235765596887921
+    },
+    "2024": {
+      "archived": {
+        "node_mse": 0.24581421895178288,
+        "density_mse": 0.24916168656850923,
+        "graph_mse": 0.24891944705721522,
+        "density_minus_node": 0.0033474676167263573,
+        "graph_minus_density": -0.00024223951129401233,
+        "graph_minus_node": 0.003105228105432345
+      },
+      "fixed_node_config": [
+        "ridge",
+        1000
+      ],
+      "fixed_penalty_mse": {
+        "node": 0.24581421895178288,
+        "density": 0.24916168656850923,
+        "graph": 0.24891944705721522,
+        "node_plus_graph_without_density": 0.2456057636124097
+      },
+      "fixed_penalty_density_minus_node": 0.0033474676167263573,
+      "fixed_penalty_graph_minus_density": -0.00024223951129401233,
+      "test_mc_null_error_rmse": 0.019897583035970706,
+      "test_exact_surplus_sd": 0.2454205617632001,
+      "validation_year": 2023,
+      "validation_residual_correlation": -0.0057095010007723246
+    }
+  },
+  "interpretation": "Controlled feature-set test with a fixed ridge penalty, not causal identification of market mechanisms."
+}

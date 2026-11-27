@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "protocol": "006-intraday-residual",
+  "rows": 2912,
+  "code_commit": "6cf6bca630bd3c062580781e35561c8fe545abce",
+  "panel_sha256": "01d7b186d328015ca4c864ee48a7e7dafd9d3dcc1579c76c3aba17a8eb856f90",
+  "reference_predictions_sha256": "b0b6fcc90fe97693ccab4e47c2948150e518dc3084a4fa35b77cef07618100f0",
+  "predictions_sha256": "59e90c4d49825326af765e29fa713f60897fcff6915cb96f50ef9522d847e341",
+  "pooled_mse": {
+    "strong_control": 0.2478195517231468,
+    "old_graph": 0.24985125756239346,
+    "full_correction": 0.24798442154970649,
+    "corrected_graph": 0.2480150165772257
+  },
+  "per_year_mse": {
+    "2022": {
+      "strong_control": 0.23893179286457236,
+      "old_graph": 0.24139243206237898,
+      "full_correction": 0.23950906837682148,
+      "corrected_graph": 0.23950906837682148
+    },
+    "2023": {
+      "strong_control": 0.25865816722462254,
+      "old_graph": 0.25922979189545287,
+      "full_correction": 0.25873476795044364,
+      "corrected_graph": 0.25865816722462254
+    },
+    "2024": {
+      "strong_control": 0.24581421895178288,
+      "old_graph": 0.24891944705721522,
+      "full_correction": 0.24563989102641895,
+      "corrected_graph": 0.24581421895178288
+    }
+  },
+  "mse_reduction_pct": -0.07887386314751055,
+  "paired_vs_strong": {
+    "block_trading_days": 5,
+    "draws": 10000,
+    "days": 748,
+    "mse_gain": -0.00019546485407886255,
+    "ci95": [
+      -0.0005187079308272337,
+      4.1805219115552224e-05
+    ],
+    "centered_bootstrap_p_two_sided": 0.1620837916208379
+  },
+  "block_length_sensitivity": [
+    {
+      "block_trading_days": 10,
+      "draws": 10000,
+      "days": 748,
+      "mse_gain": -0.00019546485407886255,
+      "ci95": [
+        -0.0005318391194462512,
+        3.501999704166102e-05
+      ],
+      "centered_bootstrap_p_two_sided": 0.18038196180381963
+    },
+    {
+      "block_trading_days": 20,
+      "draws": 10000,
+      "days": 748,
+      "mse_gain": -0.00019546485407886255,
+      "ci95": [
+        -0.0005424076538863179,
+        3.404567045931416e-05
+      ],
+      "centered_bootstrap_p_two_sided": 0.1922807719228077
+    }
+  ],
+  "significant_mse_reduction_at_95pct": false,
+  "evidence_scope": "Historical development comparison designed after observing study 005"
+}

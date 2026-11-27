@@ -1,0 +1,54 @@
+{
+  "status": "verified",
+  "rows": 2912,
+  "year_counts": {
+    "2022": 986,
+    "2023": 983,
+    "2024": 943
+  },
+  "trading_days": 748,
+  "same_targets_and_frozen_predictions": true,
+  "validation_weights_verified": true,
+  "mse": {
+    "strong_control": 0.2478195517231468,
+    "old_graph": 0.2498512575623935,
+    "full_correction": 0.24798442154970643,
+    "corrected_graph": 0.2480150165772257
+  },
+  "paired_mse_gain": -0.00019546485407886263,
+  "block_length_5_ci95": [
+    -0.0005187079308272337,
+    4.180521911555222e-05
+  ],
+  "cq_job": "j-1128-1fd048",
+  "host": "c225",
+  "code_commit": "6cf6bca630bd3c062580781e35561c8fe545abce",
+  "output_receipts": [
+    {
+      "path": "diagnosis.json",
+      "bytes": 3560,
+      "sha256": "47894898be580120df99b54f72c1aa2a46b0cac8861751d95fa20021a24c78b9",
+      "lines": 96
+    },
+    {
+      "path": "metrics.json",
+      "bytes": 2271,
+      "sha256": "f394aca0692a94bdd03303001e3b6b7b57615c1d1b7d54e0b26733620842b7ff",
+      "lines": 73
+    },
+    {
+      "path": "selection.json",
+      "bytes": 1082,
+      "sha256": "aebf0939ef9e86fe539c553ae14525fd7f05f6845d9c2872a9a2e0ac0650af6d",
+      "lines": 50
+    },
+    {
+      "path": "predictions.csv",
+      "bytes": 365255,
+      "sha256": "59e90c4d49825326af765e29fa713f60897fcff6915cb96f50ef9522d847e341",
+      "lines": 2913
+    }
+  ],
+  "output_dir": "/home/sudingli/cq-home/financial-graph-intraday-005/results/residual-006",
+  "compute_seconds": 56.964
+}
