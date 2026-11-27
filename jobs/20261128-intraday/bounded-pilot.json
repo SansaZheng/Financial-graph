@@ -1,0 +1,62 @@
+{
+  "name": "FinancialGraph bounded HF intraday timing pilot",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "5e07163c24a4e545a77a096b33a6f6903f7955b6"
+  },
+  "home": {
+    "name": "financial-graph",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "-c",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1\nroot=/data3/sudingli/cq-home/financial-graph/results\nrun=$(mktemp -d \"$root/intraday-hf-pilot-20261128.XXXXXXXX\")\n\"$FG_RUNTIME_PYTHON\" -m jobs.intraday_qualification --bounded-hf --out \"$run\"\ncp \"$run/qualification.json\" \"$run/progress.txt\" \"$CQ_OUTPUT_DIR/\"\n"
+  ],
+  "env": {
+    "FG_RUNTIME_PYTHON": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python"
+  },
+  "depends_on": [
+    "j-1128-647b69"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 1,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c224",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph/results/intraday-hf-pilot-20261128",
+    "expect": [
+      {
+        "path": "qualification.json",
+        "contains": "\"requested_symbols\""
+      }
+    ]
+  }
+}

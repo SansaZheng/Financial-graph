@@ -4,6 +4,8 @@
 
 CQ job `j-1128-890d91` submitted at 2026-11-28T04:21:55+08:00. Verify the pinned minute-bar file and audit a 2024-only, causally aligned hourly sample. Use metadata for later-date inventory. Venue unspecified, CCF A quality goal. Topic: incremental topology information for market volatility forecasting. See [active task](prompts/004-intraday-audit.md).
 
+Parallel timing pilot `004b-intraday-bounded` (CQ `j-1128-cbd585`): read up to 40 projected HF row groups on c225 while c220 awaits CPU. See [pilot task](prompts/004b-intraday-bounded.md).
+
 ## Completed work
 
 003-ntd | Codex + CQ | 2026-11-25T22:06:10.360595+08:00

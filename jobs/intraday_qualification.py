@@ -175,7 +175,7 @@ def hourly_rows(prices):
                 "target_end_utc": (cutoff + 60 * MINUTE).isoformat(),
                 "eligible_nodes": int(node_returns.notna().sum()),
                 "missing_spy_bars": missing,
-                "target_available": variance is not None and np.isfinite(variance),
+                "target_available": variance is not None and bool(np.isfinite(variance)),
             })
     return rows
 
