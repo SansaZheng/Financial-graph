@@ -105,7 +105,6 @@ def rewire(weights, rng):
 
 
 def make_features(panel):
-    rng = np.random.default_rng(SEED)
     labels = panel.index.tz_convert(NY)
     slots = labels.hour * 60 + labels.minute
     features = []
@@ -113,8 +112,11 @@ def make_features(panel):
         rows = rows.loc[np.isfinite(rows).all(axis=1)]
         values = rows.to_numpy()
         for i in range(WINDOW, len(rows)):
+            decision = rows.index[i]
+            epoch_minute = int(decision.timestamp() // 60)
+            rng = np.random.default_rng(np.random.SeedSequence([SEED, epoch_minute]))
             record = graph_features(values[i - WINDOW:i], values[i], rng)
-            record.update(decision=rows.index[i], graph_history_end=rows.index[i - 1])
+            record.update(decision=decision, graph_history_end=rows.index[i - 1])
             features.append(record)
     if not features:
         raise ValueError("Too few complete prior same-clock observations")
