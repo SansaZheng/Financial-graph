@@ -1,0 +1,29 @@
+{
+  "status": "passed-public-workflow",
+  "code_commit": "921a5d38fc2bd152a2fc5ac6e793a0c10ccfb1f1",
+  "clean_checkout": true,
+  "reused_environment": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261127-v2/venv/bin/python",
+  "tracked_payload_policy": "passed",
+  "pinned_hf_card": {
+    "status": "verified",
+    "asset": "upstream-card",
+    "files": 1,
+    "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9"
+  },
+  "test_log": "tests.txt",
+  "derived_hf_upload_ready": false,
+  "scientific_data_reproduction": "not run: derived asset unpublished",
+  "runtime_root": "/home/sudingli/cq-home/financial-graph/results/storage-check-20261128-v3",
+  "cache_root": "/data3/sudingli/cq-home/financial-graph/results/storage-check-20261128-v3/cache",
+  "raw_stream": {
+    "rows": 5,
+    "columns": [
+      "timestamp",
+      "ticker",
+      "close"
+    ],
+    "integrity": "pinned range read; whole-file SHA256 NOT verified by streaming",
+    "full_raw_download": false
+  },
+  "private_upload_verification": "not performed without authentication and confirmed quota"
+}

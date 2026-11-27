@@ -1,4 +1,4 @@
-# Storage migration — 2026-11-27 (Asia/Singapore)
+# Storage migration — 2026-11-28 (Asia/Singapore)
 
 ## Scope and completed reversible changes
 
@@ -20,15 +20,19 @@ The version manifest has exact paths, byte sizes and SHA256 for raw assets, deri
 | Selected full-run evidence | Same project Dataset repo, grouped by run/seed | Pending authenticated upload and pinned readback |
 | Models | None selected | No serialized weights identified; training code does not save them |
 
-Project curated upload: approximately44.2MB,69explicit files, no environments/caches. The account's existing private HF repositories, write scopes and real storage balance cannot be inspected without credentials. There is no usable HF login on the Mac or observed c225 context. A c220-labelled first inventory was scheduled by CQ to c227; its report is correctly labeled c227, not evidence about c220. A strict c220 inventory was submitted separately.
+Project curated upload: approximately44.2MB,69explicit files, no environments/caches. The account's existing private HF repositories, write scopes and real storage balance cannot be inspected without credentials. There is no usable HF login on the Mac or observed c225 context. A c220-labelled first inventory was scheduled by CQ to c227; its report is correctly labeled c227, not evidence about c220. Strict c220 inventory `j-1127-f8f1aa` remains queued because available CPUs are reserved for GPU jobs; no scheduling protections were bypassed. Legacy c220 model inventory remains incomplete.
 
 ## Verification
 
-- Eleven local unit tests passed: immutable revisions, selective downloads, SHA corruption, safe paths, default Mac guard, quota gates, public-destination refusal, duplicate avoidance and failure-safe manifest updates.
+- Thirteen local asset unit tests passed: immutable revisions, selective downloads, SHA corruption, safe paths, default Mac guard, quota gates, public-destination refusal, duplicate avoidance and failure-safe manifest updates.
 - Git index policy passes after untracking assets; source originals remain on disk.
 - Upstream HF metadata and card verified. No full raw download to Mac.
-- Clean remote GitHub/HF streaming/dependency qualification: pending CQ receipt; this section will be updated after execution.
+- Clean remote qualification passed on c225, CQ `j-1128-647b69`, code `921a5d38fc2bd152a2fc5ac6e793a0c10ccfb1f1`: clean shallow GitHub checkout, exact dependencies, 23 tests passed, pinned card full SHA256 verification, and five rows/three columns streamed from Parquet. Streaming does not verify the whole 11GB file hash. See `remote-validation.json` and `remote-tests.txt`.
 - Authenticated private upload/readback and full scientific reconstruction from HF: **not yet verified**. Unit mocks and public metadata do not count as real private upload success.
+
+CQ `j-1127-647b22` staged all 69 selected files (44,218,695 bytes) on c225 at `/data3/sudingli/cq-home/financial-graph/results/asset-staging-20261127/source`; every file passed SHA256 verification. This is remote staging, not an HF upload. See `remote-staging-receipt.json`.
+
+The server's HF HEAD response incorrectly reported zero bytes while API metadata reported 1,272. An official `HfFileSystem` pinned range read returned the correct content/hash. The downloader now supports a resumable range fallback for this specific zero-byte case, retaining strict final size/hash checks. No TLS or integrity checks were disabled. Failure diagnostics remain in this report directory.
 
 ## History and cleanup plan — approval required before destructive actions
 
@@ -46,4 +50,4 @@ Remote runtime caches/environments are isolated under the CQ project's data-disk
 4. Shared history rewriting and deletion of the old raw Release remain separate optional decisions; neither is needed for a clean current checkout.
 
 ## 中文结论
-代码与资产已经在仓库结构上分离，固定版本和校验工具已实现并进行本地测试；现有原始数据HF版本直接复用。私有派生数据上传仍受账号登录与额度信息缺失阻塞，因此尚不能宣称整个迁移完成，也不能删除本地原件。科研结果保持不变：NTD未超过最强对照。
+代码与资产已经在仓库结构上分离，固定版本和校验工具已实现，干净远端目录的23项测试及公开HF下载/流式读取验证通过，69个文件已在c225暂存并校验；现有原始数据HF版本直接复用。私有派生数据上传仍受账号登录与额度信息缺失阻塞，因此尚不能宣称整个迁移完成，也不能删除本地原件。科研结果保持不变：NTD未超过最强对照。

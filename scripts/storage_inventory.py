@@ -11,7 +11,7 @@ def inspect(roots):
             item.update(real_path=str(p.resolve()),free_bytes=shutil.disk_usage(p).free)
             files=[]; models=[]; total=0
             for base, dirs, names in os.walk(p):
-                dirs[:]=[d for d in dirs if d not in ['env','.venv','.git','repo','__pycache__','node_modules','.cache','cache'] and not Path(base,d).is_symlink()]
+                dirs[:]=[d for d in dirs if d not in ['env','.venv','.git','repo','__pycache__','node_modules','.cache','cache','.hf-auth'] and not Path(base,d).is_symlink()]
                 for name in names:
                     f=Path(base,name)
                     if f.is_symlink():continue
