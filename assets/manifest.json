@@ -87,8 +87,8 @@
           "path": "provenance/derived.json",
           "local_path": "provenance/derived.json",
           "source_path": "assets/provenance/derived.json",
-          "bytes": 555,
-          "sha256": "392501660af242f0a3bdfc8a6a05a469643d4deb3eb4a8e6559f37f89e1d1d05"
+          "bytes": 658,
+          "sha256": "29deb47564ab03d778f416ab9223cf68d0e28b8fd9952be4d59239c6d487476b"
         },
         {
           "path": "README.md",
@@ -97,7 +97,8 @@
           "bytes": 1456,
           "sha256": "abe8cee9c5cc331c1bf6521cd83de7a7ac6a89ce477d37ce07e174317ed2af9f"
         }
-      ]
+      ],
+      "code_revision_role": "consumer evaluation; original preprocessing revision unavailable"
     },
     {
       "id": "completed-experiments",
