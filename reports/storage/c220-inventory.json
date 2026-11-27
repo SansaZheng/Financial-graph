@@ -1,0 +1,31 @@
+{
+  "roots": [
+    {
+      "path": "/home/sudingli/cq-home/financial-graph",
+      "exists": true,
+      "real_path": "/home/sudingli/cq-home-data/financial-graph",
+      "free_bytes": 4033462575104,
+      "scoped_bytes": 42648918,
+      "large_files": [],
+      "model_files": []
+    },
+    {
+      "path": "/data/zyy/FinancialAD/gae-instability-v2",
+      "exists": true,
+      "real_path": "/data/zyy/FinancialAD/gae-instability-v2",
+      "free_bytes": 4033462575104,
+      "scoped_bytes": 10937130540,
+      "large_files": [
+        {
+          "path": "/data/zyy/FinancialAD/gae-instability-v2/data/raw/stocks_bars_1m.parquet",
+          "bytes": 10927267185
+        }
+      ],
+      "model_files": []
+    }
+  ],
+  "hf": {
+    "client_installed": true,
+    "credential_present": false
+  }
+}
