@@ -44,7 +44,7 @@ def transition(weights):
     return np.divide(weights, total, out=np.zeros_like(weights), where=total > 0)
 
 
-def graph_features(history, current, rng):
+def diffusion_inputs(history, current):
     past = residual(history)
     center = past.mean(axis=0)
     scale = np.maximum(past.std(axis=0), 1e-8)
@@ -58,6 +58,11 @@ def graph_features(history, current, rng):
     weights = np.where(mask | mask.T, correlation, 0)
 
     shock = np.clip((residual(current) - center) / scale, -5, 5)
+    return weights, shock
+
+
+def graph_features(history, current, rng):
+    weights, shock = diffusion_inputs(history, current)
     diff = transition(weights)
     raw = np.square(diff @ shock).mean()
     permutations = np.tile(np.arange(len(shock)), (128, 1))
@@ -104,7 +109,7 @@ def rewire(weights, rng):
     return matrix, swaps
 
 
-def make_features(panel):
+def make_features(panel, feature_function=graph_features):
     labels = panel.index.tz_convert(NY)
     slots = labels.hour * 60 + labels.minute
     features = []
@@ -115,7 +120,7 @@ def make_features(panel):
             decision = rows.index[i]
             epoch_minute = int(decision.timestamp() // 60)
             rng = np.random.default_rng(np.random.SeedSequence([SEED, epoch_minute]))
-            record = graph_features(values[i - WINDOW:i], values[i], rng)
+            record = feature_function(values[i - WINDOW:i], values[i], rng)
             record.update(decision=decision, graph_history_end=rows.index[i - 1])
             features.append(record)
     if not features:

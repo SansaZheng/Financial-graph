@@ -1,5 +1,11 @@
 # Current research stage
 
+006-intraday-residual | Codex + CQ | prepared 2026-11-28T05:09:10+08:00
+
+Diagnose the previous graph MSE penalty, then test a residual correction on the frozen 005 predictions. See [active task](prompts/006-intraday-residual.md). Topic: incremental topology information for market volatility forecasting. Venue unspecified. Original source audit remains a separate CQ job.
+
+## Previous stage
+
 005-intraday-matched | Codex + CQ | requested 2026-11-28
 
 Build the matched 11:31–14:31 New York panel and compare conditional-null graph diffusion with the strongest validation-selected control. See [active task](prompts/005-intraday-matched.md). Venue unspecified. Topic: incremental topology for market volatility forecasting.
