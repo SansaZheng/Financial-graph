@@ -1,0 +1,71 @@
+{
+  "name": "FinancialGraph 005 matched graph comparison portable runtime",
+  "work": "FinancialGraph",
+  "code": {
+    "git": "SuuTTT/financial-graph-cq",
+    "commit": "9e923aa78e6d5a1eec86520ddcbd33a05c87add3"
+  },
+  "home": {
+    "name": "financial-graph-intraday-005",
+    "from": "c225"
+  },
+  "command": [
+    "bash",
+    "-c",
+    "set -euo pipefail\nexport OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONDONTWRITEBYTECODE=1\nroot=/home/sudingli/cq-home/financial-graph-intraday-005\ncase \"$(realpath \"$root\")\" in /data/*|/data[0-9]/*|/date/*|/date[0-9]/*) ;; *) exit 70;; esac\n\"$root/env/bin/python\" -m src.intraday_compare --labels \"$root/data/forecast_data.csv\" --panel-dir \"$root/data\" --out \"$CQ_OUTPUT_DIR\"\n"
+  ],
+  "env": {},
+  "depends_on": [
+    "j-1128-b367d3"
+  ],
+  "resources": {
+    "gpus": 0,
+    "cpus": 2,
+    "ram_gb": 2
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_usd": 0,
+    "max_attempts": 1
+  },
+  "placement": {
+    "target": "school",
+    "allow_rent": false,
+    "prefer": [
+      "c224",
+      "c225"
+    ],
+    "never": [
+      "c223",
+      "c219",
+      "c237",
+      "c203",
+      "c220",
+      "c221",
+      "c222",
+      "c227",
+      "c226",
+      "pc4070"
+    ]
+  },
+  "outputs": {
+    "dest": "/home/sudingli/cq-home/financial-graph-intraday-005/results/evaluation-v2",
+    "expect": [
+      {
+        "path": "metrics.json",
+        "contains": "\"status\": \"complete\""
+      },
+      {
+        "path": "selection.json",
+        "contains": "\"strongest\""
+      },
+      {
+        "path": "predictions.csv",
+        "min_lines": 2000
+      }
+    ]
+  },
+  "replaces": [
+    "j-1128-b74995"
+  ]
+}

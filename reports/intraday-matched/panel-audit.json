@@ -1,0 +1,65 @@
+{
+  "status": "built",
+  "labels": {
+    "repo_id": "Sansa005/financial-graph-assets",
+    "revision": "00015899c8ac9511332d05949bf41d9cc0fe5c49",
+    "sha256": "a3ff9029edcf90cd382a45b4662b650971cdab914a2295868ab7552c8cb6f681"
+  },
+  "raw": {
+    "repo_id": "CryptoSpartan/stocks_bars_1m",
+    "revision": "0c6f25f287918b1421c2572d2c9e2b75bd8959a9",
+    "raw_expected_sha256": "59bc5acc7d278680c9090c53b10de6d6add796ebf19586be3873f19e3e789d7b",
+    "whole_file_sha256_verified": false,
+    "projected_compressed_bytes": 57961923,
+    "row_groups": 96,
+    "endpoint_price_rows": 77835,
+    "duplicate_endpoint_rows": 0,
+    "invalid_endpoint_rows": 0
+  },
+  "counts_utc_year": {
+    "2018": {
+      "candidates": 987,
+      "complete": 983
+    },
+    "2019": {
+      "candidates": 993,
+      "complete": 987
+    },
+    "2020": {
+      "candidates": 1004,
+      "complete": 1002
+    },
+    "2021": {
+      "candidates": 985,
+      "complete": 954
+    },
+    "2022": {
+      "candidates": 990,
+      "complete": 986
+    },
+    "2023": {
+      "candidates": 983,
+      "complete": 983
+    },
+    "2024": {
+      "candidates": 943,
+      "complete": 943
+    }
+  },
+  "symbols": [
+    "AAPL",
+    "AMZN",
+    "JNJ",
+    "JPM",
+    "MSFT",
+    "NVDA",
+    "PG",
+    "WMT",
+    "XOM"
+  ],
+  "endpoint_utc_range": [
+    "2018-01-02 15:29:00+00:00",
+    "2024-12-30 19:29:00+00:00"
+  ],
+  "panel_sha256": "01d7b186d328015ca4c864ee48a7e7dafd9d3dcc1579c76c3aba17a8eb856f90"
+}

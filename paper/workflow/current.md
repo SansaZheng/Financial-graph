@@ -4,7 +4,7 @@
 
 Build the matched 11:31–14:31 New York panel and compare conditional-null graph diffusion with the strongest validation-selected control. See [active task](prompts/005-intraday-matched.md). Venue unspecified. Topic: incremental topology for market volatility forecasting.
 
-Panel CQ job `j-1128-b367d3` assigned to c225. Comparison job `j-1128-b74995` depends on the audited panel. All models fit the same samples and select configurations on validation. Primary result is paired hourly MSE gain with a 95% trading-day block interval.
+Panel CQ job `j-1128-b367d3` completed on c225. It found 2,912 complete endpoint rows in 2022–2024. Comparison job `j-1128-cd5685` uses the verified inputs and pinned runtime in a separate staging home. It replaces the unstarted c225-only job `j-1128-b74995`, which was blocked by the RAM reservation. All models fit the same samples and select configurations on validation. Primary result is paired hourly MSE gain with a 95% trading-day block interval.
 
 ## Earlier data qualification
 
